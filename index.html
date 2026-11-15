@@ -278,7 +278,14 @@ blockquote { margin: 0; font-size: 17px; }
 .footer-grid h2 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
 .footer-grid a { color: var(--muted); text-decoration: none; padding: 6px 0; }
 .footer-grid a:hover { color: var(--gold-2); }
-.footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 40px; padding-block: 28px 36px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
+.footer-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 40px; padding-block: 28px 36px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
+.legal { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 20px; }
+.legal a { color: var(--muted); text-decoration: none; }
+.legal a:hover { color: var(--gold-2); }
+.pay { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.pay-label { display: inline-flex; align-items: center; gap: 8px; margin-right: 4px; }
+.pay-label svg { color: var(--gold); }
+.pay-chip { border: 1px solid var(--line-2); border-radius: 8px; padding: 3px 10px; font-size: 13px; color: var(--text); white-space: nowrap; }
 
 /* Boutons flottants */
 .floating { position: fixed; right: 20px; bottom: 20px; z-index: 40; display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
@@ -307,6 +314,7 @@ blockquote { margin: 0; font-size: 17px; }
   .brand { font-size: 19px; }
   .brand small { font-size: 11px; letter-spacing: .16em; }
   .floating { right: 14px; bottom: 14px; }
+  .footer-bottom { padding-bottom: 96px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -734,11 +742,6 @@ blockquote { margin: 0; font-size: 17px; }
       <a href="#destinations">Destinations</a>
       <a href="#partenaires">Programme partenaires</a>
       <a href="#faq">Questions fréquentes</a>
-      <a href="confidentialite.html">Confidentialité</a>
-      <!-- À ajouter dès que les pages existent :
-      <a href="mentions-legales.html">Mentions légales</a>
-      <a href="conditions-generales.html">Conditions générales</a>
-      -->
     </nav>
     <div style="flex: 1 1 200px">
       <h2>Contact</h2>
@@ -748,8 +751,15 @@ blockquote { margin: 0; font-size: 17px; }
     </div>
   </div>
   <div class="container footer-bottom">
-    <span>© <span id="year">2026</span> SoraPrestige · Votre partenaire de voyage pour l'Afrique, l'Europe et le Moyen-Orient</span>
-    <span>Visa · Mastercard · Wave · Orange Money · MTN Mobile Money · Moov Money</span>
+    <div class="legal">
+      <span>© <span id="year">2026</span> SoraPrestige. Tous droits réservés.</span>
+      <a href="confidentialite.html">Confidentialité</a>
+      <!-- À ajouter dès que la page existe : <a href="mentions-legales.html">Mentions légales</a> -->
+    </div>
+    <div class="pay" aria-label="Moyens de paiement acceptés">
+      <span class="pay-label"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Paiement sécurisé</span>
+      <span class="pay-chip">Visa</span><span class="pay-chip">Mastercard</span><span class="pay-chip">Wave</span><span class="pay-chip">Orange Money</span><span class="pay-chip">MTN MoMo</span><span class="pay-chip">Moov Money</span>
+    </div>
   </div>
 </footer>
 
