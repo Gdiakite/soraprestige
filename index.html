@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SoraPrestige — Jets privés, yachts, clubs sportifs, personnalités et événements</title>
 <meta name="description" content="SoraPrestige organise sur mesure vos vols en jet privé, locations de yachts, déplacements de clubs sportifs, voyages de personnalités, événements et hôtels entre l'Afrique, l'Europe et le Moyen-Orient.">
-<meta name="theme-color" content="#0A0E17">
+<meta name="theme-color" content="#F3EEE4">
 <link rel="canonical" href="https://soraprestige.com/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
@@ -14,17 +14,22 @@
 <meta property="og:title" content="SoraPrestige — Le voyage d'exception, organisé pour vous">
 <meta property="og:description" content="Jets privés, yachts, clubs sportifs, personnalités, événements et hôtels entre l'Afrique, l'Europe et le Moyen-Orient.">
 <meta property="og:url" content="https://soraprestige.com/">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://soraprestige.com/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Instrument+Sans:wght@400;500;600&display=swap">
+<link rel="preload" as="image" href="images/jet.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "TravelAgency",
   "name": "SoraPrestige",
   "url": "https://soraprestige.com/",
+  "image": "https://soraprestige.com/images/og.jpg",
   "email": "contact@soraprestige.com",
   "telephone": "+33758954783",
   "areaServed": ["Afrique", "Europe", "Moyen-Orient"],
@@ -33,288 +38,368 @@
 </script>
 <style>
 :root {
-  --bg: #0A0E17; --bg-2: #0E1421; --surface: #131B2B; --surface-2: #182236;
-  --line: #26314A; --line-2: #3D4C6B;
-  --text: #F5F1E8; --muted: #AEB6C6; --subtle: #8D97AB;
-  --gold: #D4B26A; --gold-2: #E8D09A; --ink: #0A0E17; --danger: #F2958A;
-  --serif: 'Playfair Display', Georgia, serif;
-  --sans: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --radius: 16px; --header-h: 76px;
-  color-scheme: dark;
+  --paper: #F3EEE4; --paper-2: #EAE2D3; --card: #FAF7F1;
+  --ink: #16130E; --ink-2: #3B352C; --muted: #6A6255; --line: #D3C8B5;
+  --bronze: #8B5E34; --bronze-2: #B98A5C;
+  --night: #15120E; --night-2: #1F1B15; --night-line: #3A332A; --night-text: #F3EEE4; --night-muted: #B5AB99;
+  --danger: #A33A2C; --ok: #2F6B45;
+  --serif: 'Bodoni Moda', 'Didot', 'Bodoni 72', Georgia, serif;
+  --sans: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --header-h: 76px;
+  color-scheme: light;
 }
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--bg); color: var(--text); font: 400 16px/1.6 var(--sans); overflow-x: hidden; }
-img, svg { display: block; max-width: 100%; }
-a { color: var(--gold); }
-a:hover { color: var(--gold-2); }
-:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
-section[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
-#demande { scroll-margin-top: calc(var(--header-h) + 24px); }
-h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 700; line-height: 1.15; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.6 var(--sans); overflow-x: hidden; }
+img { display: block; max-width: 100%; height: auto; }
+svg { display: block; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--bronze); outline-offset: 3px; }
+h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 400; line-height: 1.05; letter-spacing: -0.01em; }
+/* Bodoni : en petite taille, on force un dessin à contraste réduit pour que les déliés (traits d'union, empattements) restent visibles. */
+h3, .faq summary, .toc-t, .spec td:first-child, .caption em, .kicker b, .pillars b, .ask-steps li::before, .offer-row span:last-child, .est-row .flag, .est-summary .muted, .footer-grid p, .wordmark, .stamp, .panel h2 { font-variation-settings: "opsz" 11; }
 p { margin: 0; }
-summary { cursor: pointer; }
-::placeholder { color: var(--subtle); }
-::selection { background: var(--gold); color: var(--ink); }
-.skip { position: absolute; left: 16px; top: -60px; z-index: 100; background: var(--gold); color: var(--ink); padding: 10px 16px; border-radius: 10px; font-weight: 600; text-decoration: none; }
+em { font-style: italic; }
+::selection { background: var(--ink); color: var(--paper); }
+::placeholder { color: #9A9081; }
+section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
+#demande { scroll-margin-top: calc(var(--header-h) + 24px); }
+.skip { position: absolute; left: 16px; top: -60px; z-index: 100; background: var(--ink); color: var(--paper); padding: 10px 16px; font-weight: 600; text-decoration: none; }
 .skip:focus { top: 12px; }
 
-/* Mise en page */
-.container { max-width: 1200px; margin: 0 auto; padding-inline: 24px; }
-.section { padding-block: 104px; border-top: 1px solid var(--line); }
-.section--alt { background: var(--bg-2); }
-.stack { display: flex; flex-direction: column; gap: 22px; }
-.stack--lg { gap: 44px; }
-.intro { display: flex; flex-direction: column; gap: 18px; max-width: 760px; }
-.split { display: flex; flex-wrap: wrap; align-items: center; gap: 56px; }
-.split > * { flex: 1 1 440px; min-width: 0; }
-.split--reverse { flex-wrap: wrap-reverse; }
-.grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); }
-.grid--wide { grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
-.grid--tight { gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr)); }
+/* Grille et rythme */
+.wrap { max-width: 1320px; margin: 0 auto; padding-inline: clamp(16px, 4vw, 48px); }
+.band { padding-block: clamp(72px, 10vw, 136px); }
+.band--tight { padding-block: clamp(56px, 7vw, 96px); }
+.band--paper2 { background: var(--paper-2); }
+.night { background: var(--night); color: var(--night-text); }
+.rule { border: 0; border-top: 1px solid var(--ink); margin: 0; }
+.night .rule { border-color: var(--night-line); }
 
-/* Typographie */
-.eyebrow { display: inline-flex; align-items: center; gap: 12px; color: var(--gold); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; }
-.eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--gold); }
-.h2 { font-size: clamp(30px, 3.6vw, 46px); letter-spacing: -0.01em; }
-.h2--sm { font-size: clamp(28px, 3.2vw, 40px); }
-.lead { color: var(--muted); font-size: 17px; }
+/* Typographie éditoriale */
+.kicker { display: flex; align-items: baseline; gap: 14px; font: 500 12px/1.4 var(--sans); letter-spacing: .22em; text-transform: uppercase; color: var(--ink-2); }
+.kicker b { font: italic 400 15px/1 var(--serif); letter-spacing: 0; text-transform: none; color: var(--bronze); }
+.night .kicker { color: var(--night-muted); }
+.night .kicker b { color: var(--bronze-2); }
+.display { font-size: clamp(44px, 7.4vw, 112px); line-height: .98; letter-spacing: -0.025em; }
+.display em, .title em { color: var(--bronze); }
+.night .display em, .night .title em { color: var(--bronze-2); }
+.title { font-size: clamp(36px, 5vw, 72px); line-height: 1.02; letter-spacing: -0.02em; }
+.title--sm { font-size: clamp(32px, 3.6vw, 52px); }
+.lead { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.55; color: var(--ink-2); max-width: 46ch; }
+.night .lead { color: var(--night-muted); }
 .muted { color: var(--muted); }
-.gold { color: var(--gold); }
+.night .muted { color: var(--night-muted); }
+.caption { font-size: 13px; letter-spacing: .04em; color: var(--muted); display: flex; justify-content: space-between; gap: 16px; padding-top: 12px; border-top: 1px solid var(--line); margin-top: 14px; }
+.night .caption { color: var(--night-muted); border-color: var(--night-line); }
+.caption em { font-family: var(--serif); font-size: 15px; color: var(--ink); letter-spacing: 0; }
+.night .caption em { color: var(--night-text); }
 
-/* Boutons et liens */
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 12px; font: 600 16px var(--sans); text-decoration: none; cursor: pointer; border: 1px solid transparent; transition: transform .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease; }
-.btn--gold { background: var(--gold); color: var(--ink); }
-.btn--gold:hover { background: var(--gold-2); color: var(--ink); box-shadow: 0 10px 30px -12px rgba(212,178,106,.7); transform: translateY(-1px); }
-.btn--ghost { border-color: var(--line-2); color: var(--text); background: transparent; }
-.btn--ghost:hover { border-color: var(--gold); color: var(--text); }
-.btn--outline { border-color: var(--gold); color: var(--text); background: transparent; }
-.btn--outline:hover { background: rgba(212,178,106,.08); color: var(--text); }
-.btn--pill { border-radius: 999px; min-height: 44px; padding: 0 22px; font-size: 15px; }
-.link-arrow { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; color: var(--gold); font-weight: 600; text-decoration: none; padding: 12px 0; }
-.link-arrow span { transition: transform .2s ease; }
-.link-arrow:hover span { transform: translateX(4px); }
-.links-row { display: flex; flex-wrap: wrap; gap: 4px 28px; }
+/* Boutons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 52px; padding: 0 26px; border-radius: 0; font: 500 15px var(--sans); letter-spacing: .04em; text-decoration: none; cursor: pointer; border: 1px solid var(--ink); transition: background-color .25s ease, color .25s ease, border-color .25s ease; }
+.btn--gold { background: var(--ink); color: var(--paper); }
+.btn--gold:hover { background: var(--bronze); border-color: var(--bronze); color: var(--paper); }
+.btn--outline, .btn--ghost { background: transparent; color: var(--ink); }
+.btn--outline:hover, .btn--ghost:hover { background: var(--ink); color: var(--paper); }
+.night .btn { border-color: var(--night-text); }
+.night .btn--gold { background: var(--night-text); color: var(--ink); }
+.night .btn--gold:hover { background: var(--bronze-2); border-color: var(--bronze-2); color: var(--ink); }
+.night .btn--outline, .night .btn--ghost { color: var(--night-text); }
+.night .btn--outline:hover, .night .btn--ghost:hover { background: var(--night-text); color: var(--ink); }
+.arrow { display: inline-flex; align-items: center; gap: 10px; font: 500 15px var(--sans); letter-spacing: .04em; text-decoration: none; padding: 10px 0; border-bottom: 1px solid currentColor; }
+.arrow span { transition: transform .25s ease; }
+.arrow:hover span { transform: translateX(5px); }
+.arrow:hover { color: var(--bronze); }
+.night .arrow:hover { color: var(--bronze-2); }
 
 /* En-tête */
-.site-header { position: sticky; top: 0; z-index: 50; background: rgba(10,14,23,.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid transparent; transition: border-color .3s ease, background-color .3s ease; }
-.site-header.is-scrolled { border-bottom-color: var(--line); background: rgba(10,14,23,.94); }
+.topline { background: var(--ink); color: var(--paper); font-size: 12.5px; letter-spacing: .06em; }
+.topline .wrap { display: flex; justify-content: space-between; gap: 16px; min-height: 36px; align-items: center; }
+.topline a { text-decoration: none; }
+.topline a:hover { color: var(--bronze-2); }
+.site-header { position: sticky; top: 0; z-index: 50; background: rgba(243,238,228,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid transparent; transition: border-color .3s ease; }
+.site-header.is-scrolled { border-bottom-color: var(--ink); }
 .header-bar { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: var(--header-h); }
-.brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none; color: var(--text); font-family: var(--serif); font-weight: 700; font-size: 22px; white-space: nowrap; }
-.brand:hover { color: var(--text); }
-.brand small { color: var(--gold); font-family: var(--sans); font-weight: 400; letter-spacing: 0.22em; font-size: 12px; text-transform: uppercase; }
-.nav { display: flex; align-items: center; gap: 4px 26px; }
-.nav a:not(.btn) { position: relative; color: var(--text); text-decoration: none; font-size: 15px; padding: 12px 0; }
-.nav a:not(.btn)::after { content: ""; position: absolute; left: 0; right: 0; bottom: 6px; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
+.wordmark { font: 500 28px/1 var(--serif); letter-spacing: -0.01em; text-decoration: none; color: var(--ink); white-space: nowrap; }
+.wordmark em { color: var(--bronze); }
+.nav { display: flex; align-items: center; gap: 4px 28px; }
+.nav a:not(.btn) { font-size: 14.5px; letter-spacing: .02em; text-decoration: none; padding: 10px 0; position: relative; }
+.nav a:not(.btn)::after { content: ""; position: absolute; left: 0; right: 0; bottom: 4px; height: 1px; background: var(--ink); transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
 .nav a:not(.btn):hover::after, .nav a.is-active::after { transform: scaleX(1); }
-.nav a.is-active { color: var(--gold-2); }
-.burger { display: none; width: 48px; height: 48px; border-radius: 12px; border: 1px solid var(--line-2); background: transparent; color: var(--text); cursor: pointer; align-items: center; justify-content: center; }
+.nav .btn { min-height: 44px; padding: 0 20px; font-size: 14px; }
+.burger { display: none; width: 48px; height: 48px; border: 1px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; align-items: center; justify-content: center; }
 .burger svg { width: 22px; height: 22px; }
 .burger .i-close { display: none; }
 .burger[aria-expanded="true"] .i-open { display: none; }
 .burger[aria-expanded="true"] .i-close { display: block; }
-@media (max-width: 1040px) {
+@media (max-width: 1080px) {
   .burger { display: inline-flex; }
-  .nav { position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 24px 24px; background: rgba(10,14,23,.98); border-bottom: 1px solid var(--line); max-height: calc(100vh - var(--header-h)); overflow-y: auto; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity .25s ease, transform .25s ease, visibility .25s; }
+  .nav { position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; align-items: stretch; gap: 0; padding: 8px clamp(16px, 4vw, 48px) 28px; background: var(--paper); border-bottom: 1px solid var(--ink); max-height: calc(100vh - var(--header-h)); overflow-y: auto; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity .25s ease, transform .25s ease, visibility .25s; }
   .nav.is-open { opacity: 1; visibility: visible; transform: none; }
-  .nav a:not(.btn) { padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 17px; }
+  .nav a:not(.btn) { font: 400 26px/1.2 var(--serif); padding: 14px 0; border-bottom: 1px solid var(--line); }
   .nav a:not(.btn)::after { display: none; }
-  .nav .btn { margin-top: 18px; }
+  .nav .btn { margin-top: 20px; min-height: 52px; }
 }
 
-/* Héros */
-.hero { position: relative; overflow: hidden; isolation: isolate; }
-.hero::before { content: ""; position: absolute; inset: 0; z-index: -2; background:
-  radial-gradient(60% 55% at 85% 10%, rgba(212,178,106,.16), transparent 70%),
-  radial-gradient(45% 50% at 5% 90%, rgba(61,76,107,.35), transparent 70%); }
-.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .35; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 72px 72px; -webkit-mask-image: radial-gradient(70% 60% at 50% 30%, #000, transparent 75%); mask-image: radial-gradient(70% 60% at 50% 30%, #000, transparent 75%); }
-.hero-arc { position: absolute; z-index: -1; top: 40px; left: -40px; width: 760px; max-width: 90vw; pointer-events: none; opacity: .55; }
-.hero-arc path { stroke-dasharray: 6 10; animation: dash 30s linear infinite; }
-@keyframes dash { to { stroke-dashoffset: -480; } }
-.hero-inner { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 56px; padding-block: 88px 96px; }
-.hero-copy { flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 28px; padding-top: 12px; }
-.hero h1 { font-size: clamp(40px, 5.6vw, 72px); line-height: 1.05; letter-spacing: -0.02em; }
-.hero h1 em { font-style: italic; font-weight: 500; color: var(--gold); }
-.hero .lead { font-size: 19px; max-width: 540px; }
+/* Une */
+.hero { padding-block: clamp(40px, 6vw, 88px) clamp(56px, 7vw, 96px); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(32px, 5vw, 80px); align-items: end; }
+.hero-copy { display: flex; flex-direction: column; gap: 32px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-.ticks { display: flex; flex-wrap: wrap; gap: 12px 28px; font-size: 15px; padding: 0; margin: 0; list-style: none; }
-.ticks li { display: flex; align-items: center; gap: 10px; }
-.ticks svg, .checklist svg { flex: none; color: var(--gold); }
+.hero-photo { position: relative; }
+.hero-photo .frame { aspect-ratio: 4 / 5; overflow: hidden; background: var(--paper-2); }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 38% 50%; }
+.stamp { position: absolute; top: -26px; left: -26px; width: 104px; height: 104px; border-radius: 50%; background: var(--paper); border: 1px solid var(--ink); display: grid; place-items: center; text-align: center; font: italic 400 15px/1.15 var(--serif); padding: 12px; }
+.stamp svg { position: absolute; inset: 6px; width: calc(100% - 12px); height: calc(100% - 12px); animation: spin 40s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.pillars { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); margin-top: clamp(48px, 6vw, 80px); }
+.pillars li { list-style: none; padding: 18px 20px; display: flex; gap: 12px; align-items: baseline; font-size: 14.5px; }
+.pillars li + li { border-left: 1px solid var(--line); }
+.pillars b { font: italic 400 16px/1 var(--serif); color: var(--bronze); }
+.pillars { padding: 0; margin-bottom: 0; }
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-photo { order: -1; }
+  .hero-photo .frame { aspect-ratio: 16 / 11; }
+  .stamp { top: 12px; bottom: auto; left: auto; right: 12px; width: 88px; height: 88px; font-size: 13px; }
+  .pillars { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pillars li:nth-child(3) { border-left: 0; }
+  .pillars li:nth-child(n+3) { border-top: 1px solid var(--line); }
+}
 
-/* Formulaire de demande */
-.panel { flex: 1 1 440px; min-width: 0; background: linear-gradient(180deg, rgba(24,34,54,.92), rgba(19,27,43,.96)); border: 1px solid var(--line); border-radius: 22px; padding: 28px; display: flex; flex-direction: column; gap: 22px; box-shadow: 0 40px 80px -40px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.04); }
-.panel-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-.panel h2 { font-size: 24px; font-weight: 600; }
-.badge { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
-.badge::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #5BD69A; box-shadow: 0 0 0 4px rgba(91,214,154,.15); }
+/* Demande */
+.ask { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+.ask-intro { display: flex; flex-direction: column; gap: 28px; position: sticky; top: calc(var(--header-h) + 32px); }
+.ask-steps { list-style: none; margin: 8px 0 0; padding: 0; counter-reset: s; }
+.ask-steps li { counter-increment: s; display: grid; grid-template-columns: 56px 1fr; gap: 4px 12px; padding: 18px 0; border-top: 1px solid var(--line); }
+.ask-steps li::before { content: "0" counter(s); grid-row: span 2; font: italic 400 30px/1 var(--serif); color: var(--bronze); }
+.ask-steps strong { font-weight: 600; }
+.ask-steps span { color: var(--muted); font-size: 15px; }
+.panel { background: var(--card); border: 1px solid var(--ink); padding: clamp(20px, 3vw, 40px); display: flex; flex-direction: column; gap: 22px; }
+.panel-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.panel h2 { font-size: 30px; }
+.panel-head span { font-size: 13px; color: var(--muted); letter-spacing: .04em; }
+@media (max-width: 900px) { .ask { grid-template-columns: 1fr; } .ask-intro { position: static; } }
+
+/* Formulaire */
 .form { display: flex; flex-direction: column; gap: 20px; }
 .pills { display: flex; flex-wrap: wrap; gap: 8px; }
-.pills--sub { padding-top: 16px; border-top: 1px solid var(--line); }
-.pill { min-height: 44px; padding: 0 18px; border-radius: 999px; cursor: pointer; font: 500 15px var(--sans); border: 1px solid var(--line-2); background: transparent; color: var(--text); transition: border-color .2s ease, background-color .2s ease; }
-.pill:hover { border-color: var(--gold); }
-.pill[aria-pressed="true"] { border-color: var(--gold); background: var(--gold); color: var(--ink); font-weight: 600; }
-.pills--sub .pill { border-radius: 10px; font-size: 14px; }
-.fields { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); }
+.pills--sub { padding-top: 16px; border-top: 1px dashed var(--line); }
+.pill { min-height: 42px; padding: 0 16px; border-radius: 999px; cursor: pointer; font: 500 14.5px var(--sans); border: 1px solid var(--line); background: transparent; color: var(--ink); transition: border-color .2s ease, background-color .2s ease, color .2s ease; }
+.pill:hover { border-color: var(--ink); }
+.pill[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.pills--sub .pill { border-radius: 0; font-size: 14px; }
+.fields { display: grid; gap: 18px 16px; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); }
 .field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .field--full { grid-column: 1 / -1; }
-.field label { font-size: 13px; color: var(--muted); }
-.field label b { color: var(--gold); font-weight: 500; }
-.input { height: 48px; width: 100%; padding: 0 14px; border-radius: 10px; border: 1px solid var(--line-2); background: var(--bg); color: var(--text); font: 400 16px var(--sans); transition: border-color .2s ease, box-shadow .2s ease; }
-textarea.input { height: auto; min-height: 88px; padding: 12px 14px; resize: vertical; }
-.input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(212,178,106,.18); }
-.input[aria-invalid="true"] { border-color: var(--danger); }
-input[type="date"].input::-webkit-calendar-picker-indicator { filter: invert(.8); cursor: pointer; }
-.form-error { color: var(--danger); font-size: 14px; min-height: 0; }
-.form-error:empty { display: none; }
-.form-ok { color: #8FE3B6; font-size: 14px; }
-.form-ok:empty { display: none; }
-.send { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr)); }
+.field label { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.field label b { color: var(--bronze); font-weight: 500; }
+.input { height: 48px; width: 100%; padding: 0 2px; border: 0; border-bottom: 1px solid var(--ink-2); border-radius: 0; background: transparent; color: var(--ink); font: 400 17px var(--sans); transition: border-color .2s ease; -webkit-appearance: none; appearance: none; }
+select.input { padding-right: 24px; background-image: linear-gradient(45deg, transparent 50%, var(--ink) 50%), linear-gradient(135deg, var(--ink) 50%, transparent 50%); background-position: calc(100% - 12px) 22px, calc(100% - 7px) 22px; background-size: 5px 5px; background-repeat: no-repeat; }
+textarea.input { height: auto; min-height: 84px; padding: 10px 2px; resize: vertical; border: 1px solid var(--line); padding: 12px; }
+.input:focus { outline: none; border-bottom-color: var(--bronze); box-shadow: 0 1px 0 0 var(--bronze); }
+textarea.input:focus { border-color: var(--bronze); box-shadow: none; }
+.input[aria-invalid="true"] { border-bottom-color: var(--danger); box-shadow: 0 1px 0 0 var(--danger); }
+.form-error { color: var(--danger); font-size: 14px; }
+.form-error:empty, .form-ok:empty { display: none; }
+.form-ok { color: var(--ok); font-size: 14px; }
+.send { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); }
 .note { color: var(--muted); font-size: 13px; }
 
-/* Bandeau défilant */
-.ticker { border-block: 1px solid var(--line); background: var(--bg-2); overflow: hidden; padding: 18px 0; }
-.ticker-track { display: flex; width: max-content; gap: 48px; animation: ticker 60s linear infinite; }
-.ticker span { font-family: var(--serif); font-size: 18px; color: var(--muted); white-space: nowrap; display: inline-flex; align-items: center; gap: 48px; }
-.ticker span::after { content: "✦"; color: var(--gold); font-size: 12px; }
-.ticker:hover .ticker-track { animation-play-state: paused; }
-@keyframes ticker { to { transform: translateX(-50%); } }
+/* Sommaire */
+.toc { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: clamp(32px, 6vw, 96px); }
+.toc-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.toc-list a { display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; align-items: baseline; gap: 16px; padding: 22px 0; border-bottom: 1px solid var(--line); text-decoration: none; transition: padding-left .3s ease, color .3s ease; }
+.toc-list a:hover { padding-left: 12px; color: var(--bronze); }
+.toc-n { font: italic 400 18px/1 var(--serif); color: var(--bronze); }
+.toc-t { font: 400 clamp(26px, 3vw, 40px)/1.05 var(--serif); }
+.toc-t small { display: block; font: 400 15px/1.5 var(--sans); color: var(--muted); margin-top: 6px; }
+.toc-a { font-size: 22px; transition: transform .3s ease; }
+.toc-list a:hover .toc-a { transform: translateX(6px); }
+@media (max-width: 900px) { .toc { grid-template-columns: 1fr; } .toc-list a { grid-template-columns: 44px minmax(0, 1fr) auto; } }
 
-/* Cartes */
-.card { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; display: flex; flex-direction: column; gap: 10px; transition: border-color .25s ease, transform .25s ease, background-color .25s ease; }
-.card h3 { font-weight: 600; font-size: 19px; }
-.card p { color: var(--muted); font-size: 15px; }
-.card:hover { border-color: rgba(212,178,106,.45); transform: translateY(-2px); }
-.card--plain { background: transparent; padding: 18px; gap: 6px; }
-.card--plain h3 { font-size: 17px; }
-.card .price { color: var(--gold); font-size: 14px; margin-top: auto; }
-.universe { text-decoration: none; color: var(--text); gap: 14px; overflow: hidden; }
-.universe:hover { color: var(--text); background: var(--surface-2); }
-.universe .ico { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; background: rgba(212,178,106,.08); border: 1px solid rgba(212,178,106,.25); color: var(--gold); }
-.universe .more { margin-top: auto; padding-top: 6px; color: var(--gold); font-size: 14px; font-weight: 600; opacity: .85; }
-.num { position: absolute; top: 22px; right: 24px; font-family: var(--serif); color: var(--line-2); font-size: 15px; }
+/* Doubles pages */
+.spread { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(24px, 4vw, 56px); align-items: start; }
+.spread > .s-head { grid-column: 1 / span 5; display: flex; flex-direction: column; gap: 26px; }
+.spread > .s-body { grid-column: 7 / span 6; display: flex; flex-direction: column; gap: 28px; }
+.spread--flip > .s-head { grid-column: 8 / span 5; grid-row: 1; }
+.spread--flip > .s-body { grid-column: 1 / span 6; grid-row: 1; }
+@media (max-width: 900px) { .spread > .s-head, .spread > .s-body, .spread--flip > .s-head, .spread--flip > .s-body { grid-column: 1 / -1; grid-row: auto; } }
+.photo { overflow: hidden; background: var(--paper-2); }
+.photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s ease; }
+.photo:hover img { transform: scale(1.03); }
+.photo img { filter: saturate(.86) sepia(.06); }
+.photo--graded img { filter: saturate(.42) sepia(.28) contrast(1.06) brightness(.92); }
+.photo--wide { aspect-ratio: 21 / 9; }
+.photo--land { aspect-ratio: 3 / 2; }
+.photo--tall { aspect-ratio: 4 / 5; }
+@media (max-width: 700px) { .photo--wide { aspect-ratio: 4 / 3; } }
 
-/* Visuels */
-.media { position: relative; min-height: 420px; border-radius: 22px; overflow: hidden; border: 1px solid var(--line); background: var(--surface); isolation: isolate; }
-.media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.media-art { position: absolute; inset: 0; z-index: -1; }
-.media-art::before { content: ""; position: absolute; inset: 0; background: radial-gradient(80% 70% at 75% 20%, rgba(212,178,106,.28), transparent 60%), radial-gradient(70% 60% at 10% 100%, rgba(61,76,107,.7), transparent 70%), linear-gradient(160deg, #1A2540, #0B101B 70%); }
-.media-art svg { position: absolute; right: -8%; bottom: -6%; width: 78%; height: auto; color: rgba(212,178,106,.22); }
-.media-tag { position: absolute; left: 20px; bottom: 20px; right: 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 18px; border-radius: 14px; background: rgba(10,14,23,.66); border: 1px solid rgba(255,255,255,.08); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); font-size: 14px; }
-.media-tag strong { font-family: var(--serif); font-weight: 600; font-size: 17px; }
-.media-tag span { color: var(--muted); }
+/* Tableau des appareils */
+.spec { width: 100%; border-collapse: collapse; font-size: 15.5px; }
+.spec th, .spec td { text-align: left; padding: 18px 12px 18px 0; border-bottom: 1px solid var(--line); vertical-align: baseline; }
+.spec thead th { font: 500 12px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--ink); padding-top: 0; }
+.spec td:first-child { font: 400 24px/1.1 var(--serif); width: 38%; }
+.spec td:last-child { text-align: right; padding-right: 0; font: italic 400 16px var(--serif); color: var(--bronze); white-space: nowrap; }
+.spec th:last-child { text-align: right; padding-right: 0; }
 
-/* Listes */
-.chips { display: flex; flex-wrap: wrap; gap: 10px; }
-.chip { border: 1px solid var(--gold); color: var(--gold); border-radius: 999px; padding: 7px 16px; font-size: 14px; }
-.checklist { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
-.checklist li { display: flex; gap: 12px; align-items: flex-start; }
-.checklist svg { margin-top: 3px; }
-.checklist--cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 14px 32px; }
+/* Listes éditoriales */
+.items { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(24px, 4vw, 56px); border-top: 1px solid var(--ink); }
+.items--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.items--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.item { padding: 22px 0 24px; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
+.item h3 { font-size: 22px; line-height: 1.15; }
+.item p { color: var(--muted); font-size: 15.5px; }
+.night .items { border-color: var(--night-text); }
+.night .item { border-color: var(--night-line); }
+@media (max-width: 1000px) { .items--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .items--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .items, .items--3, .items--4 { grid-template-columns: 1fr; } }
+.dashlist { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.dashlist li { padding: 14px 0 14px 34px; border-bottom: 1px solid var(--line); position: relative; }
+.dashlist li::before { content: "—"; position: absolute; left: 0; color: var(--bronze); }
+.night .dashlist, .night .dashlist li { border-color: var(--night-line); }
+.night .dashlist li::before { color: var(--bronze-2); }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { border: 1px solid var(--ink); padding: 5px 14px; font-size: 13px; letter-spacing: .06em; }
 
-/* Estimateur de vol */
-.estimator { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 28px; display: flex; flex-direction: column; gap: 22px; }
-.est-form { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); align-items: end; }
-.est-swap { width: 48px; height: 48px; border-radius: 12px; border: 1px solid var(--line-2); background: transparent; color: var(--text); cursor: pointer; display: grid; place-items: center; }
-.est-swap:hover { border-color: var(--gold); }
-.est-actions { display: flex; gap: 10px; }
-.est-actions .btn { flex: 1; }
+/* Bandeau plein cadre */
+.cover { position: relative; color: var(--paper); }
+.cover .photo { aspect-ratio: 21 / 9; min-height: 420px; }
+.cover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,9,7,0) 35%, rgba(10,9,7,.72)); pointer-events: none; }
+.cover-text { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding-bottom: clamp(28px, 4vw, 56px); }
+.cover-text .wrap { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 20px; }
+.cover .kicker { color: rgba(243,238,228,.8); }
+.cover .kicker b { color: #E2C29C; }
+.cover .title em { color: #E2C29C; }
+@media (max-width: 700px) { .cover .photo { aspect-ratio: 3 / 4; min-height: 0; } }
+
+/* Estimateur : carte d'embarquement */
+.est-layout { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+@media (max-width: 900px) { .est-layout { grid-template-columns: 1fr; } }
+.ticket { background: var(--paper); color: var(--ink); position: relative; }
+.ticket-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 24px; background: var(--bronze); color: var(--paper); font: 500 12px var(--sans); letter-spacing: .2em; text-transform: uppercase; }
+.ticket-body { padding: 24px; display: flex; flex-direction: column; gap: 22px; }
+.est-form { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: end; }
+.est-swap { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; display: grid; place-items: center; margin-bottom: 2px; }
+.est-swap:hover { background: var(--ink); color: var(--paper); }
+.est-actions { grid-column: 1 / -1; }
+.night .ticket .btn--gold { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.night .ticket .btn--gold:hover { background: var(--bronze); border-color: var(--bronze); color: var(--paper); }
+.est-actions .btn { width: 100%; }
+@media (max-width: 560px) { .est-form { grid-template-columns: 1fr; } .est-swap { justify-self: center; transform: rotate(90deg); } }
 .est-result:empty { display: none; }
-.est-summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
-.est-summary strong { font-family: var(--serif); font-size: 22px; font-weight: 600; }
-.est-rows { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); padding-top: 16px; }
-.est-row { border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; }
-.est-row.is-best { border-color: var(--gold); background: rgba(212,178,106,.06); }
-.est-row .t { font-family: var(--serif); font-size: 26px; color: var(--gold); }
-.est-row .k { font-weight: 600; }
-.est-row .s { color: var(--muted); font-size: 14px; }
-.est-row .flag { align-self: flex-start; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); background: var(--gold); border-radius: 999px; padding: 2px 10px; }
-.est-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; padding-top: 18px; }
+.est-result { border-top: 2px dashed var(--line); margin: 0 -24px; padding: 22px 24px 0; position: relative; }
+.est-result::before, .est-result::after { content: ""; position: absolute; top: -13px; width: 24px; height: 24px; border-radius: 50%; background: var(--night); }
+.est-result::before { left: -12px; }
+.est-result::after { right: -12px; }
+.est-summary { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 18px; padding-bottom: 16px; }
+.est-summary strong { font: 400 clamp(26px, 3vw, 36px)/1.1 var(--serif); }
+.est-summary .muted { font: italic 400 17px var(--serif); }
+.est-rows { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+.est-row { padding: 16px 14px 18px; display: flex; flex-direction: column; gap: 4px; border-right: 1px solid var(--line); position: relative; }
+.est-row:last-child { border-right: 0; }
+.est-row.is-best { background: var(--card); box-shadow: inset 0 3px 0 var(--bronze); }
+.est-row .k { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.est-row .t { font: 400 34px/1.1 var(--serif); }
+.est-row .s { color: var(--muted); font-size: 13.5px; }
+.est-row .flag { position: absolute; top: 14px; right: 12px; font: italic 400 13px var(--serif); color: var(--bronze); }
+@media (max-width: 640px) { .est-rows { grid-template-columns: 1fr; } .est-row { border-right: 0; border-bottom: 1px solid var(--line); } }
+.est-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; padding: 18px 0 24px; }
+.est-foot .note { max-width: 40ch; }
 
-/* Destinations, étapes */
-.region { border-top: 2px solid var(--gold); padding-top: 20px; display: flex; flex-direction: column; gap: 10px; }
-.region h3 { font-weight: 600; font-size: 20px; }
-.region p { color: var(--muted); font-size: 15px; }
-.facts { display: grid; gap: 20px 32px; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); border-top: 1px solid var(--line); padding-top: 28px; }
+/* Destinations */
+.dest { border-top: 1px solid var(--ink); }
+.dest-row { display: grid; grid-template-columns: minmax(0, .35fr) minmax(0, 1fr); gap: 24px; padding: 26px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+.dest-row h3 { font: italic 400 22px/1.2 var(--serif); color: var(--bronze); }
+.dest-row p { font: 400 clamp(24px, 3vw, 40px)/1.25 var(--serif); }
+.dest-row p span { color: var(--bronze-2); font-style: italic; }
+@media (max-width: 700px) { .dest-row { grid-template-columns: 1fr; gap: 8px; } }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 20px 40px; padding-top: 28px; }
 .fact { display: flex; flex-direction: column; gap: 4px; }
-.fact .k { color: var(--muted); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
-.steps { margin: 0; padding: 0; list-style: none; display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); counter-reset: step; }
-.steps li { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; display: flex; flex-direction: column; gap: 10px; }
-.steps li::before { counter-increment: step; content: "0" counter(step); font-family: var(--serif); font-size: 44px; line-height: 1; color: transparent; -webkit-text-stroke: 1px var(--gold); }
-.steps h3 { font-weight: 600; font-size: 20px; }
-.steps p { color: var(--muted); font-size: 15px; }
-.pledge { display: flex; flex-direction: column; gap: 12px; }
-.pledge h3 { font-weight: 600; font-size: 18px; }
-.pledge p { color: var(--muted); font-size: 15px; }
-.pledge .ico { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; border: 1px solid rgba(212,178,106,.35); color: var(--gold); }
+.fact .k { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
 
-/* Équipe, confiance (sections à compléter) */
-.person { display: flex; align-items: center; gap: 20px; }
-.avatar { flex: none; width: 84px; height: 84px; border-radius: 50%; border: 1px dashed var(--line-2); display: grid; place-items: center; color: var(--muted); font-size: 12px; overflow: hidden; }
-.stat { display: flex; flex-direction: column; gap: 6px; }
-.stat b { font-family: var(--serif); font-weight: 600; font-size: 34px; color: var(--gold); }
-.logo-slot { height: 84px; border: 1px dashed var(--line-2); border-radius: 12px; display: grid; place-items: center; color: var(--muted); font-size: 13px; }
-blockquote { margin: 0; font-size: 17px; }
+/* Méthode */
+.method { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--ink); counter-reset: m; list-style: none; margin: 0; padding: 0; }
+.method li { counter-increment: m; padding: 28px clamp(16px, 2.5vw, 36px) 32px 0; display: flex; flex-direction: column; gap: 12px; }
+.method li + li { border-left: 1px solid var(--line); padding-left: clamp(16px, 2.5vw, 36px); }
+.method li::before { content: counter(m, upper-roman) "."; font: italic 400 56px/1 var(--serif); color: var(--bronze); }
+.method h3 { font-size: 26px; }
+.method p { color: var(--muted); font-size: 15.5px; }
+@media (max-width: 800px) { .method { grid-template-columns: 1fr; } .method li + li { border-left: 0; border-top: 1px solid var(--line); padding-left: 0; } }
+
+/* Équipe, confiance (masquées tant qu'elles ne sont pas renseignées) */
+.person { display: flex; align-items: center; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.avatar { flex: none; width: 84px; height: 84px; border-radius: 50%; border: 1px dashed var(--muted); display: grid; place-items: center; font-size: 12px; color: var(--muted); }
+.stat b { display: block; font: 400 48px/1 var(--serif); color: var(--bronze); }
+.logo-slot { height: 84px; border: 1px dashed var(--muted); display: grid; place-items: center; font-size: 13px; color: var(--muted); }
+blockquote { margin: 0; font: italic 400 24px/1.35 var(--serif); }
 
 /* Partenaires */
-.offer { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; display: flex; flex-direction: column; gap: 16px; }
-.offer-row { display: flex; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--line); padding-bottom: 14px; }
-.offer-row span:last-child { font-weight: 600; text-align: right; }
+.offer { border-top: 1px solid var(--ink); }
+.offer-row { display: flex; justify-content: space-between; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.offer-row span:last-child { font: italic 400 19px var(--serif); text-align: right; }
 
 /* FAQ */
-.faq { border-top: 1px solid var(--line); }
+.faq-grid { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: clamp(32px, 6vw, 96px); }
+@media (max-width: 900px) { .faq-grid { grid-template-columns: 1fr; } }
+.faq { border-top: 1px solid var(--ink); }
 .faq details { border-bottom: 1px solid var(--line); }
-.faq summary { list-style: none; min-height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-family: var(--serif); font-weight: 600; font-size: 18px; padding: 8px 0; }
+.faq summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 0; font: 400 clamp(20px, 2vw, 25px)/1.25 var(--serif); }
 .faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: ""; flex: none; width: 12px; height: 12px; border-right: 1.5px solid var(--gold); border-bottom: 1.5px solid var(--gold); transform: rotate(45deg) translateY(-4px); transition: transform .25s ease; }
-.faq details[open] summary::after { transform: rotate(225deg) translateY(-2px); }
-.faq details p { color: var(--muted); padding: 0 0 20px; max-width: 720px; }
+.faq summary::after { content: "+"; flex: none; font: 300 28px/1 var(--sans); color: var(--bronze); transition: transform .3s ease; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { color: var(--muted); padding: 0 0 24px; max-width: 64ch; }
+.faq details a { color: var(--bronze); }
 
-/* Contact, pied de page */
-.contact { background: radial-gradient(60% 120% at 100% 0%, rgba(212,178,106,.14), transparent 60%), var(--surface); }
-.contact-actions { flex: 0 1 380px; display: flex; flex-direction: column; gap: 14px; }
-.site-footer { border-top: 1px solid var(--line); font-size: 15px; }
-.footer-grid { display: flex; flex-wrap: wrap; gap: 36px 56px; padding-block: 56px 20px; }
-.footer-grid > * { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
-.footer-grid h2 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
-.footer-grid a { color: var(--muted); text-decoration: none; padding: 6px 0; }
-.footer-grid a:hover { color: var(--gold-2); }
-.footer-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 40px; padding-block: 28px 36px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
-.legal { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 20px; }
-.legal a { color: var(--muted); text-decoration: none; }
-.legal a:hover { color: var(--gold-2); }
-.pay { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-.pay-label { display: inline-flex; align-items: center; gap: 8px; margin-right: 4px; }
-.pay-label svg { color: var(--gold); }
-.pay-chip { border: 1px solid var(--line-2); border-radius: 8px; padding: 3px 10px; font-size: 13px; color: var(--text); white-space: nowrap; }
+/* Contact */
+.contact-big { display: flex; flex-direction: column; gap: 4px; margin-top: 40px; border-top: 1px solid var(--night-line); }
+.contact-big a { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 22px 0; border-bottom: 1px solid var(--night-line); text-decoration: none; font: 400 clamp(26px, 4.2vw, 56px)/1.1 var(--serif); transition: color .25s ease, padding-left .3s ease; overflow-wrap: anywhere; }
+.contact-big a small { font: 500 12px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--night-muted); white-space: nowrap; }
+.contact-big a:hover { color: var(--bronze-2); padding-left: 10px; }
+@media (max-width: 600px) { .contact-big a { flex-direction: column-reverse; gap: 6px; } }
+
+/* Pied de page */
+.site-footer { padding-top: clamp(56px, 7vw, 96px); overflow: hidden; }
+.footer-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: 36px 40px; padding-bottom: 48px; }
+.footer-grid h2 { font: 500 12px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.footer-grid nav, .footer-grid > div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.footer-grid a { text-decoration: none; padding: 5px 0; font-size: 15.5px; }
+.footer-grid a:hover { color: var(--bronze); }
+.footer-grid p { font: italic 400 22px/1.35 var(--serif); max-width: 22ch; }
+@media (max-width: 900px) { .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .footer-grid > :first-child { grid-column: 1 / -1; } }
+.signature { font: 400 clamp(64px, 17.5vw, 270px)/.8 var(--serif); letter-spacing: -0.045em; white-space: nowrap; margin: 0; padding-top: 12px; border-top: 1px solid var(--ink); text-align: center; }
+.signature em { color: var(--bronze); }
+.footer-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 40px; padding-block: 24px 32px; font-size: 13.5px; color: var(--muted); border-top: 1px solid var(--line); margin-top: clamp(16px, 2vw, 28px); }
+.legal { display: flex; flex-wrap: wrap; gap: 6px 20px; align-items: center; }
+.legal a { text-decoration: none; }
+.legal a:hover { color: var(--bronze); }
+.pay { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.pay-label { margin-right: 6px; }
+.pay-chip { border: 1px solid var(--line); padding: 2px 9px; font-size: 12.5px; color: var(--ink-2); white-space: nowrap; }
 
 /* Boutons flottants */
-.floating { position: fixed; right: 20px; bottom: 20px; z-index: 40; display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
-.fab { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; border: 0; cursor: pointer; text-decoration: none; box-shadow: 0 14px 30px -10px rgba(0,0,0,.7); transition: transform .2s ease, opacity .3s ease, visibility .3s; }
+.floating { position: fixed; right: 20px; bottom: 20px; z-index: 40; display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+.fab { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; border: 0; cursor: pointer; text-decoration: none; box-shadow: 0 12px 28px -10px rgba(22,19,14,.55); transition: transform .2s ease, opacity .3s ease, visibility .3s; }
 .fab:hover { transform: translateY(-2px); }
 .fab--wa { background: #25D366; color: #fff; }
-.fab--wa:hover { color: #fff; }
-.fab--top { width: 46px; height: 46px; background: var(--surface-2); color: var(--text); border: 1px solid var(--line-2); opacity: 0; visibility: hidden; }
+.fab--top { width: 44px; height: 44px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); opacity: 0; visibility: hidden; }
 .fab--top.is-visible { opacity: 1; visibility: visible; }
 
-/* Apparition au défilement */
-.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+/* Apparition */
+.js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
 .js .reveal.is-in { opacity: 1; transform: none; }
-.hero-copy > * { animation: rise .8s ease both; }
+.hero-copy > * { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
 .hero-copy > *:nth-child(2) { animation-delay: .08s; }
 .hero-copy > *:nth-child(3) { animation-delay: .16s; }
 .hero-copy > *:nth-child(4) { animation-delay: .24s; }
-.hero-copy > *:nth-child(5) { animation-delay: .32s; }
-@keyframes rise { from { opacity: 0; transform: translateY(14px); } }
-
+.hero-photo { animation: fade 1.2s ease both .1s; }
+@keyframes rise { from { opacity: 0; transform: translateY(16px); } }
+@keyframes fade { from { opacity: 0; } }
 @media (max-width: 640px) {
-  .section { padding-block: 72px; }
-  .hero-inner { padding-block: 48px 64px; gap: 40px; }
-  .panel, .estimator, .offer { padding: 20px; }
-  .media { min-height: 300px; }
-  .brand { font-size: 19px; }
-  .brand small { font-size: 11px; letter-spacing: .16em; }
+  .topline .hide-sm { display: none; }
+  .wordmark { font-size: 24px; }
+  .footer-bottom { padding-bottom: 92px; }
   .floating { right: 14px; bottom: 14px; }
-  .footer-bottom { padding-bottom: 96px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -326,270 +411,347 @@ blockquote { margin: 0; font-size: 17px; }
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
 
+<div class="topline">
+  <div class="wrap">
+    <span>Afrique · Europe · Moyen-Orient</span>
+    <span><a href="https://wa.me/33758954783" target="_blank" rel="noopener">WhatsApp</a><span class="hide-sm"> · <a href="mailto:contact@soraprestige.com">contact@soraprestige.com</a></span></span>
+  </div>
+</div>
+
 <header class="site-header" id="header">
-  <div class="container header-bar">
-    <a class="brand" href="#top">Sora<small>Prestige</small></a>
+  <div class="wrap header-bar">
+    <a class="wordmark" href="#top">Sora<em>Prestige</em></a>
     <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
-      <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true"><path d="M3 8h18M3 16h18"/></svg>
+      <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg>
     </button>
     <nav class="nav" id="nav" aria-label="Navigation principale">
-      <a href="#jets">Jets privés</a>
+      <a href="#jets">Jets</a>
       <a href="#yachts">Yachts</a>
       <a href="#clubs">Clubs sportifs</a>
       <a href="#vip">Personnalités</a>
       <a href="#evenements">Événements</a>
       <a href="#hotels">Hôtels</a>
       <a href="#estimation">Estimer un vol</a>
-      <a class="btn btn--gold btn--pill" href="#demande">Demander un devis</a>
+      <a class="btn btn--gold" href="#demande">Demander un devis</a>
     </nav>
   </div>
 </header>
 
 <main id="contenu">
 
+<!-- UNE -->
 <section class="hero" id="top">
-  <svg class="hero-arc" viewBox="0 0 760 320" fill="none" aria-hidden="true"><path d="M20 300C180 60 520 20 740 120" stroke="#D4B26A" stroke-width="1.2"/></svg>
-  <div class="container hero-inner">
-    <div class="hero-copy">
-      <p class="eyebrow">Afrique · Europe · Moyen-Orient</p>
-      <h1>Le voyage d'exception, <em>organisé pour vous.</em></h1>
-      <p class="lead">Jets privés, yachts et catamarans, déplacements de clubs sportifs, voyages de personnalités et transport d'événements : une seule équipe prépare chaque détail, du départ à l'arrivée.</p>
-      <div class="hero-actions">
-        <a class="btn btn--gold" href="#demande">Demander un devis</a>
-        <a class="btn btn--ghost" href="#estimation">Estimer un vol</a>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="kicker"><b>N° 01</b> Voyages sur mesure</p>
+        <h1 class="display">Le voyage d'exception, <em>organisé pour vous.</em></h1>
+        <p class="lead">Jets privés, yachts, déplacements de clubs, voyages de personnalités et transport d'événements. Une seule équipe prépare chaque détail, du départ à l'arrivée.</p>
+        <div class="hero-actions">
+          <a class="btn btn--gold" href="#demande">Demander un devis <span aria-hidden="true">→</span></a>
+          <a class="btn btn--outline" href="#estimation">Estimer un vol</a>
+        </div>
       </div>
-      <ul class="ticks">
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Paiement sécurisé</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Partenaires vérifiés</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Confidentialité</li>
-      </ul>
+      <figure class="hero-photo" style="margin: 0">
+        <div class="frame"><img src="images/jet.jpg" alt="Jet privé sur le tarmac au coucher du soleil" width="1800" height="1151" fetchpriority="high"></div>
+        <div class="stamp" aria-hidden="true">
+          <svg viewBox="0 0 100 100"><defs><path id="circ" d="M50 50m-41 0a41 41 0 1 1 82 0a41 41 0 1 1-82 0"/></defs><text font-family="Instrument Sans, sans-serif" font-size="8.4" letter-spacing="2.6" fill="#16130E"><textPath href="#circ">AFRIQUE · EUROPE · MOYEN-ORIENT ·</textPath></text></svg>
+          Sur<br>mesure
+        </div>
+        <figcaption class="caption"><em>Abidjan → Paris</em><span>env. 6 h 45 en jet intermédiaire</span></figcaption>
+      </figure>
     </div>
+    <ul class="pillars reveal">
+      <li><b>i.</b> Paiement sécurisé</li>
+      <li><b>ii.</b> Partenaires vérifiés</li>
+      <li><b>iii.</b> Confidentialité totale</li>
+      <li><b>iv.</b> Devis dans votre devise</li>
+    </ul>
+  </div>
+</section>
 
-    <div class="panel">
+<!-- DEMANDE -->
+<section class="band band--paper2" aria-labelledby="demande">
+  <div class="wrap ask">
+    <div class="ask-intro reveal">
+      <p class="kicker"><b>Devis</b> Sans engagement</p>
+      <h2 class="title title--sm">Dites&#8208;nous où, quand <em>et combien.</em></h2>
+      <p class="lead">Votre demande part directement chez un conseiller, par WhatsApp ou par e-mail. Il revient vers vous avec une proposition chiffrée.</p>
+      <ol class="ask-steps">
+        <li><strong>Vous décrivez votre besoin</strong><span>Trajet, dates, nombre de personnes, exigences particulières.</span></li>
+        <li><strong>Nous vous envoyons une proposition</strong><span>Options chiffrées dans votre devise, auprès de partenaires vérifiés.</span></li>
+        <li><strong>Vous validez, nous organisons</strong><span>Paiement par carte ou Mobile Money, puis suivi jusqu'au retour.</span></li>
+      </ol>
+    </div>
+    <div class="panel reveal">
       <div class="panel-head">
         <h2 id="demande">Votre demande</h2>
-        <span class="badge">Réponse personnalisée</span>
+        <span>Les champs marqués d'une étoile sont obligatoires</span>
       </div>
       <datalist id="sora-lieux"></datalist>
       <form class="form" id="sora-form" novalidate></form>
-      <p class="note">Sans engagement. Vos informations restent strictement confidentielles et ne sont enregistrées que dans votre navigateur.</p>
+      <p class="note">Vos informations restent confidentielles et ne sont enregistrées que dans votre navigateur. <a href="confidentialite.html">En savoir plus</a></p>
     </div>
   </div>
 </section>
 
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track" id="ticker"></div>
-</div>
-
-<section class="section section--alt" aria-labelledby="univers-titre" style="border-top: 0">
-  <div class="container stack stack--lg">
-    <div class="intro reveal">
-      <p class="eyebrow">Nos univers</p>
-      <h2 class="h2" id="univers-titre">Un seul interlocuteur pour tout le voyage.</h2>
+<!-- SOMMAIRE -->
+<section class="band" aria-labelledby="sommaire-titre">
+  <div class="wrap toc">
+    <div class="reveal" style="display: flex; flex-direction: column; gap: 24px">
+      <p class="kicker"><b>Sommaire</b> Nos univers</p>
+      <h2 class="title" id="sommaire-titre">Tout le voyage, <em>une seule adresse.</em></h2>
     </div>
-    <div class="grid grid--wide">
-      <a class="card universe reveal" href="#jets"><span class="num">01</span><span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span><h3>Jets privés</h3><p>Vols à la demande, à vos horaires, vers les aéroports de votre choix.</p><span class="more">Découvrir →</span></a>
-      <a class="card universe reveal" href="#yachts"><span class="num">02</span><span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v13"/><path d="M12 4l7 10h-7"/><path d="M12 7l-5 7h5"/><path d="M3 17h18l-2.5 4h-13z"/></svg></span><h3>Yachts et catamarans</h3><p>Location avec équipage, à la journée ou à la semaine.</p><span class="more">Découvrir →</span></a>
-      <a class="card universe reveal" href="#clubs"><span class="num">03</span><span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4a3 3 0 0 0 3 4"/><path d="M17 6h3a3 3 0 0 1-3 4"/></svg></span><h3>Clubs sportifs</h3><p>Transport, hébergement et logistique de toute l'équipe.</p><span class="more">Découvrir →</span></a>
-      <a class="card universe reveal" href="#vip"><span class="num">04</span><span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.7 6.3.8-4.6 4.3 1.2 6.2L12 17l-5.6 3 1.2-6.2L3 9.5l6.3-.8z"/></svg></span><h3>Personnalités et stars</h3><p>Voyages discrets et sécurisés pour artistes, dirigeants et officiels.</p><span class="more">Découvrir →</span></a>
-      <a class="card universe reveal" href="#evenements"><span class="num">05</span><span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13l2-6h14l2 6v5h-3v-2H6v2H3z"/><path d="M3 13h18"/><circle cx="7" cy="15" r=".6"/><circle cx="17" cy="15" r=".6"/></svg></span><h3>Événements et chauffeurs</h3><p>Chauffeurs privés et transport complet de vos invités.</p><span class="more">Découvrir →</span></a>
-      <a class="card universe reveal" href="#hotels"><span class="num">06</span><span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20V8"/><path d="M3 16h18v4"/><path d="M21 16v-3a3 3 0 0 0-3-3h-7v6"/><circle cx="7" cy="12" r="2"/></svg></span><h3>Hôtels et villas</h3><p>Palaces, suites et villas privées réservés avec votre voyage.</p><span class="more">Découvrir →</span></a>
-    </div>
+    <ol class="toc-list reveal">
+      <li><a href="#jets"><span class="toc-n">01</span><span class="toc-t">Jets privés<small>Vols à la demande, à vos horaires, vers l'aéroport de votre choix.</small></span><span class="toc-a" aria-hidden="true">→</span></a></li>
+      <li><a href="#yachts"><span class="toc-n">02</span><span class="toc-t">Yachts et catamarans<small>Location avec équipage, à la journée ou à la semaine.</small></span><span class="toc-a" aria-hidden="true">→</span></a></li>
+      <li><a href="#clubs"><span class="toc-n">03</span><span class="toc-t">Clubs sportifs<small>Transport, hébergement et logistique de toute l'équipe.</small></span><span class="toc-a" aria-hidden="true">→</span></a></li>
+      <li><a href="#vip"><span class="toc-n">04</span><span class="toc-t">Personnalités<small>Voyages discrets pour artistes, dirigeants et officiels.</small></span><span class="toc-a" aria-hidden="true">→</span></a></li>
+      <li><a href="#evenements"><span class="toc-n">05</span><span class="toc-t">Événements et chauffeurs<small>Chauffeurs privés et transport complet de vos invités.</small></span><span class="toc-a" aria-hidden="true">→</span></a></li>
+      <li><a href="#hotels"><span class="toc-n">06</span><span class="toc-t">Hôtels et villas<small>Palaces, suites et villas réservés avec votre voyage.</small></span><span class="toc-a" aria-hidden="true">→</span></a></li>
+      <li><a href="#services"><span class="toc-n">07</span><span class="toc-t">Services à la carte<small>Hélicoptère, sécurité, visas, conciergerie…</small></span><span class="toc-a" aria-hidden="true">→</span></a></li>
+    </ol>
   </div>
 </section>
 
-<section class="section" id="jets">
-  <div class="container split">
-    <div class="stack reveal">
-      <p class="eyebrow">01 · Jets privés</p>
-      <h2 class="h2">Décollez à votre heure, pas à celle des autres.</h2>
-      <p class="lead">Vous indiquez le trajet et la date, nous trouvons l'appareil adapté et gérons le reste : créneaux, accueil au terminal, transferts au sol et restauration à bord.</p>
-      <div class="chips"><span class="chip">Aller simple</span><span class="chip">Aller-retour</span><span class="chip">Multi-étapes</span></div>
-      <div class="grid grid--tight">
-        <div class="card card--plain"><h3>Jet léger</h3><p>Trajets courts, petits groupes</p><span class="price">Sur devis</span></div>
-        <div class="card card--plain"><h3>Jet intermédiaire</h3><p>Vols régionaux, plus d'espace</p><span class="price">Sur devis</span></div>
-        <div class="card card--plain"><h3>Long-courrier</h3><p>Afrique – Europe sans escale</p><span class="price">Sur devis</span></div>
-        <div class="card card--plain"><h3>Avion de groupe</h3><p>Équipes, délégations, tournées</p><span class="price">Sur devis</span></div>
+<!-- 01 JETS -->
+<section class="band" id="jets" style="padding-top: 0">
+  <div class="wrap">
+    <hr class="rule">
+    <div class="spread" style="padding-top: clamp(40px, 5vw, 72px)">
+      <div class="s-head reveal">
+        <p class="kicker"><b>01</b> Jets privés</p>
+        <h2 class="title">Décollez à votre heure, <em>pas à celle des autres.</em></h2>
+        <p class="lead">Vous indiquez le trajet et la date, nous trouvons l'appareil adapté et gérons le reste : créneaux, accueil au terminal, transferts au sol et restauration à bord.</p>
+        <div class="tags"><span class="tag">Aller simple</span><span class="tag">Aller-retour</span><span class="tag">Multi-étapes</span></div>
       </div>
-      <div class="links-row">
-        <a class="link-arrow" href="#demande" data-tab="jet">Demander un vol <span>→</span></a>
-        <a class="link-arrow" href="#estimation">Estimer la durée du vol <span>→</span></a>
-      </div>
-    </div>
-    <!-- Pour mettre une photo : ajoutez <img src="images/jet.jpg" alt="Jet privé sur le tarmac"> juste après <figure class="media …">. -->
-    <figure class="media reveal" style="margin: 0">
-      <div class="media-art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=".5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></div>
-      <figcaption class="media-tag"><strong>Vols à la demande</strong><span>Afrique · Europe · Moyen-Orient</span></figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="section section--alt" id="estimation" aria-labelledby="estimation-titre">
-  <div class="container stack stack--lg">
-    <div class="intro reveal">
-      <p class="eyebrow">Estimateur de vol</p>
-      <h2 class="h2" id="estimation-titre">Combien de temps dure votre vol ?</h2>
-      <p class="lead">Choisissez une ville de départ et d'arrivée : nous estimons la distance et la durée de vol selon le type d'appareil.</p>
-    </div>
-    <div class="estimator reveal">
-      <form class="est-form" id="est-form" novalidate>
-        <div class="field"><label for="est-from">Départ</label><input class="input" id="est-from" list="sora-lieux" placeholder="Ex. Abidjan" autocomplete="off"></div>
-        <div class="field"><label for="est-to">Arrivée</label><input class="input" id="est-to" list="sora-lieux" placeholder="Ex. Paris" autocomplete="off"></div>
-        <div class="est-actions">
-          <button class="est-swap" type="button" id="est-swap" aria-label="Inverser départ et arrivée"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4 3 8l4 4"/><path d="M3 8h14"/><path d="m17 20 4-4-4-4"/><path d="M21 16H7"/></svg></button>
-          <button class="btn btn--gold" type="submit">Estimer</button>
+      <div class="s-body reveal">
+        <table class="spec">
+          <thead><tr><th scope="col">Appareil</th><th scope="col">Pour qui</th><th scope="col">Tarif</th></tr></thead>
+          <tbody>
+            <tr><td>Jet léger</td><td class="muted">Trajets courts, petits groupes</td><td>Sur devis</td></tr>
+            <tr><td>Jet intermédiaire</td><td class="muted">Vols régionaux, plus d'espace</td><td>Sur devis</td></tr>
+            <tr><td>Long-courrier</td><td class="muted">Afrique – Europe sans escale</td><td>Sur devis</td></tr>
+            <tr><td>Avion de groupe</td><td class="muted">Équipes, délégations, tournées</td><td>Sur devis</td></tr>
+          </tbody>
+        </table>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px 32px">
+          <a class="arrow" href="#demande" data-tab="jet">Demander un vol <span>→</span></a>
+          <a class="arrow" href="#estimation">Estimer la durée du vol <span>→</span></a>
         </div>
-      </form>
-      <div class="est-result" id="est-result" aria-live="polite"></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="yachts">
-  <div class="container split split--reverse">
-    <figure class="media reveal" style="margin: 0">
-      <div class="media-art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=".5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v13"/><path d="M12 4l7 10h-7"/><path d="M12 7l-5 7h5"/><path d="M3 17h18l-2.5 4h-13z"/></svg></div>
-      <figcaption class="media-tag"><strong>Avec équipage</strong><span>À la journée ou à la semaine</span></figcaption>
-    </figure>
-    <div class="stack reveal">
-      <p class="eyebrow">02 · Yachts et catamarans</p>
-      <h2 class="h2">La mer comme adresse privée.</h2>
-      <p class="lead">Croisière en famille, séminaire en mer ou réception à quai : nous sélectionnons le bateau, l'équipage et l'itinéraire selon votre programme.</p>
-      <div class="grid grid--tight" style="grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr))">
-        <div class="card card--plain"><h3>Yacht charter</h3><p>Le bateau et son équipage pour vous seuls, plusieurs jours ou une semaine.</p></div>
-        <div class="card card--plain"><h3>Sortie de pêche</h3><p>Fishing trip en mer avec skipper et matériel fournis.</p></div>
-        <div class="card card--plain"><h3>Croisière à la journée</h3><p>Baignade, déjeuner à bord et retour au coucher du soleil.</p></div>
-        <div class="card card--plain"><h3>Réception à bord</h3><p>Anniversaire, séminaire ou soirée privée, à quai ou en mer.</p></div>
       </div>
-      <ul class="checklist">
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Yachts à moteur, voiliers et catamarans avec équipage</span></li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Chef à bord, activités nautiques et escales sur mesure</span></li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Tarif sur devis, selon le bateau, la durée et la saison</span></li>
-      </ul>
-      <a class="link-arrow" href="#demande" data-tab="yacht">Réserver un yacht <span>→</span></a>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="clubs">
-  <div class="container stack stack--lg">
-    <div class="intro reveal">
-      <p class="eyebrow">03 · Clubs sportifs</p>
-      <h2 class="h2">Votre équipe arrive prête à jouer.</h2>
-      <p class="lead">Clubs, fédérations et sélections : nous organisons les déplacements de match, de stage et de tournoi, pour les joueurs, le staff et le matériel.</p>
+<!-- ESTIMATEUR -->
+<section class="band night" id="estimation" aria-labelledby="estimation-titre">
+  <div class="wrap est-layout">
+    <div class="reveal" style="display: flex; flex-direction: column; gap: 24px">
+      <p class="kicker"><b>Outil</b> Estimateur de vol</p>
+      <h2 class="title title--sm" id="estimation-titre">Combien de temps <em>dure votre vol&nbsp;?</em></h2>
+      <p class="lead">Choisissez une ville de départ et d'arrivée : nous estimons la distance et la durée de vol pour chaque type d'appareil.</p>
     </div>
-    <div class="grid">
-      <div class="card reveal"><h3>Vols d'équipe</h3><p>Charter complet ou places groupées, avec horaires calés sur le calendrier sportif.</p></div>
-      <div class="card reveal"><h3>Hébergement groupé</h3><p>Hôtels proches du stade, étages réservés, repas adaptés aux sportifs.</p></div>
-      <div class="card reveal"><h3>Matériel et bagages</h3><p>Équipements, matériel médical et bagages hors format pris en charge.</p></div>
-      <div class="card reveal"><h3>Coordinateur dédié</h3><p>Un seul interlocuteur avant, pendant et après le déplacement.</p></div>
-      <div class="card reveal"><h3>Bus et transferts sur place</h3><p>Car d'équipe et véhicules du staff entre l'aéroport, l'hôtel, l'entraînement et le stade.</p></div>
-      <div class="card reveal"><h3>Stages et entraînements</h3><p>Recherche de terrains, salles de sport et centres de récupération pour vos stages.</p></div>
-      <div class="card reveal"><h3>Visas et formalités de groupe</h3><p>Suivi des passeports, visas et listes de passagers pour tout l'effectif.</p></div>
-      <div class="card reveal"><h3>Dirigeants et supporters</h3><p>Déplacements séparés pour les dirigeants, les familles, la presse et les supporters.</p></div>
+    <div class="ticket reveal">
+      <div class="ticket-top"><span>Carte d'embarquement</span><span>SoraPrestige</span></div>
+      <div class="ticket-body">
+        <form class="est-form" id="est-form" novalidate>
+          <div class="field"><label for="est-from">De</label><input class="input" id="est-from" list="sora-lieux" placeholder="Abidjan" autocomplete="off"></div>
+          <button class="est-swap" type="button" id="est-swap" aria-label="Inverser départ et arrivée"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4 3 8l4 4"/><path d="M3 8h14"/><path d="m17 20 4-4-4-4"/><path d="M21 16H7"/></svg></button>
+          <div class="field"><label for="est-to">À</label><input class="input" id="est-to" list="sora-lieux" placeholder="Paris" autocomplete="off"></div>
+          <div class="est-actions"><button class="btn btn--gold" type="submit">Estimer la durée</button></div>
+        </form>
+        <div class="est-result" id="est-result" aria-live="polite"></div>
+      </div>
     </div>
-    <a class="link-arrow" href="#demande" data-tab="club">Planifier un déplacement d'équipe <span>→</span></a>
   </div>
 </section>
 
-<section class="section" id="vip">
-  <div class="container split">
-    <div class="stack reveal">
-      <p class="eyebrow">04 · Personnalités et stars</p>
-      <h2 class="h2">Discrétion totale, service complet.</h2>
+<!-- 02 YACHTS -->
+<section id="yachts" aria-labelledby="yachts-titre">
+  <div class="cover">
+    <div class="photo"><img src="images/yacht.jpg" alt="Yacht naviguant en Méditerranée au large de Cannes" width="2000" height="1210" loading="lazy" decoding="async"></div>
+    <div class="cover-text">
+      <div class="wrap">
+        <div style="display: flex; flex-direction: column; gap: 18px; max-width: 760px">
+          <p class="kicker"><b>02</b> Yachts et catamarans</p>
+          <h2 class="title" id="yachts-titre">La mer comme <em>adresse privée.</em></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap band--tight band">
+    <div class="spread">
+      <div class="s-head reveal">
+        <p class="lead">Croisière en famille, séminaire en mer ou réception à quai : nous sélectionnons le bateau, l'équipage et l'itinéraire selon votre programme.</p>
+        <ul class="dashlist">
+          <li>Yachts à moteur, voiliers et catamarans avec équipage</li>
+          <li>Chef à bord, activités nautiques et escales sur mesure</li>
+          <li>Tarif sur devis, selon le bateau, la durée et la saison</li>
+        </ul>
+        <a class="arrow" href="#demande" data-tab="yacht" style="align-self: flex-start">Réserver un yacht <span>→</span></a>
+      </div>
+      <div class="s-body reveal">
+        <div class="items">
+          <div class="item"><h3>Yacht charter</h3><p>Le bateau et son équipage pour vous seuls, plusieurs jours ou une semaine.</p></div>
+          <div class="item"><h3>Sortie de pêche</h3><p>Fishing trip en mer avec skipper et matériel fournis.</p></div>
+          <div class="item"><h3>Croisière à la journée</h3><p>Baignade, déjeuner à bord et retour au coucher du soleil.</p></div>
+          <div class="item"><h3>Réception à bord</h3><p>Anniversaire, séminaire ou soirée privée, à quai ou en mer.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 CLUBS -->
+<section class="band band--paper2" id="clubs" aria-labelledby="clubs-titre">
+  <div class="wrap" style="display: flex; flex-direction: column; gap: clamp(36px, 5vw, 64px)">
+    <div class="spread">
+      <div class="s-head reveal">
+        <p class="kicker"><b>03</b> Clubs sportifs</p>
+        <h2 class="title" id="clubs-titre">Votre équipe arrive <em>prête à jouer.</em></h2>
+      </div>
+      <div class="s-body reveal" style="justify-content: flex-end">
+        <p class="lead">Clubs, fédérations et sélections : nous organisons les déplacements de match, de stage et de tournoi, pour les joueurs, le staff et le matériel.</p>
+        <a class="arrow" href="#demande" data-tab="club" style="align-self: flex-start">Planifier un déplacement d'équipe <span>→</span></a>
+      </div>
+    </div>
+    <figure class="photo photo--wide photo--graded reveal" style="margin: 0"><img src="images/clubs.jpg" alt="Terrain de football éclairé par les projecteurs du stade, de nuit" width="2000" height="1330" loading="lazy" decoding="async"></figure>
+    <div class="items items--4 reveal">
+      <div class="item"><h3>Vols d'équipe</h3><p>Charter complet ou places groupées, avec horaires calés sur le calendrier sportif.</p></div>
+      <div class="item"><h3>Hébergement groupé</h3><p>Hôtels proches du stade, étages réservés, repas adaptés aux sportifs.</p></div>
+      <div class="item"><h3>Matériel et bagages</h3><p>Équipements, matériel médical et bagages hors format pris en charge.</p></div>
+      <div class="item"><h3>Coordinateur dédié</h3><p>Un seul interlocuteur avant, pendant et après le déplacement.</p></div>
+      <div class="item"><h3>Bus et transferts</h3><p>Car d'équipe et véhicules du staff entre l'aéroport, l'hôtel, l'entraînement et le stade.</p></div>
+      <div class="item"><h3>Stages</h3><p>Recherche de terrains, salles de sport et centres de récupération pour vos stages.</p></div>
+      <div class="item"><h3>Visas de groupe</h3><p>Suivi des passeports, visas et listes de passagers pour tout l'effectif.</p></div>
+      <div class="item"><h3>Dirigeants et supporters</h3><p>Déplacements séparés pour les dirigeants, les familles, la presse et les supporters.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 PERSONNALITÉS -->
+<section class="band night" id="vip" aria-labelledby="vip-titre">
+  <div class="wrap spread spread--flip">
+    <div class="s-head reveal">
+      <p class="kicker"><b>04</b> Personnalités et stars</p>
+      <h2 class="title" id="vip-titre">Discrétion totale, <em>service complet.</em></h2>
       <p class="lead">Artistes, sportifs de haut niveau, dirigeants et personnalités publiques : chaque voyage est préparé en toute confidentialité, avec votre entourage et votre agenda.</p>
-      <ul class="checklist">
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Accord de confidentialité sur demande</span></li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Accueil VIP à l'aéroport et passage accéléré</span></li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Chauffeur privé et sécurité rapprochée</span></li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Suites, villas et tournées : entourage et équipes inclus</span></li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Tournées et agendas sur plusieurs villes, en lien avec votre manager</span></li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Réservations sous un autre nom et itinéraires tenus secrets</span></li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Assistant de voyage sur place pendant tout le séjour</span></li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Demandes personnelles : tables, shopping privé, loisirs, bagages</span></li>
+      <ul class="dashlist">
+        <li>Accord de confidentialité sur demande</li>
+        <li>Accueil VIP à l'aéroport et passage accéléré</li>
+        <li>Chauffeur privé et sécurité rapprochée</li>
+        <li>Suites, villas et tournées : entourage et équipes inclus</li>
+        <li>Agendas sur plusieurs villes, en lien avec votre manager</li>
+        <li>Réservations sous un autre nom, itinéraires tenus secrets</li>
+        <li>Assistant de voyage sur place pendant tout le séjour</li>
+        <li>Demandes personnelles : tables, shopping privé, loisirs</li>
       </ul>
-      <a class="link-arrow" href="#demande" data-tab="vip">Parler à un conseiller <span>→</span></a>
+      <a class="arrow" href="#demande" data-tab="vip" style="align-self: flex-start">Parler à un conseiller <span>→</span></a>
     </div>
-    <figure class="media reveal" style="margin: 0">
-      <div class="media-art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=".5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.7 6.3.8-4.6 4.3 1.2 6.2L12 17l-5.6 3 1.2-6.2L3 9.5l6.3-.8z"/></svg></div>
-      <figcaption class="media-tag"><strong>Accueil VIP</strong><span>Confidentialité garantie</span></figcaption>
+    <figure class="s-body reveal" style="margin: 0">
+      <div class="photo photo--land"><img src="images/vip.jpg" alt="Berline Mercedes noire avec chauffeur" width="1600" height="1066" loading="lazy" decoding="async" style="object-position: 62% 78%"></div>
+      <figcaption class="caption"><em>Accueil et chauffeur</em><span>Berline, van ou cortège</span></figcaption>
     </figure>
   </div>
 </section>
 
-<section class="section section--alt" id="evenements">
-  <div class="container stack stack--lg">
-    <div class="intro reveal">
-      <p class="eyebrow">05 · Événements et chauffeurs</p>
-      <h2 class="h2">Vos invités sont attendus, jamais en attente.</h2>
-      <p class="lead">Sommets et forums, compétitions sportives, concerts et tournées, mariages et cérémonies privées : nous prenons en charge tous les déplacements de l'événement, de l'aéroport à la dernière voiture du soir.</p>
+<!-- 05 ÉVÉNEMENTS -->
+<section class="band" id="evenements" aria-labelledby="evenements-titre">
+  <div class="wrap" style="display: flex; flex-direction: column; gap: clamp(36px, 5vw, 64px)">
+    <div class="spread">
+      <div class="s-head reveal">
+        <p class="kicker"><b>05</b> Événements et chauffeurs</p>
+        <h2 class="title" id="evenements-titre">Vos invités sont attendus, <em>jamais en attente.</em></h2>
+        <p class="lead">Sommets et forums, compétitions sportives, concerts, mariages et cérémonies privées : nous prenons en charge tous les déplacements de l'événement, de l'aéroport à la dernière voiture du soir.</p>
+        <a class="arrow" href="#demande" data-tab="event" style="align-self: flex-start">Organiser le transport d'un événement <span>→</span></a>
+      </div>
+      <figure class="s-body reveal" style="margin: 0">
+        <div class="photo photo--land"><img src="images/evenement.jpg" alt="Longue table de gala dressée avec bougies et fleurs" width="1600" height="1066" loading="lazy" decoding="async"></div>
+        <figcaption class="caption"><em>Dîners, galas, cérémonies</em><span>Lieux et transport des invités</span></figcaption>
+      </figure>
     </div>
-    <div class="grid">
-      <div class="card reveal"><h3>Chauffeurs privés</h3><p>Transferts ou mise à disposition à la journée, en berline, van ou minibus.</p></div>
-      <div class="card reveal"><h3>Accueil des invités</h3><p>Prise en charge à l'aéroport des délégations, intervenants et artistes.</p></div>
-      <div class="card reveal"><h3>Coordination sur place</h3><p>Un responsable suit les trajets entre tous les lieux et gère les changements de dernière minute.</p></div>
-      <div class="card reveal"><h3>Conciergerie</h3><p>Hébergement des invités, restaurants, accès VIP aux matchs et spectacles.</p></div>
-      <div class="card reveal"><h3>Navettes pour les invités</h3><p>Minibus et cars en rotation entre les hôtels et les lieux de l'événement.</p></div>
-      <div class="card reveal"><h3>Lieux et réceptions</h3><p>Recherche de salles, villas ou yachts pour vos dîners, soirées et cérémonies.</p></div>
-      <div class="card reveal"><h3>Protocole et délégations</h3><p>Accueil des officiels, cortèges et coordination avec les services de sécurité.</p></div>
-      <div class="card reveal"><h3>Aux couleurs de l'événement</h3><p>Véhicules et tenues des chauffeurs personnalisés à votre image.</p></div>
-    </div>
-    <a class="link-arrow" href="#demande" data-tab="event">Organiser le transport d'un événement <span>→</span></a>
-  </div>
-</section>
-
-<section class="section" id="hotels">
-  <div class="container stack stack--lg">
-    <div class="intro reveal">
-      <p class="eyebrow">06 · Hôtels et villas</p>
-      <h2 class="h2">Une adresse à la hauteur du voyage.</h2>
-      <p class="lead">Nous réservons votre hébergement en même temps que votre jet, votre yacht ou votre événement, pour une seule organisation et une seule facture.</p>
-    </div>
-    <div class="grid grid--wide">
-      <div class="card reveal"><h3>Hôtels et palaces</h3><p>Chambres et suites dans des établissements haut de gamme, en Afrique et en Europe.</p></div>
-      <div class="card reveal"><h3>Villas et appartements</h3><p>Des résidences privées pour plus d'espace et de discrétion, avec personnel sur demande.</p></div>
-      <div class="card reveal"><h3>Réservations de groupe</h3><p>Équipes, délégations et invités logés ensemble, au même endroit.</p></div>
-      <div class="card reveal"><h3>Demandes particulières</h3><p>Arrivée anticipée, départ tardif, chambres communicantes, étage réservé : nous les négocions avec l'hôtel.</p></div>
-      <div class="card reveal"><h3>Séminaires et réunions</h3><p>Salles de réunion, salons privés et restauration pour vos rendez-vous d'affaires.</p></div>
-      <div class="card reveal"><h3>Longs séjours</h3><p>Résidences et appartements avec services pour les missions de plusieurs semaines.</p></div>
-    </div>
-    <a class="link-arrow" href="#demande" data-tab="hotel">Réserver un hébergement <span>→</span></a>
-  </div>
-</section>
-
-<section class="section section--alt" id="services">
-  <div class="container stack stack--lg">
-    <div class="intro reveal">
-      <p class="eyebrow">07 · Services à la carte</p>
-      <h2 class="h2">Tout ce qui entoure le voyage.</h2>
-      <p class="lead">Ajoutez à votre demande les services dont vous avez besoin : nous les coordonnons avec le reste du voyage.</p>
-    </div>
-    <div class="grid">
-      <div class="card reveal"><h3>Hélicoptère</h3><p>Transferts rapides entre l'aéroport, la ville et les sites difficiles d'accès.</p></div>
-      <div class="card reveal"><h3>Voitures de luxe</h3><p>Location avec ou sans chauffeur, livrée à l'aéroport ou à l'hôtel.</p></div>
-      <div class="card reveal"><h3>Accueil aéroport</h3><p>Agent à l'arrivée, passage accéléré aux contrôles et salon privé.</p></div>
-      <div class="card reveal"><h3>Visa et formalités</h3><p>Accompagnement pour les visas, autorisations et documents de voyage.</p></div>
-      <div class="card reveal"><h3>Sécurité</h3><p>Agents de protection et véhicules adaptés, en coordination avec votre équipe.</p></div>
-      <div class="card reveal"><h3>Animaux à bord</h3><p>Vols et hébergements qui acceptent vos animaux de compagnie.</p></div>
-      <div class="card reveal"><h3>eSIM et connectivité</h3><p>Internet dès l'atterrissage, sans changer de carte SIM.</p></div>
-      <div class="card reveal"><h3>Restaurants et billetterie</h3><p>Tables, concerts, matchs et accès privilégiés réservés pour vous.</p></div>
+    <div class="items items--4 reveal">
+      <div class="item"><h3>Chauffeurs privés</h3><p>Transferts ou mise à disposition à la journée, en berline, van ou minibus.</p></div>
+      <div class="item"><h3>Accueil des invités</h3><p>Prise en charge à l'aéroport des délégations, intervenants et artistes.</p></div>
+      <div class="item"><h3>Coordination sur place</h3><p>Un responsable suit les trajets et gère les changements de dernière minute.</p></div>
+      <div class="item"><h3>Conciergerie</h3><p>Hébergement des invités, restaurants, accès VIP aux matchs et spectacles.</p></div>
+      <div class="item"><h3>Navettes</h3><p>Minibus et cars en rotation entre les hôtels et les lieux de l'événement.</p></div>
+      <div class="item"><h3>Lieux et réceptions</h3><p>Salles, villas ou yachts pour vos dîners, soirées et cérémonies.</p></div>
+      <div class="item"><h3>Protocole</h3><p>Accueil des officiels, cortèges et coordination avec les services de sécurité.</p></div>
+      <div class="item"><h3>À vos couleurs</h3><p>Véhicules et tenues des chauffeurs personnalisés à votre image.</p></div>
     </div>
   </div>
 </section>
 
-<section class="section" id="destinations" aria-labelledby="destinations-titre">
-  <div class="container stack stack--lg">
-    <div class="intro reveal">
-      <p class="eyebrow">Destinations</p>
-      <h2 class="h2" id="destinations-titre">Trois régions, un même niveau de service.</h2>
-      <p class="lead">Nous organisons vos voyages au départ et à destination des grandes villes d'Afrique, d'Europe et du Moyen-Orient. Autres destinations sur demande.</p>
+<!-- 06 HÔTELS -->
+<section class="band band--paper2" id="hotels" aria-labelledby="hotels-titre">
+  <div class="wrap spread spread--flip">
+    <div class="s-head reveal">
+      <p class="kicker"><b>06</b> Hôtels et villas</p>
+      <h2 class="title" id="hotels-titre">Une adresse <em>à la hauteur du voyage.</em></h2>
+      <p class="lead">Nous réservons votre hébergement en même temps que votre jet, votre yacht ou votre événement : une seule organisation, une seule facture.</p>
+      <a class="arrow" href="#demande" data-tab="hotel" style="align-self: flex-start">Réserver un hébergement <span>→</span></a>
     </div>
-    <div class="grid">
-      <div class="region reveal"><h3>Afrique de l'Ouest et centrale</h3><p>Abidjan · Dakar · Lagos · Accra · Douala · Libreville · Kinshasa</p></div>
-      <div class="region reveal"><h3>Afrique du Nord et de l'Est</h3><p>Casablanca · Marrakech · Tunis · Le Caire · Nairobi · Kigali · Zanzibar</p></div>
-      <div class="region reveal"><h3>Europe</h3><p>Paris · Nice · Monaco · Londres · Genève · Ibiza · Mykonos</p></div>
-      <div class="region reveal"><h3>Moyen-Orient</h3><p>Dubaï · Abu Dhabi · Doha · Riyad</p></div>
+    <div class="s-body reveal">
+      <figure style="margin: 0">
+        <div class="photo photo--land"><img src="images/hotel.jpg" alt="Suite d'hôtel avec bain et vue sur la ville" width="1600" height="1066" loading="lazy" decoding="async"></div>
+      </figure>
+      <div class="items">
+        <div class="item"><h3>Hôtels et palaces</h3><p>Chambres et suites haut de gamme, en Afrique et en Europe.</p></div>
+        <div class="item"><h3>Villas et appartements</h3><p>Résidences privées, avec personnel sur demande.</p></div>
+        <div class="item"><h3>Réservations de groupe</h3><p>Équipes, délégations et invités logés au même endroit.</p></div>
+        <div class="item"><h3>Demandes particulières</h3><p>Arrivée anticipée, départ tardif, étage réservé : nous les négocions.</p></div>
+        <div class="item"><h3>Séminaires</h3><p>Salles de réunion, salons privés et restauration.</p></div>
+        <div class="item"><h3>Longs séjours</h3><p>Résidences avec services pour les missions de plusieurs semaines.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 SERVICES -->
+<section class="band" id="services" aria-labelledby="services-titre">
+  <div class="wrap" style="display: flex; flex-direction: column; gap: clamp(36px, 5vw, 56px)">
+    <div class="spread">
+      <div class="s-head reveal">
+        <p class="kicker"><b>07</b> Services à la carte</p>
+        <h2 class="title" id="services-titre">Tout ce qui <em>entoure le voyage.</em></h2>
+      </div>
+      <div class="s-body reveal" style="justify-content: flex-end">
+        <p class="lead">Ajoutez à votre demande les services dont vous avez besoin : nous les coordonnons avec le reste du voyage.</p>
+      </div>
+    </div>
+    <div class="items items--4 reveal">
+      <div class="item"><h3>Hélicoptère</h3><p>Transferts rapides entre l'aéroport, la ville et les sites difficiles d'accès.</p></div>
+      <div class="item"><h3>Voitures de luxe</h3><p>Avec ou sans chauffeur, livrées à l'aéroport ou à l'hôtel.</p></div>
+      <div class="item"><h3>Accueil aéroport</h3><p>Agent à l'arrivée, passage accéléré et salon privé.</p></div>
+      <div class="item"><h3>Visa et formalités</h3><p>Accompagnement pour les visas et documents de voyage.</p></div>
+      <div class="item"><h3>Sécurité</h3><p>Agents de protection et véhicules adaptés.</p></div>
+      <div class="item"><h3>Animaux à bord</h3><p>Vols et hébergements qui acceptent vos animaux.</p></div>
+      <div class="item"><h3>eSIM</h3><p>Internet dès l'atterrissage, sans changer de carte SIM.</p></div>
+      <div class="item"><h3>Restaurants et billetterie</h3><p>Tables, concerts, matchs et accès privilégiés.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section class="band band--paper2" id="destinations" aria-labelledby="destinations-titre">
+  <div class="wrap" style="display: flex; flex-direction: column; gap: clamp(36px, 5vw, 56px)">
+    <div class="spread">
+      <div class="s-head reveal">
+        <p class="kicker"><b>Atlas</b> Destinations</p>
+        <h2 class="title" id="destinations-titre">Trois régions, <em>un même niveau de service.</em></h2>
+      </div>
+      <div class="s-body reveal" style="justify-content: flex-end">
+        <p class="lead">Au départ et à destination des grandes villes d'Afrique, d'Europe et du Moyen-Orient. Autres destinations sur demande.</p>
+      </div>
+    </div>
+    <div class="dest reveal">
+      <div class="dest-row"><h3>Afrique de l'Ouest et centrale</h3><p>Abidjan&nbsp;<span>/</span> Dakar&nbsp;<span>/</span> Lagos&nbsp;<span>/</span> Accra&nbsp;<span>/</span> Douala&nbsp;<span>/</span> Libreville&nbsp;<span>/</span> Kinshasa</p></div>
+      <div class="dest-row"><h3>Afrique du Nord et de l'Est</h3><p>Casablanca&nbsp;<span>/</span> Marrakech&nbsp;<span>/</span> Tunis&nbsp;<span>/</span> Le&nbsp;Caire&nbsp;<span>/</span> Nairobi&nbsp;<span>/</span> Kigali&nbsp;<span>/</span> Zanzibar</p></div>
+      <div class="dest-row"><h3>Europe</h3><p>Paris&nbsp;<span>/</span> Nice&nbsp;<span>/</span> Monaco&nbsp;<span>/</span> Londres&nbsp;<span>/</span> Genève&nbsp;<span>/</span> Ibiza&nbsp;<span>/</span> Mykonos</p></div>
+      <div class="dest-row"><h3>Moyen&#8208;Orient</h3><p>Dubaï&nbsp;<span>/</span> Abu&nbsp;Dhabi&nbsp;<span>/</span> Doha&nbsp;<span>/</span> Riyad</p></div>
     </div>
     <div class="facts reveal">
       <div class="fact"><span class="k">Devises du devis</span><span>EUR · USD · GBP · XOF · XAF · AED</span></div>
@@ -603,117 +765,103 @@ blockquote { margin: 0; font-size: 17px; }
   </div>
 </section>
 
-<section class="section section--alt" aria-labelledby="engagements-titre">
-  <div class="container stack stack--lg">
-    <div class="intro reveal">
-      <p class="eyebrow">Nos engagements</p>
-      <h2 class="h2 h2--sm" id="engagements-titre">Pourquoi nous confier votre voyage.</h2>
+<!-- ENGAGEMENTS -->
+<section class="band" aria-labelledby="engagements-titre">
+  <div class="wrap" style="display: flex; flex-direction: column; gap: clamp(36px, 5vw, 56px)">
+    <div class="reveal" style="display: flex; flex-direction: column; gap: 22px; max-width: 900px">
+      <p class="kicker"><b>Nos engagements</b> Pourquoi nous</p>
+      <h2 class="title" id="engagements-titre">Ce que vous pouvez <em>attendre de nous.</em></h2>
     </div>
-    <div class="grid">
-      <div class="pledge reveal"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><h3>Un interlocuteur unique</h3><p>La même personne suit votre dossier de la demande jusqu'au retour.</p></div>
-      <div class="pledge reveal"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Partenaires vérifiés</h3><p>Opérateurs aériens, armateurs et chauffeurs sélectionnés et contrôlés par nos soins.</p></div>
-      <div class="pledge reveal"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><h3>Confidentialité</h3><p>Vos trajets, vos invités et vos données ne sont partagés avec personne.</p></div>
-      <div class="pledge reveal"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7"/><path d="M9 16h7"/></svg></span><h3>Prix clairs</h3><p>Un devis détaillé dans votre devise, validé par vous avant toute réservation.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" aria-labelledby="etapes-titre">
-  <div class="container stack stack--lg">
-    <div class="intro reveal">
-      <p class="eyebrow">Comment ça marche</p>
-      <h2 class="h2 h2--sm" id="etapes-titre">Trois étapes, un seul interlocuteur.</h2>
-    </div>
-    <ol class="steps">
-      <li class="reveal"><h3>Vous décrivez votre besoin</h3><p>Trajet, dates, nombre de personnes et exigences particulières.</p></li>
-      <li class="reveal"><h3>Nous vous envoyons une proposition</h3><p>Options chiffrées dans votre devise, auprès de partenaires vérifiés.</p></li>
-      <li class="reveal"><h3>Vous validez, nous organisons</h3><p>Paiement sécurisé par carte ou Mobile Money, puis suivi jusqu'au retour.</p></li>
+    <ol class="method reveal">
+      <li><h3>Un interlocuteur unique</h3><p>La même personne suit votre dossier de la demande jusqu'au retour, et coordonne chaque prestataire.</p></li>
+      <li><h3>Des partenaires vérifiés</h3><p>Opérateurs aériens, armateurs et chauffeurs sélectionnés et contrôlés par nos soins.</p></li>
+      <li><h3>Des prix clairs, en toute discrétion</h3><p>Un devis détaillé dans votre devise, validé par vous avant toute réservation. Vos trajets et vos invités ne sont partagés avec personne.</p></li>
     </ol>
   </div>
 </section>
 
 <!-- SECTION MASQUÉE tant que les informations ne sont pas renseignées : retirez l'attribut « hidden » pour l'afficher. -->
-<section class="section section--alt" aria-labelledby="equipe-titre" hidden>
-  <div class="container stack stack--lg">
-    <div class="intro">
-      <p class="eyebrow">Votre équipe</p>
-      <h2 class="h2" id="equipe-titre">Des personnes, pas un standard.</h2>
-      <p class="lead">Une question ? Nos conseillers vous répondent directement et suivent votre dossier à chaque étape.</p>
+<section class="band band--paper2" aria-labelledby="equipe-titre" hidden>
+  <div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
+    <div style="display: flex; flex-direction: column; gap: 18px; max-width: 760px">
+      <p class="kicker"><b>Équipe</b> Vos conseillers</p>
+      <h2 class="title" id="equipe-titre">Des personnes, <em>pas un standard.</em></h2>
     </div>
-    <div class="grid grid--wide">
-      <div class="card person"><div class="avatar">[PHOTO]</div><div><h3>[NOM DU CONSEILLER]</h3><p>[Fonction]</p></div></div>
-      <div class="card person"><div class="avatar">[PHOTO]</div><div><h3>[NOM DU CONSEILLER]</h3><p>[Fonction]</p></div></div>
+    <div class="items">
+      <div class="person"><div class="avatar">[PHOTO]</div><div><h3>[NOM DU CONSEILLER]</h3><p class="muted">[Fonction]</p></div></div>
+      <div class="person"><div class="avatar">[PHOTO]</div><div><h3>[NOM DU CONSEILLER]</h3><p class="muted">[Fonction]</p></div></div>
     </div>
-    <div class="facts">
-      <div class="stat"><b>[CHIFFRE]</b><span class="muted">voyages organisés</span></div>
-      <div class="stat"><b>[CHIFFRE]</b><span class="muted">pays desservis</span></div>
-      <div class="stat"><b>[CHIFFRE]</b><span class="muted">partenaires vérifiés</span></div>
-      <div class="stat"><b>[NOTE] / 5</b><span class="muted">satisfaction clients</span></div>
+    <div class="items items--4">
+      <div class="item stat"><b>[CHIFFRE]</b><p>voyages organisés</p></div>
+      <div class="item stat"><b>[CHIFFRE]</b><p>pays desservis</p></div>
+      <div class="item stat"><b>[CHIFFRE]</b><p>partenaires vérifiés</p></div>
+      <div class="item stat"><b>[NOTE] / 5</b><p>satisfaction clients</p></div>
     </div>
   </div>
 </section>
 
 <!-- SECTION MASQUÉE tant que les logos et témoignages ne sont pas renseignés : retirez l'attribut « hidden » pour l'afficher. -->
-<section class="section" aria-labelledby="confiance-titre" hidden>
-  <div class="container stack stack--lg">
-    <h2 class="h2 h2--sm" id="confiance-titre">Ils nous font confiance.</h2>
-    <div class="grid grid--tight">
-      <div class="logo-slot">[LOGO PARTENAIRE]</div>
-      <div class="logo-slot">[LOGO PARTENAIRE]</div>
-      <div class="logo-slot">[LOGO PARTENAIRE]</div>
-      <div class="logo-slot">[LOGO PARTENAIRE]</div>
-      <div class="logo-slot">[LOGO PARTENAIRE]</div>
+<section class="band" aria-labelledby="confiance-titre" hidden>
+  <div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
+    <h2 class="title title--sm" id="confiance-titre">Ils nous font <em>confiance.</em></h2>
+    <div class="items items--4">
+      <div class="logo-slot">[LOGO PARTENAIRE]</div><div class="logo-slot">[LOGO PARTENAIRE]</div><div class="logo-slot">[LOGO PARTENAIRE]</div><div class="logo-slot">[LOGO PARTENAIRE]</div>
     </div>
-    <div class="grid grid--wide">
-      <figure class="card" style="margin: 0"><blockquote>[TÉMOIGNAGE CLIENT : deux ou trois phrases]</blockquote><figcaption class="muted">[Nom, fonction]</figcaption></figure>
-      <figure class="card" style="margin: 0"><blockquote>[TÉMOIGNAGE CLIENT : deux ou trois phrases]</blockquote><figcaption class="muted">[Nom, fonction]</figcaption></figure>
+    <div class="items">
+      <figure class="item" style="margin: 0"><blockquote>[TÉMOIGNAGE CLIENT : deux ou trois phrases]</blockquote><figcaption class="muted">[Nom, fonction]</figcaption></figure>
+      <figure class="item" style="margin: 0"><blockquote>[TÉMOIGNAGE CLIENT : deux ou trois phrases]</blockquote><figcaption class="muted">[Nom, fonction]</figcaption></figure>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="partenaires" aria-labelledby="partenaires-titre">
-  <div class="container split" style="gap: 40px 56px">
-    <div class="stack reveal">
-      <p class="eyebrow">Programme partenaires</p>
-      <h2 class="h2" id="partenaires-titre">Vous avez les clients, nous organisons le voyage.</h2>
+<!-- PARTENAIRES -->
+<section class="band band--paper2" id="partenaires" aria-labelledby="partenaires-titre">
+  <div class="wrap spread">
+    <div class="s-head reveal">
+      <p class="kicker"><b>Programme</b> Partenaires</p>
+      <h2 class="title title--sm" id="partenaires-titre">Vous avez les clients, <em>nous organisons le voyage.</em></h2>
       <p class="lead">Agents de joueurs, managers d'artistes, conciergeries, agences et organisateurs d'événements : confiez-nous les déplacements de vos clients et recevez une commission sur chaque voyage réalisé.</p>
     </div>
-    <div class="offer reveal" style="flex: 1 1 360px">
-      <div class="offer-row"><span class="muted">Commission</span><span>Sur chaque voyage réalisé</span></div>
-      <div class="offer-row"><span class="muted">Votre client</span><span>Reste votre client</span></div>
-      <div class="offer-row" style="border: 0; padding: 0"><span class="muted">Suivi</span><span>Un conseiller dédié</span></div>
-      <a class="btn btn--gold" href="mailto:contact@soraprestige.com?subject=Programme%20partenaires">Devenir partenaire</a>
+    <div class="s-body reveal" style="justify-content: flex-end">
+      <div class="offer">
+        <div class="offer-row"><span class="muted">Commission</span><span>Sur chaque voyage réalisé</span></div>
+        <div class="offer-row"><span class="muted">Votre client</span><span>Reste votre client</span></div>
+        <div class="offer-row"><span class="muted">Suivi</span><span>Un conseiller dédié</span></div>
+      </div>
+      <a class="btn btn--gold" href="mailto:contact@soraprestige.com?subject=Programme%20partenaires" style="align-self: flex-start">Devenir partenaire <span aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
 
-<section class="section" id="faq" aria-labelledby="faq-titre">
-  <div class="container stack stack--lg" style="max-width: 880px">
-    <div class="intro reveal">
-      <p class="eyebrow">FAQ</p>
-      <h2 class="h2 h2--sm" id="faq-titre">Questions fréquentes</h2>
+<!-- FAQ -->
+<section class="band" id="faq" aria-labelledby="faq-titre">
+  <div class="wrap faq-grid">
+    <div class="reveal" style="display: flex; flex-direction: column; gap: 22px">
+      <p class="kicker"><b>FAQ</b> Questions fréquentes</p>
+      <h2 class="title title--sm" id="faq-titre">Avant de <em>partir.</em></h2>
     </div>
     <div class="faq reveal">
-      <details><summary>Combien de temps à l'avance faut-il réserver ?</summary><p>Le plus tôt possible, surtout pour un groupe ou un événement. Pour une demande urgente, écrivez-nous directement sur WhatsApp : nous vérifions les disponibilités immédiatement.</p></details>
-      <details><summary>Comment le prix est-il calculé ?</summary><p>Chaque demande reçoit un devis selon le trajet, les dates, le nombre de personnes et le niveau de service souhaité. La demande est gratuite et sans engagement.</p></details>
-      <details><summary>L'estimation de durée de vol est-elle fiable ?</summary><p>Elle donne un ordre de grandeur calculé à partir de la distance entre les deux villes et de la vitesse moyenne de chaque type d'appareil. La durée réelle dépend de l'appareil choisi, des vents et des éventuelles escales : elle figure dans votre devis.</p></details>
-      <details><summary>Quels moyens de paiement acceptez-vous ?</summary><p>Carte bancaire (Visa, Mastercard) et Mobile Money (Wave, Orange Money, MTN Mobile Money, Moov Money).</p></details>
-      <details><summary>Mes informations restent-elles confidentielles ?</summary><p>Oui. Vos informations servent uniquement à organiser votre voyage, et un accord de confidentialité peut être signé sur demande. Le formulaire de ce site n'envoie rien à un serveur : il prépare un message que vous envoyez vous-même par WhatsApp ou par e-mail.</p></details>
-      <details><summary>Dans quels pays intervenez-vous ?</summary><p>En Afrique, en Europe et au Moyen-Orient. Consultez nos <a href="#destinations">destinations</a> ; les autres destinations sont étudiées sur demande.</p></details>
+      <details><summary>Combien de temps à l'avance faut&#8208;il réserver ?</summary><p>Le plus tôt possible, surtout pour un groupe ou un événement. Pour une demande urgente, écrivez-nous directement sur WhatsApp : nous vérifions les disponibilités immédiatement.</p></details>
+      <details><summary>Comment le prix est&#8208;il calculé ?</summary><p>Chaque demande reçoit un devis selon le trajet, les dates, le nombre de personnes et le niveau de service souhaité. La demande est gratuite et sans engagement.</p></details>
+      <details><summary>L'estimation de durée de vol est&#8208;elle fiable ?</summary><p>Elle donne un ordre de grandeur calculé à partir de la distance entre les deux villes et de la vitesse moyenne de chaque type d'appareil. La durée réelle dépend de l'appareil choisi, des vents et des éventuelles escales : elle figure dans votre devis.</p></details>
+      <details><summary>Quels moyens de paiement acceptez&#8208;vous ?</summary><p>Carte bancaire (Visa, Mastercard) et Mobile Money (Wave, Orange Money, MTN Mobile Money, Moov Money).</p></details>
+      <details><summary>Mes informations restent&#8208;elles confidentielles ?</summary><p>Oui. Vos informations servent uniquement à organiser votre voyage, et un accord de confidentialité peut être signé sur demande. Le formulaire de ce site n'envoie rien à un serveur : il prépare un message que vous envoyez vous-même. Voir notre <a href="confidentialite.html">politique de confidentialité</a>.</p></details>
+      <details><summary>Dans quels pays intervenez&#8208;vous ?</summary><p>En Afrique, en Europe et au Moyen-Orient. Consultez nos <a href="#destinations">destinations</a> ; les autres destinations sont étudiées sur demande.</p></details>
     </div>
   </div>
 </section>
 
-<section class="section contact" id="contact">
-  <div class="container split" style="justify-content: space-between; gap: 40px">
-    <div class="stack reveal" style="gap: 16px">
-      <h2 class="h2">Parlons de votre prochain voyage.</h2>
-      <p class="lead" style="max-width: 520px">Un conseiller SoraPrestige étudie votre demande et revient vers vous avec une proposition personnalisée.</p>
+<!-- CONTACT -->
+<section class="band night" id="contact" aria-labelledby="contact-titre">
+  <div class="wrap">
+    <div class="reveal" style="display: flex; flex-direction: column; gap: 22px; max-width: 980px">
+      <p class="kicker"><b>Contact</b> Un conseiller vous répond</p>
+      <h2 class="display" id="contact-titre">Parlons de votre <em>prochain voyage.</em></h2>
     </div>
-    <div class="contact-actions reveal">
-      <a class="btn btn--gold" href="https://wa.me/33758954783" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
-      <a class="btn btn--outline" href="mailto:contact@soraprestige.com">contact@soraprestige.com</a>
-      <a class="btn btn--ghost" href="tel:+33758954783">+33 7 58 95 47 83</a>
+    <div class="contact-big reveal">
+      <a href="https://wa.me/33758954783" target="_blank" rel="noopener">Écrire sur WhatsApp <small>Réponse directe</small></a>
+      <a href="mailto:contact@soraprestige.com">contact@soraprestige.com <small>E-mail</small></a>
+      <a href="tel:+33758954783">+33 7 58 95 47 83 <small>Téléphone</small></a>
     </div>
   </div>
 </section>
@@ -721,64 +869,63 @@ blockquote { margin: 0; font-size: 17px; }
 </main>
 
 <footer class="site-footer">
-  <div class="container footer-grid">
-    <div style="flex: 2 1 260px; gap: 12px">
-      <a class="brand" href="#top" style="padding: 0; color: var(--text)">Sora<small>Prestige</small></a>
-      <span class="muted" style="max-width: 320px">SoraPrestige, le service sur mesure pour les voyages d'exception entre l'Afrique, l'Europe et le Moyen-Orient.</span>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div><p>Le service sur mesure pour les voyages d'exception entre l'Afrique, l'Europe et le Moyen-Orient.</p></div>
+      <nav aria-labelledby="f-services">
+        <h2 id="f-services">Services</h2>
+        <a href="#jets">Jets privés</a>
+        <a href="#yachts">Yachts et catamarans</a>
+        <a href="#clubs">Clubs sportifs</a>
+        <a href="#vip">Personnalités</a>
+        <a href="#evenements">Événements</a>
+        <a href="#hotels">Hôtels et villas</a>
+        <a href="#services">Services à la carte</a>
+      </nav>
+      <nav aria-labelledby="f-infos">
+        <h2 id="f-infos">Informations</h2>
+        <a href="#estimation">Estimer un vol</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#partenaires">Programme partenaires</a>
+        <a href="#faq">Questions fréquentes</a>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <a href="mailto:contact@soraprestige.com">contact@soraprestige.com</a>
+        <a href="tel:+33758954783">+33 7 58 95 47 83</a>
+        <a href="https://wa.me/33758954783" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
     </div>
-    <nav aria-labelledby="f-services" style="flex: 1 1 160px">
-      <h2 id="f-services">Services</h2>
-      <a href="#jets">Jets privés</a>
-      <a href="#yachts">Yachts et catamarans</a>
-      <a href="#clubs">Clubs sportifs</a>
-      <a href="#vip">Personnalités</a>
-      <a href="#evenements">Événements</a>
-      <a href="#hotels">Hôtels et villas</a>
-      <a href="#services">Services à la carte</a>
-    </nav>
-    <nav aria-labelledby="f-infos" style="flex: 1 1 160px">
-      <h2 id="f-infos">Informations</h2>
-      <a href="#estimation">Estimer un vol</a>
-      <a href="#destinations">Destinations</a>
-      <a href="#partenaires">Programme partenaires</a>
-      <a href="#faq">Questions fréquentes</a>
-    </nav>
-    <div style="flex: 1 1 200px">
-      <h2>Contact</h2>
-      <a href="mailto:contact@soraprestige.com">contact@soraprestige.com</a>
-      <a href="tel:+33758954783">+33 7 58 95 47 83</a>
-      <a href="https://wa.me/33758954783" target="_blank" rel="noopener">WhatsApp</a>
-    </div>
-  </div>
-  <div class="container footer-bottom">
-    <div class="legal">
-      <span>© <span id="year">2026</span> SoraPrestige. Tous droits réservés.</span>
-      <a href="confidentialite.html">Confidentialité</a>
-      <!-- À ajouter dès que la page existe : <a href="mentions-legales.html">Mentions légales</a> -->
-    </div>
-    <div class="pay" aria-label="Moyens de paiement acceptés">
-      <span class="pay-label"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Paiement sécurisé</span>
-      <span class="pay-chip">Visa</span><span class="pay-chip">Mastercard</span><span class="pay-chip">Wave</span><span class="pay-chip">Orange Money</span><span class="pay-chip">MTN MoMo</span><span class="pay-chip">Moov Money</span>
+    <p class="signature" aria-hidden="true">Sora<em>Prestige</em></p>
+    <div class="footer-bottom">
+      <div class="legal">
+        <span>© <span id="year">2026</span> SoraPrestige. Tous droits réservés.</span>
+        <a href="confidentialite.html">Confidentialité</a>
+        <!-- À ajouter dès que la page existe : <a href="mentions-legales.html">Mentions légales</a> -->
+      </div>
+      <div class="pay" aria-label="Moyens de paiement acceptés">
+        <span class="pay-label">Paiement sécurisé</span>
+        <span class="pay-chip">Visa</span><span class="pay-chip">Mastercard</span><span class="pay-chip">Wave</span><span class="pay-chip">Orange Money</span><span class="pay-chip">MTN MoMo</span><span class="pay-chip">Moov Money</span>
+      </div>
     </div>
   </div>
 </footer>
 
 <div class="floating">
-  <button class="fab fab--top" type="button" id="to-top" aria-label="Revenir en haut"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg></button>
-  <a class="fab fab--wa" href="https://wa.me/33758954783" target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg></a>
+  <button class="fab fab--top" type="button" id="to-top" aria-label="Revenir en haut"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg></button>
+  <a class="fab fab--wa" href="https://wa.me/33758954783" target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg></a>
 </div>
 
 <script>
 (function () {
   'use strict';
-  document.documentElement.classList.add('js');
 
   /* ---------- Réglages ---------- */
   var WHATSAPP = '33758954783';
   var EMAIL = 'contact@soraprestige.com';
   var STORE = 'sora-demande-v2';
 
-  /* Villes : nom affiché, latitude, longitude (sert à la liste de suggestions et à l'estimateur). */
+  /* Villes : nom affiché, latitude, longitude (liste de suggestions et estimateur). */
   var CITIES = [
     ["Abidjan, Côte d'Ivoire", 5.36, -4.01], ["Yamoussoukro, Côte d'Ivoire", 6.82, -5.28], ['Dakar, Sénégal', 14.69, -17.45],
     ['Bamako, Mali', 12.64, -8.00], ['Conakry, Guinée', 9.64, -13.58], ['Ouagadougou, Burkina Faso', 12.37, -1.52],
@@ -803,14 +950,8 @@ blockquote { margin: 0; font-size: 17px; }
   function $(sel, ctx) { return (ctx || document).querySelector(sel); }
   function $$(sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); }
 
-  /* ---------- Suggestions de villes et bandeau ---------- */
   var dl = $('#sora-lieux');
   if (dl) { dl.innerHTML = CITIES.map(function (c) { return '<option value="' + esc(c[0]) + '"></option>'; }).join(''); }
-  var ticker = $('#ticker');
-  if (ticker) {
-    var names = CITIES.filter(function (c, i) { return i % 2 === 0; }).map(function (c) { return '<span>' + esc(c[0].split(',')[0]) + '</span>'; }).join('');
-    ticker.innerHTML = names + names;
-  }
   var yr = $('#year'); if (yr) { yr.textContent = new Date().getFullYear(); }
 
   /* ---------- En-tête, menu mobile, lien actif ---------- */
@@ -828,7 +969,7 @@ blockquote { margin: 0; font-size: 17px; }
 
   function onScroll() {
     var y = window.scrollY || window.pageYOffset;
-    if (header) { header.classList.toggle('is-scrolled', y > 8); }
+    if (header) { header.classList.toggle('is-scrolled', y > 40); }
     if (toTop) { toTop.classList.toggle('is-visible', y > 900); }
   }
   window.addEventListener('scroll', onScroll, { passive: true });
@@ -856,15 +997,13 @@ blockquote { margin: 0; font-size: 17px; }
       if (r.top < limit) { el.classList.add('is-in'); return false; }
       return true;
     });
-    if (!pending.length) { window.removeEventListener('scroll', onReveal); window.removeEventListener('resize', onReveal); }
+    if (!pending.length) { window.removeEventListener('scroll', reveal); window.removeEventListener('resize', reveal); }
   }
-  function onReveal() { reveal(); }
-  window.addEventListener('scroll', onReveal, { passive: true });
-  window.addEventListener('resize', onReveal);
+  window.addEventListener('scroll', reveal, { passive: true });
+  window.addEventListener('resize', reveal);
   window.addEventListener('load', reveal);
   reveal();
-  /* Filet de sécurité : si un hash ou un saut de page n'a déclenché aucun événement, tout reste lisible. */
-  setTimeout(function () { onReveal(); }, 600);
+  setTimeout(reveal, 600);
 
   /* ---------- Estimateur de vol ---------- */
   var JETS = [
@@ -895,10 +1034,10 @@ blockquote { margin: 0; font-size: 17px; }
   function estimate() {
     var a = findCity(estFrom.value), b = findCity(estTo.value);
     if (!a || !b) {
-      estOut.innerHTML = '<p class="form-error">Choisissez deux villes dans la liste proposée. Pour une autre destination, <a href="#demande">demandez directement un devis</a>.</p>';
+      estOut.innerHTML = '<p class="form-error" style="padding-bottom: 22px">Choisissez deux villes dans la liste proposée. Pour une autre destination, <a href="#demande">demandez directement un devis</a>.</p>';
       lastRoute = null; return;
     }
-    if (a === b) { estOut.innerHTML = '<p class="form-error">Le départ et l\'arrivée sont identiques.</p>'; lastRoute = null; return; }
+    if (a === b) { estOut.innerHTML = '<p class="form-error" style="padding-bottom: 22px">Le départ et l\'arrivée sont identiques.</p>'; lastRoute = null; return; }
     estFrom.value = a[0]; estTo.value = b[0];
     var route = distanceKm(a, b) * 1.05;
     var best = null;
@@ -907,15 +1046,15 @@ blockquote { margin: 0; font-size: 17px; }
     var rows = JETS.map(function (j) {
       var stops = Math.max(0, Math.ceil(route / j.range) - 1);
       var hours = route / j.speed + 0.5 + stops * 0.75;
-      var note = stops === 0 ? 'Vol sans escale' : (stops === 1 ? '1 escale technique probable' : stops + ' escales techniques probables');
+      var note = stops === 0 ? 'Sans escale' : (stops === 1 ? '1 escale technique probable' : stops + ' escales techniques probables');
       return '<div class="est-row' + (j.id === best ? ' is-best' : '') + '">' + (j.id === best ? '<span class="flag">Conseillé</span>' : '') +
-        '<span class="k">' + j.name + '</span><span class="t">' + fmtDuration(hours) + '</span><span class="s">' + note + ' · ' + j.seats + '</span></div>';
+        '<span class="k">' + j.name + '</span><span class="t">' + fmtDuration(hours) + '</span><span class="s">' + note + '<br>' + j.seats + '</span></div>';
     }).join('');
     lastRoute = { from: a[0], to: b[0] };
     estOut.innerHTML = '<div class="est-summary"><strong>' + esc(a[0].split(',')[0]) + ' → ' + esc(b[0].split(',')[0]) + '</strong>' +
       '<span class="muted">environ ' + Math.round(route / 10) * 10 + ' km</span></div><div class="est-rows">' + rows + '</div>' +
-      '<div class="est-foot"><p class="note">Estimation indicative (hors vents, attente et formalités). La durée exacte figure dans votre devis.</p>' +
-      '<a class="btn btn--gold" href="#demande" data-est-request>Demander ce vol</a></div>';
+      '<div class="est-foot"><p class="note">Estimation indicative, hors vents, attente et formalités. La durée exacte figure dans votre devis.</p>' +
+      '<a class="btn btn--gold" href="#demande" data-est-request>Demander ce vol <span aria-hidden="true">→</span></a></div>';
   }
   if (estForm) {
     estForm.addEventListener('submit', function (e) { e.preventDefault(); estimate(); });
