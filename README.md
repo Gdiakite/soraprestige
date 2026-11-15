@@ -1,6 +1,6 @@
-# SoraTrave Prestige
+# SoraPrestige
 
-Site de SoraTrave Prestige : jets privés, yachts, clubs sportifs, personnalités, événements, hôtels et services à la carte.
+Site de SoraPrestige : jets privés, yachts, clubs sportifs, personnalités, événements, hôtels et services à la carte.
 
 En ligne sur **https://soraprestige.com** (hébergé par GitHub Pages, domaine chez IONOS).
 
