@@ -43,6 +43,6 @@ Ces éléments sont **masqués** sur le site tant qu'ils ne sont pas renseignés
 - **Équipe et chiffres clés** : section précédée du commentaire « SECTION MASQUÉE » ; remplir les crochets puis retirer l'attribut `hidden`.
 - **Logos partenaires et témoignages** : même principe, section suivante.
 - **Langues, horaires, bureaux** : lignes en commentaire dans la section Destinations.
-- **Mentions légales, conditions générales, confidentialité** : liens en commentaire dans le pied de page. Les mentions légales sont obligatoires pour un site professionnel en France : créer les pages puis décommenter les liens.
+- **Mentions légales, conditions générales** : liens en commentaire dans le pied de page (la page `confidentialite.html` est en ligne). Les mentions légales sont obligatoires pour un site professionnel en France : créer les pages puis décommenter les liens.
 
 Les tarifs affichent « Sur devis » et la commission partenaires « Sur chaque voyage réalisé » ; ils peuvent être remplacés par des montants dans `index.html`.
