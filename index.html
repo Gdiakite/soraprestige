@@ -132,7 +132,7 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
 .burger .i-close { display: none; }
 .burger[aria-expanded="true"] .i-open { display: none; }
 .burger[aria-expanded="true"] .i-close { display: block; }
-@media (max-width: 1080px) {
+@media (max-width: 1180px) {
   .burger { display: inline-flex; }
   .nav { position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; align-items: stretch; gap: 0; padding: 8px clamp(16px, 4vw, 48px) 28px; background: var(--paper); border-bottom: 1px solid var(--ink); max-height: calc(100vh - var(--header-h)); overflow-y: auto; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity .25s ease, transform .25s ease, visibility .25s; }
   .nav.is-open { opacity: 1; visibility: visible; transform: none; }
@@ -252,6 +252,10 @@ textarea.input:focus { border-color: var(--bronze); box-shadow: none; }
 .item p { color: var(--muted); font-size: 15.5px; }
 .night .items { border-color: var(--night-text); }
 .night .item { border-color: var(--night-line); }
+.night .item p { color: var(--night-muted); }
+.item p a, .note a { color: inherit; }
+.docs-note { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 16px 40px; font-size: 14.5px; color: var(--night-muted); padding-top: 20px; }
+.docs-note p { padding-left: 16px; border-left: 1px solid var(--bronze-2); }
 @media (max-width: 1000px) { .items--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .items--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 640px) { .items, .items--3, .items--4 { grid-template-columns: 1fr; } }
 .dashlist { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
@@ -432,6 +436,7 @@ blockquote { margin: 0; font: italic 400 24px/1.35 var(--serif); }
       <a href="#vip">Personnalités</a>
       <a href="#evenements">Événements</a>
       <a href="#hotels">Hôtels</a>
+      <a href="#visas">Visas</a>
       <a href="#estimation">Estimer un vol</a>
       <a class="btn btn--gold" href="#demande">Demander un devis</a>
     </nav>
@@ -510,7 +515,8 @@ blockquote { margin: 0; font: italic 400 24px/1.35 var(--serif); }
       <li><a href="#vip"><span class="toc-n">04</span><span class="toc-t">Personnalités<small>Voyages discrets pour artistes, dirigeants et officiels.</small></span><span class="toc-a" aria-hidden="true">→</span></a></li>
       <li><a href="#evenements"><span class="toc-n">05</span><span class="toc-t">Événements et chauffeurs<small>Chauffeurs privés et transport complet de vos invités.</small></span><span class="toc-a" aria-hidden="true">→</span></a></li>
       <li><a href="#hotels"><span class="toc-n">06</span><span class="toc-t">Hôtels et villas<small>Palaces, suites et villas réservés avec votre voyage.</small></span><span class="toc-a" aria-hidden="true">→</span></a></li>
-      <li><a href="#services"><span class="toc-n">07</span><span class="toc-t">Services à la carte<small>Hélicoptère, sécurité, visas, conciergerie…</small></span><span class="toc-a" aria-hidden="true">→</span></a></li>
+      <li><a href="#services"><span class="toc-n">07</span><span class="toc-t">Services à la carte<small>Hélicoptère, sécurité, accueil aéroport, conciergerie…</small></span><span class="toc-a" aria-hidden="true">→</span></a></li>
+      <li><a href="#visas"><span class="toc-n">08</span><span class="toc-t">Visas et formalités<small>Conditions d'entrée, dossier, rendez-vous et suivi de la demande.</small></span><span class="toc-a" aria-hidden="true">→</span></a></li>
     </ol>
   </div>
 </section>
@@ -726,11 +732,51 @@ blockquote { margin: 0; font: italic 400 24px/1.35 var(--serif); }
       <div class="item"><h3>Hélicoptère</h3><p>Transferts rapides entre l'aéroport, la ville et les sites difficiles d'accès.</p></div>
       <div class="item"><h3>Voitures de luxe</h3><p>Avec ou sans chauffeur, livrées à l'aéroport ou à l'hôtel.</p></div>
       <div class="item"><h3>Accueil aéroport</h3><p>Agent à l'arrivée, passage accéléré et salon privé.</p></div>
-      <div class="item"><h3>Visa et formalités</h3><p>Accompagnement pour les visas et documents de voyage.</p></div>
+      <div class="item"><h3>Visa et formalités</h3><p>Accompagnement pour les visas et documents de voyage. <a href="#visas">En savoir plus</a></p></div>
       <div class="item"><h3>Sécurité</h3><p>Agents de protection et véhicules adaptés.</p></div>
       <div class="item"><h3>Animaux à bord</h3><p>Vols et hébergements qui acceptent vos animaux.</p></div>
       <div class="item"><h3>eSIM</h3><p>Internet dès l'atterrissage, sans changer de carte SIM.</p></div>
       <div class="item"><h3>Restaurants et billetterie</h3><p>Tables, concerts, matchs et accès privilégiés.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 VISAS -->
+<section class="band night" id="visas" aria-labelledby="visas-titre">
+  <div class="wrap" style="display: flex; flex-direction: column; gap: clamp(40px, 5vw, 72px)">
+    <div class="spread">
+      <div class="s-head reveal">
+        <p class="kicker"><b>08</b> Visas et formalités</p>
+        <h2 class="title" id="visas-titre">Partez l'esprit tranquille, <em>dossier en règle.</em></h2>
+        <p class="lead">Conditions d'entrée, pièces à fournir, rendez-vous, délais : nous préparons vos formalités en même temps que le voyage, pour vous, votre entourage ou toute une équipe.</p>
+        <a class="arrow" href="#demande" data-tab="visa" style="align-self: flex-start">Préparer mon visa <span>→</span></a>
+      </div>
+      <div class="s-body reveal">
+        <p class="kicker" style="color: var(--night-text)">Ce que nous prenons en charge</p>
+        <ul class="dashlist">
+          <li>Vérification des conditions d'entrée selon votre nationalité, votre destination et le motif du voyage</li>
+          <li>Liste exacte des pièces à fournir, puis relecture complète du dossier</li>
+          <li>Prise de rendez-vous au consulat ou au centre de dépôt des visas</li>
+          <li>Demandes de visa électronique, lorsque le pays de destination le propose</li>
+          <li>Visas de groupe pour équipes, délégations, artistes et invités</li>
+          <li>Suivi de la demande et coordination avec les dates du voyage</li>
+        </ul>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="kicker" style="margin-bottom: 18px"><b>Aide&#8208;mémoire</b> Documents souvent demandés</p>
+      <div class="items items--3">
+        <div class="item"><h3>Passeport</h3><p>En cours de validité, généralement plusieurs mois après la date de retour, avec des pages vierges.</p></div>
+        <div class="item"><h3>Photos d'identité</h3><p>Récentes et conformes aux normes du pays de destination.</p></div>
+        <div class="item"><h3>Billets et hébergement</h3><p>Réservation de vol aller-retour, réservation d'hôtel ou attestation d'accueil.</p></div>
+        <div class="item"><h3>Justificatifs de ressources</h3><p>Relevés bancaires, attestation d'employeur ou prise en charge par un tiers.</p></div>
+        <div class="item"><h3>Assurance voyage</h3><p>Exigée notamment pour un visa Schengen, avec une couverture médicale minimale.</p></div>
+        <div class="item"><h3>Lettre d'invitation</h3><p>Pour un voyage d'affaires, un événement, une compétition ou une visite familiale.</p></div>
+      </div>
+      <div class="docs-note">
+        <p>Liste indicative : les pièces exigées varient selon le pays, votre nationalité et le motif du voyage. Nous vous envoyons la liste exacte pour votre dossier.</p>
+        <p>La délivrance du visa reste une décision des autorités du pays de destination. Les frais consulaires sont indiqués à part dans votre devis.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -844,6 +890,7 @@ blockquote { margin: 0; font: italic 400 24px/1.35 var(--serif); }
       <details><summary>Combien de temps à l'avance faut&#8208;il réserver ?</summary><p>Le plus tôt possible, surtout pour un groupe ou un événement. Pour une demande urgente, écrivez-nous directement sur WhatsApp : nous vérifions les disponibilités immédiatement.</p></details>
       <details><summary>Comment le prix est&#8208;il calculé ?</summary><p>Chaque demande reçoit un devis selon le trajet, les dates, le nombre de personnes et le niveau de service souhaité. La demande est gratuite et sans engagement.</p></details>
       <details><summary>L'estimation de durée de vol est&#8208;elle fiable ?</summary><p>Elle donne un ordre de grandeur calculé à partir de la distance entre les deux villes et de la vitesse moyenne de chaque type d'appareil. La durée réelle dépend de l'appareil choisi, des vents et des éventuelles escales : elle figure dans votre devis.</p></details>
+      <details><summary>Pouvez&#8208;vous garantir l'obtention d'un visa ?</summary><p>Non, et personne ne le peut : la décision appartient aux autorités du pays de destination. Notre rôle est de vous indiquer les bonnes conditions, de constituer un dossier complet et de le déposer dans les temps, ce qui évite la plupart des refus et des retards.</p></details>
       <details><summary>Quels moyens de paiement acceptez&#8208;vous ?</summary><p>Carte bancaire (Visa, Mastercard) et Mobile Money (Wave, Orange Money, MTN Mobile Money, Moov Money).</p></details>
       <details><summary>Mes informations restent&#8208;elles confidentielles ?</summary><p>Oui. Vos informations servent uniquement à organiser votre voyage, et un accord de confidentialité peut être signé sur demande. Le formulaire de ce site n'envoie rien à un serveur : il prépare un message que vous envoyez vous-même. Voir notre <a href="confidentialite.html">politique de confidentialité</a>.</p></details>
       <details><summary>Dans quels pays intervenez&#8208;vous ?</summary><p>En Afrique, en Europe et au Moyen-Orient. Consultez nos <a href="#destinations">destinations</a> ; les autres destinations sont étudiées sur demande.</p></details>
@@ -881,6 +928,7 @@ blockquote { margin: 0; font: italic 400 24px/1.35 var(--serif); }
         <a href="#evenements">Événements</a>
         <a href="#hotels">Hôtels et villas</a>
         <a href="#services">Services à la carte</a>
+        <a href="#visas">Visas et formalités</a>
       </nav>
       <nav aria-labelledby="f-infos">
         <h2 id="f-infos">Informations</h2>
@@ -1076,7 +1124,8 @@ blockquote { margin: 0; font: italic 400 24px/1.35 var(--serif); }
     { id: 'club', label: 'Club sportif', fields: [['Club ou fédération', 'Nom', 'text', 1], ['Trajet', 'Départ – arrivée', 'text', 1], ['Date aller', '', 'date', 1], ['Date retour', '', 'date', 0, 'Date aller'], ['Taille du groupe', 'Joueurs et staff', 'number']] },
     { id: 'vip', label: 'Personnalité', fields: [['Destination', 'Ville ou pays', 'text', 1], ['Date de départ', '', 'date', 1], ['Date de retour', '', 'date', 0, 'Date de départ'], ['Personnes', 'Vous et votre entourage', 'number'], ['Services souhaités', 'Jet, sécurité, chauffeur…', 'text']] },
     { id: 'event', label: 'Événement', fields: [["Type d'événement", 'Ex. sommet, concert, mariage', 'text', 1], ['Ville', "Lieu de l'événement", 'text', 1], ['Date de début', '', 'date', 1], ['Date de fin', '', 'date', 0, 'Date de début'], ['Invités à transporter', 'Nombre', 'number']] },
-    { id: 'hotel', label: 'Hôtel', options: ['Hôtel', 'Villa ou appartement'], fields: [['Destination', 'Ville ou pays', 'text', 1], ['Arrivée', '', 'date', 1], ['Départ', '', 'date', 0, 'Arrivée'], ['Voyageurs', 'Nombre de personnes', 'number']] }
+    { id: 'hotel', label: 'Hôtel', options: ['Hôtel', 'Villa ou appartement'], fields: [['Destination', 'Ville ou pays', 'text', 1], ['Arrivée', '', 'date', 1], ['Départ', '', 'date', 0, 'Arrivée'], ['Voyageurs', 'Nombre de personnes', 'number']] },
+    { id: 'visa', label: 'Visa', options: ['Tourisme', 'Affaires', 'Événement ou sport', 'Visite familiale'], fields: [['Nationalité', 'Ex. ivoirienne', 'text', 1], ['Pays de destination', 'Ex. France (Schengen)', 'text', 1], ['Date de départ', '', 'date', 1], ['Date de retour', '', 'date', 0, 'Date de départ'], ['Personnes', 'Nombre de demandeurs', 'number']] }
   ];
   var places = { 'jet:Départ': 1, 'jet:Arrivée': 1, 'yacht:Zone de navigation': 1, 'vip:Destination': 1, 'event:Ville': 1, 'hotel:Destination': 1 };
   var currencies = [['EUR', 'EUR · Euro'], ['USD', 'USD · Dollar américain'], ['GBP', 'GBP · Livre sterling'], ['XOF', 'XOF · Franc CFA (UEMOA)'], ['XAF', 'XAF · Franc CFA (CEMAC)'], ['AED', 'AED · Dirham des Émirats']];

@@ -20,7 +20,8 @@ Le site est statique : aucune dépendance, aucune compilation. Toute modificatio
 
 ## Modules de la page
 
-- **Formulaire de demande** (en haut de page) : six types de demande, champs obligatoires vérifiés, dates au format calendrier, devise du devis, précisions libres. Il prépare un message et l'ouvre dans WhatsApp ou dans la messagerie du visiteur ; rien n'est envoyé à un serveur. Le brouillon est gardé dans le navigateur du visiteur.
+- **Formulaire de demande** : sept types de demande (dont Visa), champs obligatoires vérifiés, dates au format calendrier, devise du devis, précisions libres. Il prépare un message et l'ouvre dans WhatsApp ou dans la messagerie du visiteur ; rien n'est envoyé à un serveur. Le brouillon est gardé dans le navigateur du visiteur.
+- **Section Visas et formalités** (`#visas`) : prise en charge, aide-mémoire des documents, lien vers la demande Visa.
 - **Estimateur de vol** (`#estimation`) : distance et durée de vol indicatives entre deux villes de la liste, pour un jet léger, intermédiaire et long-courrier, avec le type conseillé. Le bouton « Demander ce vol » pré-remplit le formulaire.
 - Menu adapté au mobile, bouton WhatsApp flottant, retour en haut de page, lien actif dans le menu, apparition progressive des sections (désactivée si le visiteur a demandé moins d'animations).
 
