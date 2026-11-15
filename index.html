@@ -6,543 +6,1048 @@
 <title>SoraTrave Prestige — Jets privés, yachts, clubs sportifs, personnalités et événements</title>
 <meta name="description" content="SoraTrave Prestige organise sur mesure vos vols en jet privé, locations de yachts, déplacements de clubs sportifs, voyages de personnalités, événements et hôtels entre l'Afrique, l'Europe et le Moyen-Orient.">
 <meta name="theme-color" content="#0A0E17">
+<link rel="canonical" href="https://soraprestige.com/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="SoraTrave Prestige">
+<meta property="og:title" content="SoraTrave Prestige — Le voyage d'exception, organisé pour vous">
+<meta property="og:description" content="Jets privés, yachts, clubs sportifs, personnalités, événements et hôtels entre l'Afrique, l'Europe et le Moyen-Orient.">
+<meta property="og:url" content="https://soraprestige.com/">
+<meta name="twitter:card" content="summary">
+<script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "SoraTrave Prestige",
+  "url": "https://soraprestige.com/",
+  "email": "contact@soratrave.com",
+  "telephone": "+33758954783",
+  "areaServed": ["Afrique", "Europe", "Moyen-Orient"],
+  "currenciesAccepted": "EUR, USD, GBP, XOF, XAF, AED"
+}
+</script>
 <style>
-body{margin:0;background:#0A0E17}
-a{color:#D4B26A}a:hover{color:#E8D09A}
-html{scroll-behavior:smooth}
-section{scroll-margin-top:96px}
-summary{cursor:pointer}
-#demande{scroll-margin-top:120px}
-@media(min-width:960px){header.site-header{position:sticky;top:0;z-index:10}}
-input::placeholder{color:#8D97AB}
+:root {
+  --bg: #0A0E17; --bg-2: #0E1421; --surface: #131B2B; --surface-2: #182236;
+  --line: #26314A; --line-2: #3D4C6B;
+  --text: #F5F1E8; --muted: #AEB6C6; --subtle: #8D97AB;
+  --gold: #D4B26A; --gold-2: #E8D09A; --ink: #0A0E17; --danger: #F2958A;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --radius: 16px; --header-h: 76px;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 400 16px/1.6 var(--sans); overflow-x: hidden; }
+img, svg { display: block; max-width: 100%; }
+a { color: var(--gold); }
+a:hover { color: var(--gold-2); }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+section[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
+#demande { scroll-margin-top: calc(var(--header-h) + 24px); }
+h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 700; line-height: 1.15; }
+p { margin: 0; }
+summary { cursor: pointer; }
+::placeholder { color: var(--subtle); }
+::selection { background: var(--gold); color: var(--ink); }
+.skip { position: absolute; left: 16px; top: -60px; z-index: 100; background: var(--gold); color: var(--ink); padding: 10px 16px; border-radius: 10px; font-weight: 600; text-decoration: none; }
+.skip:focus { top: 12px; }
+
+/* Mise en page */
+.container { max-width: 1200px; margin: 0 auto; padding-inline: 24px; }
+.section { padding-block: 104px; border-top: 1px solid var(--line); }
+.section--alt { background: var(--bg-2); }
+.stack { display: flex; flex-direction: column; gap: 22px; }
+.stack--lg { gap: 44px; }
+.intro { display: flex; flex-direction: column; gap: 18px; max-width: 760px; }
+.split { display: flex; flex-wrap: wrap; align-items: center; gap: 56px; }
+.split > * { flex: 1 1 440px; min-width: 0; }
+.split--reverse { flex-wrap: wrap-reverse; }
+.grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); }
+.grid--wide { grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
+.grid--tight { gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr)); }
+
+/* Typographie */
+.eyebrow { display: inline-flex; align-items: center; gap: 12px; color: var(--gold); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; }
+.eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--gold); }
+.h2 { font-size: clamp(30px, 3.6vw, 46px); letter-spacing: -0.01em; }
+.h2--sm { font-size: clamp(28px, 3.2vw, 40px); }
+.lead { color: var(--muted); font-size: 17px; }
+.muted { color: var(--muted); }
+.gold { color: var(--gold); }
+
+/* Boutons et liens */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 12px; font: 600 16px var(--sans); text-decoration: none; cursor: pointer; border: 1px solid transparent; transition: transform .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.btn--gold { background: var(--gold); color: var(--ink); }
+.btn--gold:hover { background: var(--gold-2); color: var(--ink); box-shadow: 0 10px 30px -12px rgba(212,178,106,.7); transform: translateY(-1px); }
+.btn--ghost { border-color: var(--line-2); color: var(--text); background: transparent; }
+.btn--ghost:hover { border-color: var(--gold); color: var(--text); }
+.btn--outline { border-color: var(--gold); color: var(--text); background: transparent; }
+.btn--outline:hover { background: rgba(212,178,106,.08); color: var(--text); }
+.btn--pill { border-radius: 999px; min-height: 44px; padding: 0 22px; font-size: 15px; }
+.link-arrow { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; color: var(--gold); font-weight: 600; text-decoration: none; padding: 12px 0; }
+.link-arrow span { transition: transform .2s ease; }
+.link-arrow:hover span { transform: translateX(4px); }
+.links-row { display: flex; flex-wrap: wrap; gap: 4px 28px; }
+
+/* En-tête */
+.site-header { position: sticky; top: 0; z-index: 50; background: rgba(10,14,23,.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid transparent; transition: border-color .3s ease, background-color .3s ease; }
+.site-header.is-scrolled { border-bottom-color: var(--line); background: rgba(10,14,23,.94); }
+.header-bar { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: var(--header-h); }
+.brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none; color: var(--text); font-family: var(--serif); font-weight: 700; font-size: 22px; white-space: nowrap; }
+.brand:hover { color: var(--text); }
+.brand small { color: var(--gold); font-family: var(--sans); font-weight: 400; letter-spacing: 0.22em; font-size: 12px; text-transform: uppercase; }
+.nav { display: flex; align-items: center; gap: 4px 26px; }
+.nav a:not(.btn) { position: relative; color: var(--text); text-decoration: none; font-size: 15px; padding: 12px 0; }
+.nav a:not(.btn)::after { content: ""; position: absolute; left: 0; right: 0; bottom: 6px; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
+.nav a:not(.btn):hover::after, .nav a.is-active::after { transform: scaleX(1); }
+.nav a.is-active { color: var(--gold-2); }
+.burger { display: none; width: 48px; height: 48px; border-radius: 12px; border: 1px solid var(--line-2); background: transparent; color: var(--text); cursor: pointer; align-items: center; justify-content: center; }
+.burger svg { width: 22px; height: 22px; }
+.burger .i-close { display: none; }
+.burger[aria-expanded="true"] .i-open { display: none; }
+.burger[aria-expanded="true"] .i-close { display: block; }
+@media (max-width: 1040px) {
+  .burger { display: inline-flex; }
+  .nav { position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 24px 24px; background: rgba(10,14,23,.98); border-bottom: 1px solid var(--line); max-height: calc(100vh - var(--header-h)); overflow-y: auto; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity .25s ease, transform .25s ease, visibility .25s; }
+  .nav.is-open { opacity: 1; visibility: visible; transform: none; }
+  .nav a:not(.btn) { padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 17px; }
+  .nav a:not(.btn)::after { display: none; }
+  .nav .btn { margin-top: 18px; }
+}
+
+/* Héros */
+.hero { position: relative; overflow: hidden; isolation: isolate; }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -2; background:
+  radial-gradient(60% 55% at 85% 10%, rgba(212,178,106,.16), transparent 70%),
+  radial-gradient(45% 50% at 5% 90%, rgba(61,76,107,.35), transparent 70%); }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .35; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 72px 72px; -webkit-mask-image: radial-gradient(70% 60% at 50% 30%, #000, transparent 75%); mask-image: radial-gradient(70% 60% at 50% 30%, #000, transparent 75%); }
+.hero-arc { position: absolute; z-index: -1; top: 40px; left: -40px; width: 760px; max-width: 90vw; pointer-events: none; opacity: .55; }
+.hero-arc path { stroke-dasharray: 6 10; animation: dash 30s linear infinite; }
+@keyframes dash { to { stroke-dashoffset: -480; } }
+.hero-inner { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 56px; padding-block: 88px 96px; }
+.hero-copy { flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 28px; padding-top: 12px; }
+.hero h1 { font-size: clamp(40px, 5.6vw, 72px); line-height: 1.05; letter-spacing: -0.02em; }
+.hero h1 em { font-style: italic; font-weight: 500; color: var(--gold); }
+.hero .lead { font-size: 19px; max-width: 540px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.ticks { display: flex; flex-wrap: wrap; gap: 12px 28px; font-size: 15px; padding: 0; margin: 0; list-style: none; }
+.ticks li { display: flex; align-items: center; gap: 10px; }
+.ticks svg, .checklist svg { flex: none; color: var(--gold); }
+
+/* Formulaire de demande */
+.panel { flex: 1 1 440px; min-width: 0; background: linear-gradient(180deg, rgba(24,34,54,.92), rgba(19,27,43,.96)); border: 1px solid var(--line); border-radius: 22px; padding: 28px; display: flex; flex-direction: column; gap: 22px; box-shadow: 0 40px 80px -40px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.04); }
+.panel-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.panel h2 { font-size: 24px; font-weight: 600; }
+.badge { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+.badge::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #5BD69A; box-shadow: 0 0 0 4px rgba(91,214,154,.15); }
+.form { display: flex; flex-direction: column; gap: 20px; }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pills--sub { padding-top: 16px; border-top: 1px solid var(--line); }
+.pill { min-height: 44px; padding: 0 18px; border-radius: 999px; cursor: pointer; font: 500 15px var(--sans); border: 1px solid var(--line-2); background: transparent; color: var(--text); transition: border-color .2s ease, background-color .2s ease; }
+.pill:hover { border-color: var(--gold); }
+.pill[aria-pressed="true"] { border-color: var(--gold); background: var(--gold); color: var(--ink); font-weight: 600; }
+.pills--sub .pill { border-radius: 10px; font-size: 14px; }
+.fields { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); }
+.field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.field--full { grid-column: 1 / -1; }
+.field label { font-size: 13px; color: var(--muted); }
+.field label b { color: var(--gold); font-weight: 500; }
+.input { height: 48px; width: 100%; padding: 0 14px; border-radius: 10px; border: 1px solid var(--line-2); background: var(--bg); color: var(--text); font: 400 16px var(--sans); transition: border-color .2s ease, box-shadow .2s ease; }
+textarea.input { height: auto; min-height: 88px; padding: 12px 14px; resize: vertical; }
+.input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(212,178,106,.18); }
+.input[aria-invalid="true"] { border-color: var(--danger); }
+input[type="date"].input::-webkit-calendar-picker-indicator { filter: invert(.8); cursor: pointer; }
+.form-error { color: var(--danger); font-size: 14px; min-height: 0; }
+.form-error:empty { display: none; }
+.form-ok { color: #8FE3B6; font-size: 14px; }
+.form-ok:empty { display: none; }
+.send { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr)); }
+.note { color: var(--muted); font-size: 13px; }
+
+/* Bandeau défilant */
+.ticker { border-block: 1px solid var(--line); background: var(--bg-2); overflow: hidden; padding: 18px 0; }
+.ticker-track { display: flex; width: max-content; gap: 48px; animation: ticker 60s linear infinite; }
+.ticker span { font-family: var(--serif); font-size: 18px; color: var(--muted); white-space: nowrap; display: inline-flex; align-items: center; gap: 48px; }
+.ticker span::after { content: "✦"; color: var(--gold); font-size: 12px; }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+@keyframes ticker { to { transform: translateX(-50%); } }
+
+/* Cartes */
+.card { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; display: flex; flex-direction: column; gap: 10px; transition: border-color .25s ease, transform .25s ease, background-color .25s ease; }
+.card h3 { font-weight: 600; font-size: 19px; }
+.card p { color: var(--muted); font-size: 15px; }
+.card:hover { border-color: rgba(212,178,106,.45); transform: translateY(-2px); }
+.card--plain { background: transparent; padding: 18px; gap: 6px; }
+.card--plain h3 { font-size: 17px; }
+.card .price { color: var(--gold); font-size: 14px; margin-top: auto; }
+.universe { text-decoration: none; color: var(--text); gap: 14px; overflow: hidden; }
+.universe:hover { color: var(--text); background: var(--surface-2); }
+.universe .ico { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; background: rgba(212,178,106,.08); border: 1px solid rgba(212,178,106,.25); color: var(--gold); }
+.universe .more { margin-top: auto; padding-top: 6px; color: var(--gold); font-size: 14px; font-weight: 600; opacity: .85; }
+.num { position: absolute; top: 22px; right: 24px; font-family: var(--serif); color: var(--line-2); font-size: 15px; }
+
+/* Visuels */
+.media { position: relative; min-height: 420px; border-radius: 22px; overflow: hidden; border: 1px solid var(--line); background: var(--surface); isolation: isolate; }
+.media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.media-art { position: absolute; inset: 0; z-index: -1; }
+.media-art::before { content: ""; position: absolute; inset: 0; background: radial-gradient(80% 70% at 75% 20%, rgba(212,178,106,.28), transparent 60%), radial-gradient(70% 60% at 10% 100%, rgba(61,76,107,.7), transparent 70%), linear-gradient(160deg, #1A2540, #0B101B 70%); }
+.media-art svg { position: absolute; right: -8%; bottom: -6%; width: 78%; height: auto; color: rgba(212,178,106,.22); }
+.media-tag { position: absolute; left: 20px; bottom: 20px; right: 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 18px; border-radius: 14px; background: rgba(10,14,23,.66); border: 1px solid rgba(255,255,255,.08); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); font-size: 14px; }
+.media-tag strong { font-family: var(--serif); font-weight: 600; font-size: 17px; }
+.media-tag span { color: var(--muted); }
+
+/* Listes */
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { border: 1px solid var(--gold); color: var(--gold); border-radius: 999px; padding: 7px 16px; font-size: 14px; }
+.checklist { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.checklist li { display: flex; gap: 12px; align-items: flex-start; }
+.checklist svg { margin-top: 3px; }
+.checklist--cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 14px 32px; }
+
+/* Estimateur de vol */
+.estimator { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 28px; display: flex; flex-direction: column; gap: 22px; }
+.est-form { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); align-items: end; }
+.est-swap { width: 48px; height: 48px; border-radius: 12px; border: 1px solid var(--line-2); background: transparent; color: var(--text); cursor: pointer; display: grid; place-items: center; }
+.est-swap:hover { border-color: var(--gold); }
+.est-actions { display: flex; gap: 10px; }
+.est-actions .btn { flex: 1; }
+.est-result:empty { display: none; }
+.est-summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.est-summary strong { font-family: var(--serif); font-size: 22px; font-weight: 600; }
+.est-rows { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); padding-top: 16px; }
+.est-row { border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; }
+.est-row.is-best { border-color: var(--gold); background: rgba(212,178,106,.06); }
+.est-row .t { font-family: var(--serif); font-size: 26px; color: var(--gold); }
+.est-row .k { font-weight: 600; }
+.est-row .s { color: var(--muted); font-size: 14px; }
+.est-row .flag { align-self: flex-start; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); background: var(--gold); border-radius: 999px; padding: 2px 10px; }
+.est-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; padding-top: 18px; }
+
+/* Destinations, étapes */
+.region { border-top: 2px solid var(--gold); padding-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+.region h3 { font-weight: 600; font-size: 20px; }
+.region p { color: var(--muted); font-size: 15px; }
+.facts { display: grid; gap: 20px 32px; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); border-top: 1px solid var(--line); padding-top: 28px; }
+.fact { display: flex; flex-direction: column; gap: 4px; }
+.fact .k { color: var(--muted); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
+.steps { margin: 0; padding: 0; list-style: none; display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); counter-reset: step; }
+.steps li { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; display: flex; flex-direction: column; gap: 10px; }
+.steps li::before { counter-increment: step; content: "0" counter(step); font-family: var(--serif); font-size: 44px; line-height: 1; color: transparent; -webkit-text-stroke: 1px var(--gold); }
+.steps h3 { font-weight: 600; font-size: 20px; }
+.steps p { color: var(--muted); font-size: 15px; }
+.pledge { display: flex; flex-direction: column; gap: 12px; }
+.pledge h3 { font-weight: 600; font-size: 18px; }
+.pledge p { color: var(--muted); font-size: 15px; }
+.pledge .ico { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; border: 1px solid rgba(212,178,106,.35); color: var(--gold); }
+
+/* Équipe, confiance (sections à compléter) */
+.person { display: flex; align-items: center; gap: 20px; }
+.avatar { flex: none; width: 84px; height: 84px; border-radius: 50%; border: 1px dashed var(--line-2); display: grid; place-items: center; color: var(--muted); font-size: 12px; overflow: hidden; }
+.stat { display: flex; flex-direction: column; gap: 6px; }
+.stat b { font-family: var(--serif); font-weight: 600; font-size: 34px; color: var(--gold); }
+.logo-slot { height: 84px; border: 1px dashed var(--line-2); border-radius: 12px; display: grid; place-items: center; color: var(--muted); font-size: 13px; }
+blockquote { margin: 0; font-size: 17px; }
+
+/* Partenaires */
+.offer { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; display: flex; flex-direction: column; gap: 16px; }
+.offer-row { display: flex; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--line); padding-bottom: 14px; }
+.offer-row span:last-child { font-weight: 600; text-align: right; }
+
+/* FAQ */
+.faq { border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { list-style: none; min-height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-family: var(--serif); font-weight: 600; font-size: 18px; padding: 8px 0; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: ""; flex: none; width: 12px; height: 12px; border-right: 1.5px solid var(--gold); border-bottom: 1.5px solid var(--gold); transform: rotate(45deg) translateY(-4px); transition: transform .25s ease; }
+.faq details[open] summary::after { transform: rotate(225deg) translateY(-2px); }
+.faq details p { color: var(--muted); padding: 0 0 20px; max-width: 720px; }
+
+/* Contact, pied de page */
+.contact { background: radial-gradient(60% 120% at 100% 0%, rgba(212,178,106,.14), transparent 60%), var(--surface); }
+.contact-actions { flex: 0 1 380px; display: flex; flex-direction: column; gap: 14px; }
+.site-footer { border-top: 1px solid var(--line); font-size: 15px; }
+.footer-grid { display: flex; flex-wrap: wrap; gap: 36px 56px; padding-block: 56px 20px; }
+.footer-grid > * { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.footer-grid h2 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.footer-grid a { color: var(--muted); text-decoration: none; padding: 6px 0; }
+.footer-grid a:hover { color: var(--gold-2); }
+.footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 40px; padding-block: 28px 36px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
+
+/* Boutons flottants */
+.floating { position: fixed; right: 20px; bottom: 20px; z-index: 40; display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+.fab { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; border: 0; cursor: pointer; text-decoration: none; box-shadow: 0 14px 30px -10px rgba(0,0,0,.7); transition: transform .2s ease, opacity .3s ease, visibility .3s; }
+.fab:hover { transform: translateY(-2px); }
+.fab--wa { background: #25D366; color: #fff; }
+.fab--wa:hover { color: #fff; }
+.fab--top { width: 46px; height: 46px; background: var(--surface-2); color: var(--text); border: 1px solid var(--line-2); opacity: 0; visibility: hidden; }
+.fab--top.is-visible { opacity: 1; visibility: visible; }
+
+/* Apparition au défilement */
+.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.js .reveal.is-in { opacity: 1; transform: none; }
+.hero-copy > * { animation: rise .8s ease both; }
+.hero-copy > *:nth-child(2) { animation-delay: .08s; }
+.hero-copy > *:nth-child(3) { animation-delay: .16s; }
+.hero-copy > *:nth-child(4) { animation-delay: .24s; }
+.hero-copy > *:nth-child(5) { animation-delay: .32s; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+
+@media (max-width: 640px) {
+  .section { padding-block: 72px; }
+  .hero-inner { padding-block: 48px 64px; gap: 40px; }
+  .panel, .estimator, .offer { padding: 20px; }
+  .media { min-height: 300px; }
+  .brand { font-size: 19px; }
+  .brand small { font-size: 11px; letter-spacing: .16em; }
+  .floating { right: 14px; bottom: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .reveal { opacity: 1; transform: none; }
+}
 </style>
 </head>
 <body>
-<div style="background: #0A0E17; color: #F5F1E8; font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.6">
+<a class="skip" href="#contenu">Aller au contenu</a>
 
-<header class="site-header" style="background: rgba(10,14,23,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid #26314A">
-<div style="max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px">
-<a href="#top" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #F5F1E8; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 22px; min-height: 44px">SoraTrave <span style="color: #D4B26A; font-weight: 400; letter-spacing: 0.18em; font-size: 13px; text-transform: uppercase">Prestige</span></a>
-<nav aria-label="Navigation principale" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px">
-<a href="#jets" style="color: #F5F1E8; text-decoration: none; font-size: 15px; padding: 12px 0">Jets privés</a>
-<a href="#yachts" style="color: #F5F1E8; text-decoration: none; font-size: 15px; padding: 12px 0">Yachts</a>
-<a href="#clubs" style="color: #F5F1E8; text-decoration: none; font-size: 15px; padding: 12px 0">Clubs sportifs</a>
-<a href="#vip" style="color: #F5F1E8; text-decoration: none; font-size: 15px; padding: 12px 0">Personnalités</a>
-<a href="#evenements" style="color: #F5F1E8; text-decoration: none; font-size: 15px; padding: 12px 0">Événements</a>
-<a href="#hotels" style="color: #F5F1E8; text-decoration: none; font-size: 15px; padding: 12px 0">Hôtels</a>
-<a href="#demande" style="background: #D4B26A; color: #0A0E17; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 999px">Demander un devis</a>
-</nav>
-</div>
+<header class="site-header" id="header">
+  <div class="container header-bar">
+    <a class="brand" href="#top">SoraTrave <small>Prestige</small></a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+      <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="#jets">Jets privés</a>
+      <a href="#yachts">Yachts</a>
+      <a href="#clubs">Clubs sportifs</a>
+      <a href="#vip">Personnalités</a>
+      <a href="#evenements">Événements</a>
+      <a href="#hotels">Hôtels</a>
+      <a href="#estimation">Estimer un vol</a>
+      <a class="btn btn--gold btn--pill" href="#demande">Demander un devis</a>
+    </nav>
+  </div>
 </header>
 
-<section id="top">
-<div style="max-width: 1200px; margin: 0 auto; padding: 88px 24px 96px; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 56px">
-<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
-<p style="margin: 0; color: #D4B26A; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase">Afrique · Europe · sur mesure</p>
-<h1 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(38px, 5.4vw, 68px); line-height: 1.08; letter-spacing: -0.02em">Le voyage d'exception, organisé pour vous.</h1>
-<p style="margin: 0; color: #AEB6C6; font-size: 19px; max-width: 520px">Jets privés, yachts et catamarans, déplacements de clubs sportifs, voyages de personnalités et transport d'événements : une seule équipe prépare chaque détail, du départ à l'arrivée.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 12px 32px; color: #F5F1E8; font-size: 15px">
-<span style="display: flex; align-items: center; gap: 10px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Paiement sécurisé</span>
-<span style="display: flex; align-items: center; gap: 10px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Partenaires vérifiés</span>
-<span style="display: flex; align-items: center; gap: 10px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Confidentialité</span>
-</div>
-</div>
+<main id="contenu">
 
-<div style="flex: 1 1 420px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 22px">
-<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 22px" id="demande">Votre demande</h2>
-<datalist id="sora-lieux">
-<option value="Abidjan, Côte d'Ivoire"></option><option value="Yamoussoukro, Côte d'Ivoire"></option><option value="Dakar, Sénégal"></option><option value="Bamako, Mali"></option><option value="Conakry, Guinée"></option><option value="Ouagadougou, Burkina Faso"></option><option value="Niamey, Niger"></option><option value="Lomé, Togo"></option><option value="Cotonou, Bénin"></option><option value="Accra, Ghana"></option><option value="Lagos, Nigeria"></option><option value="Abuja, Nigeria"></option><option value="Douala, Cameroun"></option><option value="Yaoundé, Cameroun"></option><option value="Libreville, Gabon"></option><option value="Brazzaville, Congo"></option><option value="Kinshasa, RD Congo"></option><option value="Luanda, Angola"></option><option value="Kigali, Rwanda"></option><option value="Nairobi, Kenya"></option><option value="Addis-Abeba, Éthiopie"></option><option value="Dar es Salaam, Tanzanie"></option><option value="Zanzibar, Tanzanie"></option><option value="Johannesburg, Afrique du Sud"></option><option value="Le Cap, Afrique du Sud"></option><option value="Casablanca, Maroc"></option><option value="Marrakech, Maroc"></option><option value="Rabat, Maroc"></option><option value="Alger, Algérie"></option><option value="Tunis, Tunisie"></option><option value="Le Caire, Égypte"></option><option value="Paris, France"></option><option value="Nice, France"></option><option value="Cannes, France"></option><option value="Marseille, France"></option><option value="Lyon, France"></option><option value="Monaco"></option><option value="Londres, Royaume-Uni"></option><option value="Bruxelles, Belgique"></option><option value="Genève, Suisse"></option><option value="Madrid, Espagne"></option><option value="Barcelone, Espagne"></option><option value="Ibiza, Espagne"></option><option value="Lisbonne, Portugal"></option><option value="Rome, Italie"></option><option value="Milan, Italie"></option><option value="Athènes, Grèce"></option><option value="Mykonos, Grèce"></option><option value="Istanbul, Turquie"></option><option value="Dubaï, Émirats arabes unis"></option><option value="Abu Dhabi, Émirats arabes unis"></option><option value="Doha, Qatar"></option><option value="Riyad, Arabie saoudite"></option>
-</datalist>
-<div id="sora-form" style="display: flex; flex-direction: column; gap: 22px"></div>
-<p style="margin: 0; color: #AEB6C6; font-size: 13px">Sans engagement. Vos informations restent strictement confidentielles.</p>
-</div>
-</div>
+<section class="hero" id="top">
+  <svg class="hero-arc" viewBox="0 0 760 320" fill="none" aria-hidden="true"><path d="M20 300C180 60 520 20 740 120" stroke="#D4B26A" stroke-width="1.2"/></svg>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow">Afrique · Europe · Moyen-Orient</p>
+      <h1>Le voyage d'exception, <em>organisé pour vous.</em></h1>
+      <p class="lead">Jets privés, yachts et catamarans, déplacements de clubs sportifs, voyages de personnalités et transport d'événements : une seule équipe prépare chaque détail, du départ à l'arrivée.</p>
+      <div class="hero-actions">
+        <a class="btn btn--gold" href="#demande">Demander un devis</a>
+        <a class="btn btn--ghost" href="#estimation">Estimer un vol</a>
+      </div>
+      <ul class="ticks">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Paiement sécurisé</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Partenaires vérifiés</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Confidentialité</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <h2 id="demande">Votre demande</h2>
+        <span class="badge">Réponse personnalisée</span>
+      </div>
+      <datalist id="sora-lieux"></datalist>
+      <form class="form" id="sora-form" novalidate></form>
+      <p class="note">Sans engagement. Vos informations restent strictement confidentielles et ne sont enregistrées que dans votre navigateur.</p>
+    </div>
+  </div>
 </section>
 
-<section aria-label="Nos quatre univers" style="border-top: 1px solid #26314A; border-bottom: 1px solid #26314A; background: #0E1421">
-<div style="max-width: 1200px; margin: 0 auto; padding: 56px 24px; display: flex; flex-wrap: wrap; gap: 20px">
-<a href="#jets" style="flex: 1 1 300px; min-width: 0; text-decoration: none; color: #F5F1E8; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 14px">
-<svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.500 5.300c.3.4.8.5 1.300.3l.5-.2c.4-.3.6-.7.5-1.200z"/></svg>
-<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 19px">Jets privés</span>
-<span style="color: #AEB6C6; font-size: 15px">Vols à la demande, à vos horaires, vers les aéroports de votre choix.</span>
-</a>
-<a href="#yachts" style="flex: 1 1 300px; min-width: 0; text-decoration: none; color: #F5F1E8; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 14px">
-<svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M12 4l7 10h-7"/><path d="M12 7l-5 7h5"/><path d="M3 17h18l-2.500 4h-13z"/></svg>
-<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 19px">Yachts et catamarans</span>
-<span style="color: #AEB6C6; font-size: 15px">Location avec équipage, à la journée ou à la semaine.</span>
-</a>
-<a href="#clubs" style="flex: 1 1 300px; min-width: 0; text-decoration: none; color: #F5F1E8; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 14px">
-<svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4a3 3 0 0 0 3 4"/><path d="M17 6h3a3 3 0 0 1-3 4"/></svg>
-<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 19px">Clubs sportifs</span>
-<span style="color: #AEB6C6; font-size: 15px">Transport, hébergement et logistique de toute l'équipe.</span>
-</a>
-<a href="#vip" style="flex: 1 1 300px; min-width: 0; text-decoration: none; color: #F5F1E8; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 14px">
-<svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.700 5.700 6.300.800-4.600 4.300 1.200 6.200L12 17l-5.600 3 1.200-6.200L3 9.500l6.300-.800z"/></svg>
-<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 19px">Personnalités et stars</span>
-<span style="color: #AEB6C6; font-size: 15px">Voyages discrets et sécurisés pour artistes, dirigeants et officiels.</span>
-</a>
-<a href="#evenements" style="flex: 1 1 300px; min-width: 0; text-decoration: none; color: #F5F1E8; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 14px">
-<svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2-6h14l2 6v5h-3v-2H6v2H3z"/><path d="M3 13h18"/><circle cx="7" cy="15" r="0.6"/><circle cx="17" cy="15" r="0.6"/></svg>
-<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 19px">Événements et chauffeurs</span>
-<span style="color: #AEB6C6; font-size: 15px">Chauffeurs privés et transport complet de vos invités.</span>
-</a>
-<a href="#hotels" style="flex: 1 1 300px; min-width: 0; text-decoration: none; color: #F5F1E8; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 14px">
-<svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20V8"/><path d="M3 16h18v4"/><path d="M21 16v-3a3 3 0 0 0-3-3h-7v6"/><circle cx="7" cy="12" r="2"/></svg>
-<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 19px">Hôtels et villas</span>
-<span style="color: #AEB6C6; font-size: 15px">Palaces, suites et villas privées réservés avec votre voyage.</span>
-</a>
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="ticker"></div>
 </div>
+
+<section class="section section--alt" aria-labelledby="univers-titre" style="border-top: 0">
+  <div class="container stack stack--lg">
+    <div class="intro reveal">
+      <p class="eyebrow">Nos univers</p>
+      <h2 class="h2" id="univers-titre">Un seul interlocuteur pour tout le voyage.</h2>
+    </div>
+    <div class="grid grid--wide">
+      <a class="card universe reveal" href="#jets"><span class="num">01</span><span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span><h3>Jets privés</h3><p>Vols à la demande, à vos horaires, vers les aéroports de votre choix.</p><span class="more">Découvrir →</span></a>
+      <a class="card universe reveal" href="#yachts"><span class="num">02</span><span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v13"/><path d="M12 4l7 10h-7"/><path d="M12 7l-5 7h5"/><path d="M3 17h18l-2.5 4h-13z"/></svg></span><h3>Yachts et catamarans</h3><p>Location avec équipage, à la journée ou à la semaine.</p><span class="more">Découvrir →</span></a>
+      <a class="card universe reveal" href="#clubs"><span class="num">03</span><span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4a3 3 0 0 0 3 4"/><path d="M17 6h3a3 3 0 0 1-3 4"/></svg></span><h3>Clubs sportifs</h3><p>Transport, hébergement et logistique de toute l'équipe.</p><span class="more">Découvrir →</span></a>
+      <a class="card universe reveal" href="#vip"><span class="num">04</span><span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.7 6.3.8-4.6 4.3 1.2 6.2L12 17l-5.6 3 1.2-6.2L3 9.5l6.3-.8z"/></svg></span><h3>Personnalités et stars</h3><p>Voyages discrets et sécurisés pour artistes, dirigeants et officiels.</p><span class="more">Découvrir →</span></a>
+      <a class="card universe reveal" href="#evenements"><span class="num">05</span><span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13l2-6h14l2 6v5h-3v-2H6v2H3z"/><path d="M3 13h18"/><circle cx="7" cy="15" r=".6"/><circle cx="17" cy="15" r=".6"/></svg></span><h3>Événements et chauffeurs</h3><p>Chauffeurs privés et transport complet de vos invités.</p><span class="more">Découvrir →</span></a>
+      <a class="card universe reveal" href="#hotels"><span class="num">06</span><span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20V8"/><path d="M3 16h18v4"/><path d="M21 16v-3a3 3 0 0 0-3-3h-7v6"/><circle cx="7" cy="12" r="2"/></svg></span><h3>Hôtels et villas</h3><p>Palaces, suites et villas privées réservés avec votre voyage.</p><span class="more">Découvrir →</span></a>
+    </div>
+  </div>
 </section>
 
-<section id="jets">
-<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
-<div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
-<p style="margin: 0; color: #D4B26A; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase">01 · Jets privés</p>
-<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.15">Décollez à votre heure, pas à celle des autres.</h2>
-<p style="margin: 0; color: #AEB6C6">Vous indiquez le trajet et la date, nous trouvons l'appareil adapté et gérons le reste : créneaux, accueil au terminal, transferts au sol et restauration à bord.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 10px">
-<span style="border: 1px solid #D4B26A; color: #D4B26A; border-radius: 999px; padding: 8px 16px; font-size: 14px">Aller simple</span>
-<span style="border: 1px solid #D4B26A; color: #D4B26A; border-radius: 999px; padding: 8px 16px; font-size: 14px">Aller-retour</span>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 14px">
-<div style="flex: 1 1 150px; min-width: 0; border: 1px solid #26314A; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600">Jet léger</span><span style="color: #AEB6C6; font-size: 14px">Trajets courts, petits groupes</span><span style="color: #D4B26A; font-size: 14px">[VOTRE TARIF] / heure</span></div>
-<div style="flex: 1 1 150px; min-width: 0; border: 1px solid #26314A; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600">Jet intermédiaire</span><span style="color: #AEB6C6; font-size: 14px">Vols régionaux, plus d'espace</span><span style="color: #D4B26A; font-size: 14px">[VOTRE TARIF] / heure</span></div>
-<div style="flex: 1 1 150px; min-width: 0; border: 1px solid #26314A; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600">Long-courrier</span><span style="color: #AEB6C6; font-size: 14px">Afrique – Europe sans escale</span><span style="color: #D4B26A; font-size: 14px">[VOTRE TARIF] / heure</span></div>
-<div style="flex: 1 1 150px; min-width: 0; border: 1px solid #26314A; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600">Avion de groupe</span><span style="color: #AEB6C6; font-size: 14px">Équipes, délégations, tournées</span><span style="color: #D4B26A; font-size: 14px">Sur devis</span></div>
-</div>
-<a href="#demande" data-tab="jet" style="align-self: flex-start; color: #D4B26A; font-weight: 600; text-decoration: none; padding: 12px 0">Demander un vol →</a>
-</div>
-<div role="img" aria-label="Emplacement photo : jet privé sur le tarmac" style="flex: 1 1 440px; min-width: 0; min-height: 380px; border: 1px dashed #3D4C6B; border-radius: 20px; background: #131B2B; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; color: #AEB6C6; font-size: 14px; text-align: center; padding: 24px; box-sizing: border-box">
-<svg aria-hidden="true" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#3D4C6B" stroke-width="1.200" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.500 5.300c.3.4.8.5 1.300.3l.5-.2c.4-.3.6-.7.5-1.200z"/></svg>
-[PHOTO : jet privé sur le tarmac]
-</div>
-</div>
+<section class="section" id="jets">
+  <div class="container split">
+    <div class="stack reveal">
+      <p class="eyebrow">01 · Jets privés</p>
+      <h2 class="h2">Décollez à votre heure, pas à celle des autres.</h2>
+      <p class="lead">Vous indiquez le trajet et la date, nous trouvons l'appareil adapté et gérons le reste : créneaux, accueil au terminal, transferts au sol et restauration à bord.</p>
+      <div class="chips"><span class="chip">Aller simple</span><span class="chip">Aller-retour</span><span class="chip">Multi-étapes</span></div>
+      <div class="grid grid--tight">
+        <div class="card card--plain"><h3>Jet léger</h3><p>Trajets courts, petits groupes</p><span class="price">Sur devis</span></div>
+        <div class="card card--plain"><h3>Jet intermédiaire</h3><p>Vols régionaux, plus d'espace</p><span class="price">Sur devis</span></div>
+        <div class="card card--plain"><h3>Long-courrier</h3><p>Afrique – Europe sans escale</p><span class="price">Sur devis</span></div>
+        <div class="card card--plain"><h3>Avion de groupe</h3><p>Équipes, délégations, tournées</p><span class="price">Sur devis</span></div>
+      </div>
+      <div class="links-row">
+        <a class="link-arrow" href="#demande" data-tab="jet">Demander un vol <span>→</span></a>
+        <a class="link-arrow" href="#estimation">Estimer la durée du vol <span>→</span></a>
+      </div>
+    </div>
+    <!-- Pour mettre une photo : ajoutez <img src="images/jet.jpg" alt="Jet privé sur le tarmac"> juste après <figure class="media …">. -->
+    <figure class="media reveal" style="margin: 0">
+      <div class="media-art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=".5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></div>
+      <figcaption class="media-tag"><strong>Vols à la demande</strong><span>Afrique · Europe · Moyen-Orient</span></figcaption>
+    </figure>
+  </div>
 </section>
 
-<section id="yachts" style="background: #0E1421; border-top: 1px solid #26314A; border-bottom: 1px solid #26314A">
-<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap-reverse; align-items: center; gap: 56px">
-<div role="img" aria-label="Emplacement photo : yacht au mouillage" style="flex: 1 1 440px; min-width: 0; min-height: 380px; border: 1px dashed #3D4C6B; border-radius: 20px; background: #131B2B; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; color: #AEB6C6; font-size: 14px; text-align: center; padding: 24px; box-sizing: border-box">
-<svg aria-hidden="true" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#3D4C6B" stroke-width="1.200" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M12 4l7 10h-7"/><path d="M12 7l-5 7h5"/><path d="M3 17h18l-2.500 4h-13z"/></svg>
-[PHOTO : yacht au mouillage]
-</div>
-<div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
-<p style="margin: 0; color: #D4B26A; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase">02 · Yachts et catamarans</p>
-<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.15">La mer comme adresse privée.</h2>
-<p style="margin: 0; color: #AEB6C6">Croisière en famille, séminaire en mer ou réception à quai : nous sélectionnons le bateau, l'équipage et l'itinéraire selon votre programme.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 14px">
-<div style="flex: 1 1 200px; min-width: 0; border: 1px solid #26314A; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600">Yacht charter</span><span style="color: #AEB6C6; font-size: 14px">Le bateau et son équipage pour vous seuls, plusieurs jours ou une semaine.</span></div>
-<div style="flex: 1 1 200px; min-width: 0; border: 1px solid #26314A; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600">Sortie de pêche</span><span style="color: #AEB6C6; font-size: 14px">Fishing trip en mer avec skipper et matériel fournis.</span></div>
-<div style="flex: 1 1 200px; min-width: 0; border: 1px solid #26314A; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600">Croisière à la journée</span><span style="color: #AEB6C6; font-size: 14px">Baignade, déjeuner à bord et retour au coucher du soleil.</span></div>
-<div style="flex: 1 1 200px; min-width: 0; border: 1px solid #26314A; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600">Réception à bord</span><span style="color: #AEB6C6; font-size: 14px">Anniversaire, séminaire ou soirée privée, à quai ou en mer.</span></div>
-</div>
-<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
-<li style="display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"/></svg><span>Yachts à moteur, voiliers et catamarans avec équipage</span></li>
-<li style="display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"/></svg><span>Chef à bord, activités nautiques et escales sur mesure</span></li>
-<li style="display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"/></svg><span>Zones de navigation : [VOS DESTINATIONS]</span></li>
-<li style="display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"/></svg><span>À partir de [VOTRE TARIF] par jour</span></li>
-</ul>
-<a href="#demande" data-tab="yacht" style="align-self: flex-start; color: #D4B26A; font-weight: 600; text-decoration: none; padding: 12px 0">Réserver un yacht →</a>
-</div>
-</div>
+<section class="section section--alt" id="estimation" aria-labelledby="estimation-titre">
+  <div class="container stack stack--lg">
+    <div class="intro reveal">
+      <p class="eyebrow">Estimateur de vol</p>
+      <h2 class="h2" id="estimation-titre">Combien de temps dure votre vol ?</h2>
+      <p class="lead">Choisissez une ville de départ et d'arrivée : nous estimons la distance et la durée de vol selon le type d'appareil.</p>
+    </div>
+    <div class="estimator reveal">
+      <form class="est-form" id="est-form" novalidate>
+        <div class="field"><label for="est-from">Départ</label><input class="input" id="est-from" list="sora-lieux" placeholder="Ex. Abidjan" autocomplete="off"></div>
+        <div class="field"><label for="est-to">Arrivée</label><input class="input" id="est-to" list="sora-lieux" placeholder="Ex. Paris" autocomplete="off"></div>
+        <div class="est-actions">
+          <button class="est-swap" type="button" id="est-swap" aria-label="Inverser départ et arrivée"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4 3 8l4 4"/><path d="M3 8h14"/><path d="m17 20 4-4-4-4"/><path d="M21 16H7"/></svg></button>
+          <button class="btn btn--gold" type="submit">Estimer</button>
+        </div>
+      </form>
+      <div class="est-result" id="est-result" aria-live="polite"></div>
+    </div>
+  </div>
 </section>
 
-<section id="clubs">
-<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
-<div style="display: flex; flex-direction: column; gap: 18px; max-width: 760px">
-<p style="margin: 0; color: #D4B26A; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase">03 · Clubs sportifs</p>
-<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.15">Votre équipe arrive prête à jouer.</h2>
-<p style="margin: 0; color: #AEB6C6">Clubs, fédérations et sélections : nous organisons les déplacements de match, de stage et de tournoi, pour les joueurs, le staff et le matériel.</p>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 20px">
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Vols d'équipe</span><span style="color: #AEB6C6; font-size: 15px">Charter complet ou places groupées, avec horaires calés sur le calendrier sportif.</span></div>
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Hébergement groupé</span><span style="color: #AEB6C6; font-size: 15px">Hôtels proches du stade, étages réservés, repas adaptés aux sportifs.</span></div>
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Matériel et bagages</span><span style="color: #AEB6C6; font-size: 15px">Équipements, matériel médical et bagages hors format pris en charge.</span></div>
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Coordinateur dédié</span><span style="color: #AEB6C6; font-size: 15px">Un seul interlocuteur avant, pendant et après le déplacement.</span></div>
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Bus et transferts sur place</span><span style="color: #AEB6C6; font-size: 15px">Car d'équipe et véhicules du staff entre l'aéroport, l'hôtel, l'entraînement et le stade.</span></div>
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Stages et entraînements</span><span style="color: #AEB6C6; font-size: 15px">Recherche de terrains, salles de sport et centres de récupération pour vos stages.</span></div>
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Visas et formalités de groupe</span><span style="color: #AEB6C6; font-size: 15px">Suivi des passeports, visas et listes de passagers pour tout l'effectif.</span></div>
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Dirigeants et supporters</span><span style="color: #AEB6C6; font-size: 15px">Déplacements séparés pour les dirigeants, les familles, la presse et les supporters.</span></div>
-</div>
-<a href="#demande" data-tab="club" style="align-self: flex-start; color: #D4B26A; font-weight: 600; text-decoration: none; padding: 12px 0">Planifier un déplacement d'équipe →</a>
-</div>
+<section class="section" id="yachts">
+  <div class="container split split--reverse">
+    <figure class="media reveal" style="margin: 0">
+      <div class="media-art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=".5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v13"/><path d="M12 4l7 10h-7"/><path d="M12 7l-5 7h5"/><path d="M3 17h18l-2.5 4h-13z"/></svg></div>
+      <figcaption class="media-tag"><strong>Avec équipage</strong><span>À la journée ou à la semaine</span></figcaption>
+    </figure>
+    <div class="stack reveal">
+      <p class="eyebrow">02 · Yachts et catamarans</p>
+      <h2 class="h2">La mer comme adresse privée.</h2>
+      <p class="lead">Croisière en famille, séminaire en mer ou réception à quai : nous sélectionnons le bateau, l'équipage et l'itinéraire selon votre programme.</p>
+      <div class="grid grid--tight" style="grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr))">
+        <div class="card card--plain"><h3>Yacht charter</h3><p>Le bateau et son équipage pour vous seuls, plusieurs jours ou une semaine.</p></div>
+        <div class="card card--plain"><h3>Sortie de pêche</h3><p>Fishing trip en mer avec skipper et matériel fournis.</p></div>
+        <div class="card card--plain"><h3>Croisière à la journée</h3><p>Baignade, déjeuner à bord et retour au coucher du soleil.</p></div>
+        <div class="card card--plain"><h3>Réception à bord</h3><p>Anniversaire, séminaire ou soirée privée, à quai ou en mer.</p></div>
+      </div>
+      <ul class="checklist">
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Yachts à moteur, voiliers et catamarans avec équipage</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Chef à bord, activités nautiques et escales sur mesure</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Tarif sur devis, selon le bateau, la durée et la saison</span></li>
+      </ul>
+      <a class="link-arrow" href="#demande" data-tab="yacht">Réserver un yacht <span>→</span></a>
+    </div>
+  </div>
 </section>
 
-<section id="vip" style="background: #0E1421; border-top: 1px solid #26314A; border-bottom: 1px solid #26314A">
-<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
-<div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
-<p style="margin: 0; color: #D4B26A; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase">04 · Personnalités et stars</p>
-<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.15">Discrétion totale, service complet.</h2>
-<p style="margin: 0; color: #AEB6C6">Artistes, sportifs de haut niveau, dirigeants et personnalités publiques : chaque voyage est préparé en toute confidentialité, avec votre entourage et votre agenda.</p>
-<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
-<li style="display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"/></svg><span>Accord de confidentialité sur demande</span></li>
-<li style="display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"/></svg><span>Accueil VIP à l'aéroport et passage accéléré</span></li>
-<li style="display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"/></svg><span>Chauffeur privé et sécurité rapprochée</span></li>
-<li style="display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"/></svg><span>Suites, villas et tournées : entourage et équipes inclus</span></li>
-<li style="display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"/></svg><span>Tournées et agendas sur plusieurs villes, en lien avec votre manager</span></li>
-<li style="display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"/></svg><span>Réservations sous un autre nom et itinéraires tenus secrets</span></li>
-<li style="display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"/></svg><span>Assistant de voyage sur place pendant tout le séjour</span></li>
-<li style="display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"/></svg><span>Demandes personnelles : tables, shopping privé, loisirs, bagages</span></li>
-</ul>
-<a href="#demande" data-tab="vip" style="align-self: flex-start; color: #D4B26A; font-weight: 600; text-decoration: none; padding: 12px 0">Parler à un conseiller →</a>
-</div>
-<div role="img" aria-label="Emplacement photo : accueil VIP et berline avec chauffeur" style="flex: 1 1 440px; min-width: 0; min-height: 380px; border: 1px dashed #3D4C6B; border-radius: 20px; background: #131B2B; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; color: #AEB6C6; font-size: 14px; text-align: center; padding: 24px; box-sizing: border-box">
-<svg aria-hidden="true" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#3D4C6B" stroke-width="1.200" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.700 5.700 6.300.800-4.600 4.300 1.200 6.200L12 17l-5.600 3 1.200-6.200L3 9.500l6.300-.800z"/></svg>
-[PHOTO : accueil VIP, berline avec chauffeur]
-</div>
-</div>
+<section class="section section--alt" id="clubs">
+  <div class="container stack stack--lg">
+    <div class="intro reveal">
+      <p class="eyebrow">03 · Clubs sportifs</p>
+      <h2 class="h2">Votre équipe arrive prête à jouer.</h2>
+      <p class="lead">Clubs, fédérations et sélections : nous organisons les déplacements de match, de stage et de tournoi, pour les joueurs, le staff et le matériel.</p>
+    </div>
+    <div class="grid">
+      <div class="card reveal"><h3>Vols d'équipe</h3><p>Charter complet ou places groupées, avec horaires calés sur le calendrier sportif.</p></div>
+      <div class="card reveal"><h3>Hébergement groupé</h3><p>Hôtels proches du stade, étages réservés, repas adaptés aux sportifs.</p></div>
+      <div class="card reveal"><h3>Matériel et bagages</h3><p>Équipements, matériel médical et bagages hors format pris en charge.</p></div>
+      <div class="card reveal"><h3>Coordinateur dédié</h3><p>Un seul interlocuteur avant, pendant et après le déplacement.</p></div>
+      <div class="card reveal"><h3>Bus et transferts sur place</h3><p>Car d'équipe et véhicules du staff entre l'aéroport, l'hôtel, l'entraînement et le stade.</p></div>
+      <div class="card reveal"><h3>Stages et entraînements</h3><p>Recherche de terrains, salles de sport et centres de récupération pour vos stages.</p></div>
+      <div class="card reveal"><h3>Visas et formalités de groupe</h3><p>Suivi des passeports, visas et listes de passagers pour tout l'effectif.</p></div>
+      <div class="card reveal"><h3>Dirigeants et supporters</h3><p>Déplacements séparés pour les dirigeants, les familles, la presse et les supporters.</p></div>
+    </div>
+    <a class="link-arrow" href="#demande" data-tab="club">Planifier un déplacement d'équipe <span>→</span></a>
+  </div>
 </section>
 
-<section id="evenements">
-<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
-<div style="display: flex; flex-direction: column; gap: 18px; max-width: 760px">
-<p style="margin: 0; color: #D4B26A; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase">05 · Événements et chauffeurs</p>
-<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.15">Vos invités sont attendus, jamais en attente.</h2>
-<p style="margin: 0; color: #AEB6C6">Sommets et forums, compétitions sportives, concerts et tournées, mariages et cérémonies privées : nous prenons en charge tous les déplacements de l'événement, de l'aéroport à la dernière voiture du soir.</p>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 20px">
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Chauffeurs privés</span><span style="color: #AEB6C6; font-size: 15px">Transferts ou mise à disposition à la journée, en berline, van ou minibus.</span></div>
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Accueil des invités</span><span style="color: #AEB6C6; font-size: 15px">Prise en charge à l'aéroport des délégations, intervenants et artistes.</span></div>
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Coordination sur place</span><span style="color: #AEB6C6; font-size: 15px">Un responsable suit les trajets entre tous les lieux et gère les changements de dernière minute.</span></div>
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Conciergerie</span><span style="color: #AEB6C6; font-size: 15px">Hébergement des invités, restaurants, accès VIP aux matchs et spectacles.</span></div>
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Navettes pour les invités</span><span style="color: #AEB6C6; font-size: 15px">Minibus et cars en rotation entre les hôtels et les lieux de l'événement.</span></div>
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Lieux et réceptions</span><span style="color: #AEB6C6; font-size: 15px">Recherche de salles, villas ou yachts pour vos dîners, soirées et cérémonies.</span></div>
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Protocole et délégations</span><span style="color: #AEB6C6; font-size: 15px">Accueil des officiels, cortèges et coordination avec les services de sécurité.</span></div>
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Aux couleurs de l'événement</span><span style="color: #AEB6C6; font-size: 15px">Véhicules et tenues des chauffeurs personnalisés à votre image.</span></div>
-</div>
-<p style="margin: 0; color: #D4B26A; font-size: 15px">Villes couvertes : [VOS VILLES]</p>
-<a href="#demande" data-tab="event" style="align-self: flex-start; color: #D4B26A; font-weight: 600; text-decoration: none; padding: 12px 0">Organiser le transport d'un événement →</a>
-</div>
+<section class="section" id="vip">
+  <div class="container split">
+    <div class="stack reveal">
+      <p class="eyebrow">04 · Personnalités et stars</p>
+      <h2 class="h2">Discrétion totale, service complet.</h2>
+      <p class="lead">Artistes, sportifs de haut niveau, dirigeants et personnalités publiques : chaque voyage est préparé en toute confidentialité, avec votre entourage et votre agenda.</p>
+      <ul class="checklist">
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Accord de confidentialité sur demande</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Accueil VIP à l'aéroport et passage accéléré</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Chauffeur privé et sécurité rapprochée</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Suites, villas et tournées : entourage et équipes inclus</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Tournées et agendas sur plusieurs villes, en lien avec votre manager</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Réservations sous un autre nom et itinéraires tenus secrets</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Assistant de voyage sur place pendant tout le séjour</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Demandes personnelles : tables, shopping privé, loisirs, bagages</span></li>
+      </ul>
+      <a class="link-arrow" href="#demande" data-tab="vip">Parler à un conseiller <span>→</span></a>
+    </div>
+    <figure class="media reveal" style="margin: 0">
+      <div class="media-art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=".5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.7 6.3.8-4.6 4.3 1.2 6.2L12 17l-5.6 3 1.2-6.2L3 9.5l6.3-.8z"/></svg></div>
+      <figcaption class="media-tag"><strong>Accueil VIP</strong><span>Confidentialité garantie</span></figcaption>
+    </figure>
+  </div>
 </section>
 
-<section id="hotels" style="border-top: 1px solid #26314A">
-<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
-<div style="display: flex; flex-direction: column; gap: 18px; max-width: 760px">
-<p style="margin: 0; color: #D4B26A; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase">06 · Hôtels et villas</p>
-<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.15">Une adresse à la hauteur du voyage.</h2>
-<p style="margin: 0; color: #AEB6C6">Nous réservons votre hébergement en même temps que votre jet, votre yacht ou votre événement, pour une seule organisation et une seule facture.</p>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 20px">
-<div style="flex: 1 1 300px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Hôtels et palaces</span><span style="color: #AEB6C6; font-size: 15px">Chambres et suites dans des établissements haut de gamme, en Afrique et en Europe.</span></div>
-<div style="flex: 1 1 300px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Villas et appartements</span><span style="color: #AEB6C6; font-size: 15px">Des résidences privées pour plus d'espace et de discrétion, avec personnel sur demande.</span></div>
-<div style="flex: 1 1 300px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Réservations de groupe</span><span style="color: #AEB6C6; font-size: 15px">Équipes, délégations et invités logés ensemble, au même endroit.</span></div>
-<div style="flex: 1 1 300px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Demandes particulières</span><span style="color: #AEB6C6; font-size: 15px">Arrivée anticipée, départ tardif, chambres communicantes, étage réservé : nous les négocions avec l'hôtel.</span></div>
-<div style="flex: 1 1 300px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Séminaires et réunions</span><span style="color: #AEB6C6; font-size: 15px">Salles de réunion, salons privés et restauration pour vos rendez-vous d'affaires.</span></div>
-<div style="flex: 1 1 300px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Longs séjours</span><span style="color: #AEB6C6; font-size: 15px">Résidences et appartements avec services pour les missions de plusieurs semaines.</span></div>
-</div>
-<a href="#demande" data-tab="hotel" style="align-self: flex-start; color: #D4B26A; font-weight: 600; text-decoration: none; padding: 12px 0">Réserver un hébergement →</a>
-</div>
+<section class="section section--alt" id="evenements">
+  <div class="container stack stack--lg">
+    <div class="intro reveal">
+      <p class="eyebrow">05 · Événements et chauffeurs</p>
+      <h2 class="h2">Vos invités sont attendus, jamais en attente.</h2>
+      <p class="lead">Sommets et forums, compétitions sportives, concerts et tournées, mariages et cérémonies privées : nous prenons en charge tous les déplacements de l'événement, de l'aéroport à la dernière voiture du soir.</p>
+    </div>
+    <div class="grid">
+      <div class="card reveal"><h3>Chauffeurs privés</h3><p>Transferts ou mise à disposition à la journée, en berline, van ou minibus.</p></div>
+      <div class="card reveal"><h3>Accueil des invités</h3><p>Prise en charge à l'aéroport des délégations, intervenants et artistes.</p></div>
+      <div class="card reveal"><h3>Coordination sur place</h3><p>Un responsable suit les trajets entre tous les lieux et gère les changements de dernière minute.</p></div>
+      <div class="card reveal"><h3>Conciergerie</h3><p>Hébergement des invités, restaurants, accès VIP aux matchs et spectacles.</p></div>
+      <div class="card reveal"><h3>Navettes pour les invités</h3><p>Minibus et cars en rotation entre les hôtels et les lieux de l'événement.</p></div>
+      <div class="card reveal"><h3>Lieux et réceptions</h3><p>Recherche de salles, villas ou yachts pour vos dîners, soirées et cérémonies.</p></div>
+      <div class="card reveal"><h3>Protocole et délégations</h3><p>Accueil des officiels, cortèges et coordination avec les services de sécurité.</p></div>
+      <div class="card reveal"><h3>Aux couleurs de l'événement</h3><p>Véhicules et tenues des chauffeurs personnalisés à votre image.</p></div>
+    </div>
+    <a class="link-arrow" href="#demande" data-tab="event">Organiser le transport d'un événement <span>→</span></a>
+  </div>
 </section>
 
-<section id="services" style="background: #0E1421; border-top: 1px solid #26314A">
-<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
-<div style="display: flex; flex-direction: column; gap: 18px; max-width: 760px">
-<p style="margin: 0; color: #D4B26A; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase">07 · Services à la carte</p>
-<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.15">Tout ce qui entoure le voyage.</h2>
-<p style="margin: 0; color: #AEB6C6">Ajoutez à votre demande les services dont vous avez besoin : nous les coordonnons avec le reste du voyage.</p>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 20px">
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Hélicoptère</span><span style="color: #AEB6C6; font-size: 15px">Transferts rapides entre l'aéroport, la ville et les sites difficiles d'accès.</span></div>
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Voitures de luxe</span><span style="color: #AEB6C6; font-size: 15px">Location avec ou sans chauffeur, livrée à l'aéroport ou à l'hôtel.</span></div>
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Accueil aéroport</span><span style="color: #AEB6C6; font-size: 15px">Agent à l'arrivée, passage accéléré aux contrôles et salon privé.</span></div>
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Visa et formalités</span><span style="color: #AEB6C6; font-size: 15px">Accompagnement pour les visas, autorisations et documents de voyage.</span></div>
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Sécurité</span><span style="color: #AEB6C6; font-size: 15px">Agents de protection et véhicules adaptés, en coordination avec votre équipe.</span></div>
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Animaux à bord</span><span style="color: #AEB6C6; font-size: 15px">Vols et hébergements qui acceptent vos animaux de compagnie.</span></div>
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">eSIM et connectivité</span><span style="color: #AEB6C6; font-size: 15px">Internet dès l'atterrissage, sans changer de carte SIM.</span></div>
-<div style="flex: 1 1 250px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Restaurants et billetterie</span><span style="color: #AEB6C6; font-size: 15px">Tables, concerts, matchs et accès privilégiés réservés pour vous.</span></div>
-</div>
-</div>
+<section class="section" id="hotels">
+  <div class="container stack stack--lg">
+    <div class="intro reveal">
+      <p class="eyebrow">06 · Hôtels et villas</p>
+      <h2 class="h2">Une adresse à la hauteur du voyage.</h2>
+      <p class="lead">Nous réservons votre hébergement en même temps que votre jet, votre yacht ou votre événement, pour une seule organisation et une seule facture.</p>
+    </div>
+    <div class="grid grid--wide">
+      <div class="card reveal"><h3>Hôtels et palaces</h3><p>Chambres et suites dans des établissements haut de gamme, en Afrique et en Europe.</p></div>
+      <div class="card reveal"><h3>Villas et appartements</h3><p>Des résidences privées pour plus d'espace et de discrétion, avec personnel sur demande.</p></div>
+      <div class="card reveal"><h3>Réservations de groupe</h3><p>Équipes, délégations et invités logés ensemble, au même endroit.</p></div>
+      <div class="card reveal"><h3>Demandes particulières</h3><p>Arrivée anticipée, départ tardif, chambres communicantes, étage réservé : nous les négocions avec l'hôtel.</p></div>
+      <div class="card reveal"><h3>Séminaires et réunions</h3><p>Salles de réunion, salons privés et restauration pour vos rendez-vous d'affaires.</p></div>
+      <div class="card reveal"><h3>Longs séjours</h3><p>Résidences et appartements avec services pour les missions de plusieurs semaines.</p></div>
+    </div>
+    <a class="link-arrow" href="#demande" data-tab="hotel">Réserver un hébergement <span>→</span></a>
+  </div>
 </section>
 
-<section id="destinations" aria-labelledby="destinations-titre" style="border-top: 1px solid #26314A">
-<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
-<div style="display: flex; flex-direction: column; gap: 18px; max-width: 760px">
-<p style="margin: 0; color: #D4B26A; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase">Destinations</p>
-<h2 id="destinations-titre" style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.15">Trois régions, un même niveau de service.</h2>
-<p style="margin: 0; color: #AEB6C6">Nous organisons vos voyages au départ et à destination des grandes villes d'Afrique, d'Europe et du Moyen-Orient. Autres destinations sur demande.</p>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 28px 32px">
-<div style="flex: 1 1 250px; min-width: 0; border-top: 2px solid #D4B26A; padding-top: 20px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 20px">Afrique de l'Ouest et centrale</span><span style="color: #AEB6C6; font-size: 15px">Abidjan · Dakar · Lagos · Accra · Douala · Libreville · Kinshasa</span></div>
-<div style="flex: 1 1 250px; min-width: 0; border-top: 2px solid #D4B26A; padding-top: 20px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 20px">Afrique du Nord et de l'Est</span><span style="color: #AEB6C6; font-size: 15px">Casablanca · Marrakech · Tunis · Le Caire · Nairobi · Kigali · Zanzibar</span></div>
-<div style="flex: 1 1 250px; min-width: 0; border-top: 2px solid #D4B26A; padding-top: 20px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 20px">Europe</span><span style="color: #AEB6C6; font-size: 15px">Paris · Nice · Monaco · Londres · Genève · Ibiza · Mykonos</span></div>
-<div style="flex: 1 1 250px; min-width: 0; border-top: 2px solid #D4B26A; padding-top: 20px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 20px">Moyen-Orient</span><span style="color: #AEB6C6; font-size: 15px">Dubaï · Abu Dhabi · Doha · Riyad</span></div>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 20px 32px; border-top: 1px solid #26314A; padding-top: 28px">
-<div style="flex: 1 1 250px; min-width: 0; display: flex; flex-direction: column; gap: 4px"><span style="color: #AEB6C6; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase">Devises du devis</span><span style="font-size: 16px">EUR · USD · GBP · XOF · XAF · AED</span></div>
-<div style="flex: 1 1 250px; min-width: 0; display: flex; flex-direction: column; gap: 4px"><span style="color: #AEB6C6; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase">Langues</span><span style="font-size: 16px">[VOS LANGUES]</span></div>
-<div style="flex: 1 1 250px; min-width: 0; display: flex; flex-direction: column; gap: 4px"><span style="color: #AEB6C6; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase">Disponibilité</span><span style="font-size: 16px">[VOS HORAIRES]</span></div>
-<div style="flex: 1 1 250px; min-width: 0; display: flex; flex-direction: column; gap: 4px"><span style="color: #AEB6C6; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase">Bureaux</span><span style="font-size: 16px">[VOS BUREAUX]</span></div>
-</div>
-</div>
+<section class="section section--alt" id="services">
+  <div class="container stack stack--lg">
+    <div class="intro reveal">
+      <p class="eyebrow">07 · Services à la carte</p>
+      <h2 class="h2">Tout ce qui entoure le voyage.</h2>
+      <p class="lead">Ajoutez à votre demande les services dont vous avez besoin : nous les coordonnons avec le reste du voyage.</p>
+    </div>
+    <div class="grid">
+      <div class="card reveal"><h3>Hélicoptère</h3><p>Transferts rapides entre l'aéroport, la ville et les sites difficiles d'accès.</p></div>
+      <div class="card reveal"><h3>Voitures de luxe</h3><p>Location avec ou sans chauffeur, livrée à l'aéroport ou à l'hôtel.</p></div>
+      <div class="card reveal"><h3>Accueil aéroport</h3><p>Agent à l'arrivée, passage accéléré aux contrôles et salon privé.</p></div>
+      <div class="card reveal"><h3>Visa et formalités</h3><p>Accompagnement pour les visas, autorisations et documents de voyage.</p></div>
+      <div class="card reveal"><h3>Sécurité</h3><p>Agents de protection et véhicules adaptés, en coordination avec votre équipe.</p></div>
+      <div class="card reveal"><h3>Animaux à bord</h3><p>Vols et hébergements qui acceptent vos animaux de compagnie.</p></div>
+      <div class="card reveal"><h3>eSIM et connectivité</h3><p>Internet dès l'atterrissage, sans changer de carte SIM.</p></div>
+      <div class="card reveal"><h3>Restaurants et billetterie</h3><p>Tables, concerts, matchs et accès privilégiés réservés pour vous.</p></div>
+    </div>
+  </div>
 </section>
 
-<section aria-labelledby="engagements-titre" style="background: #0E1421; border-top: 1px solid #26314A">
-<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
-<div style="display: flex; flex-direction: column; gap: 18px; max-width: 760px">
-<p style="margin: 0; color: #D4B26A; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase">Nos engagements</p>
-<h2 id="engagements-titre" style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(28px, 3.2vw, 40px); line-height: 1.15">Pourquoi nous confier votre voyage.</h2>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 32px 40px">
-<div style="flex: 1 1 230px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
-<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Un interlocuteur unique</span>
-<span style="color: #AEB6C6; font-size: 15px">La même personne suit votre dossier de la demande jusqu'au retour.</span>
-</div>
-<div style="flex: 1 1 230px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
-<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Partenaires vérifiés</span>
-<span style="color: #AEB6C6; font-size: 15px">Opérateurs aériens, armateurs et chauffeurs sélectionnés et contrôlés par nos soins.</span>
-</div>
-<div style="flex: 1 1 230px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
-<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Confidentialité</span>
-<span style="color: #AEB6C6; font-size: 15px">Vos trajets, vos invités et vos données ne sont partagés avec personne.</span>
-</div>
-<div style="flex: 1 1 230px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D4B26A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7"/><path d="M9 16h7"/></svg>
-<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px">Prix clairs</span>
-<span style="color: #AEB6C6; font-size: 15px">Un devis détaillé dans votre devise, validé par vous avant toute réservation.</span>
-</div>
-</div>
-</div>
+<section class="section" id="destinations" aria-labelledby="destinations-titre">
+  <div class="container stack stack--lg">
+    <div class="intro reveal">
+      <p class="eyebrow">Destinations</p>
+      <h2 class="h2" id="destinations-titre">Trois régions, un même niveau de service.</h2>
+      <p class="lead">Nous organisons vos voyages au départ et à destination des grandes villes d'Afrique, d'Europe et du Moyen-Orient. Autres destinations sur demande.</p>
+    </div>
+    <div class="grid">
+      <div class="region reveal"><h3>Afrique de l'Ouest et centrale</h3><p>Abidjan · Dakar · Lagos · Accra · Douala · Libreville · Kinshasa</p></div>
+      <div class="region reveal"><h3>Afrique du Nord et de l'Est</h3><p>Casablanca · Marrakech · Tunis · Le Caire · Nairobi · Kigali · Zanzibar</p></div>
+      <div class="region reveal"><h3>Europe</h3><p>Paris · Nice · Monaco · Londres · Genève · Ibiza · Mykonos</p></div>
+      <div class="region reveal"><h3>Moyen-Orient</h3><p>Dubaï · Abu Dhabi · Doha · Riyad</p></div>
+    </div>
+    <div class="facts reveal">
+      <div class="fact"><span class="k">Devises du devis</span><span>EUR · USD · GBP · XOF · XAF · AED</span></div>
+      <div class="fact"><span class="k">Paiement</span><span>Carte bancaire et Mobile Money</span></div>
+      <!-- À compléter puis décommenter :
+      <div class="fact"><span class="k">Langues</span><span>[VOS LANGUES]</span></div>
+      <div class="fact"><span class="k">Disponibilité</span><span>[VOS HORAIRES]</span></div>
+      <div class="fact"><span class="k">Bureaux</span><span>[VOS BUREAUX]</span></div>
+      -->
+    </div>
+  </div>
 </section>
 
-<section aria-labelledby="etapes-titre" style="border-top: 1px solid #26314A">
-<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
-<h2 id="etapes-titre" style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(28px, 3.200vw, 40px); line-height: 1.15">Trois étapes, un seul interlocuteur.</h2>
-<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 20px">
-<li style="flex: 1 1 280px; min-width: 0; border-top: 2px solid #D4B26A; padding-top: 22px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; color: #D4B26A; font-size: 14px">Étape 1</span><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 20px">Vous décrivez votre besoin</span><span style="color: #AEB6C6; font-size: 15px">Trajet, dates, nombre de personnes et exigences particulières.</span></li>
-<li style="flex: 1 1 280px; min-width: 0; border-top: 2px solid #D4B26A; padding-top: 22px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; color: #D4B26A; font-size: 14px">Étape 2</span><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 20px">Nous vous envoyons une proposition</span><span style="color: #AEB6C6; font-size: 15px">Options chiffrées dans votre devise, auprès de partenaires vérifiés.</span></li>
-<li style="flex: 1 1 280px; min-width: 0; border-top: 2px solid #D4B26A; padding-top: 22px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Playfair Display', Georgia, serif; color: #D4B26A; font-size: 14px">Étape 3</span><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 20px">Vous validez, nous organisons</span><span style="color: #AEB6C6; font-size: 15px">Paiement sécurisé par carte ou Mobile Money, puis suivi jusqu'au retour.</span></li>
-</ol>
-</div>
+<section class="section section--alt" aria-labelledby="engagements-titre">
+  <div class="container stack stack--lg">
+    <div class="intro reveal">
+      <p class="eyebrow">Nos engagements</p>
+      <h2 class="h2 h2--sm" id="engagements-titre">Pourquoi nous confier votre voyage.</h2>
+    </div>
+    <div class="grid">
+      <div class="pledge reveal"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><h3>Un interlocuteur unique</h3><p>La même personne suit votre dossier de la demande jusqu'au retour.</p></div>
+      <div class="pledge reveal"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Partenaires vérifiés</h3><p>Opérateurs aériens, armateurs et chauffeurs sélectionnés et contrôlés par nos soins.</p></div>
+      <div class="pledge reveal"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><h3>Confidentialité</h3><p>Vos trajets, vos invités et vos données ne sont partagés avec personne.</p></div>
+      <div class="pledge reveal"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7"/><path d="M9 16h7"/></svg></span><h3>Prix clairs</h3><p>Un devis détaillé dans votre devise, validé par vous avant toute réservation.</p></div>
+    </div>
+  </div>
 </section>
 
-<section aria-labelledby="equipe-titre" style="border-top: 1px solid #26314A">
-<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
-<div style="display: flex; flex-direction: column; gap: 18px; max-width: 760px">
-<p style="margin: 0; color: #D4B26A; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase">Votre équipe</p>
-<h2 id="equipe-titre" style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.15">Des personnes, pas un standard.</h2>
-<p style="margin: 0; color: #AEB6C6">Une question ? Nos conseillers vous répondent directement et suivent votre dossier à chaque étape.</p>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 20px">
-<div style="flex: 1 1 320px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 24px; display: flex; align-items: center; gap: 20px"><div role="img" aria-label="Emplacement photo du conseiller" style="flex: none; width: 84px; height: 84px; border-radius: 50%; border: 1px dashed #3D4C6B; display: flex; align-items: center; justify-content: center; color: #AEB6C6; font-size: 12px">[PHOTO]</div><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 19px">[NOM DU CONSEILLER]</span><span style="color: #AEB6C6; font-size: 15px">[Fonction]</span></div></div>
-<div style="flex: 1 1 320px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 24px; display: flex; align-items: center; gap: 20px"><div role="img" aria-label="Emplacement photo du conseiller" style="flex: none; width: 84px; height: 84px; border-radius: 50%; border: 1px dashed #3D4C6B; display: flex; align-items: center; justify-content: center; color: #AEB6C6; font-size: 12px">[PHOTO]</div><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 19px">[NOM DU CONSEILLER]</span><span style="color: #AEB6C6; font-size: 15px">[Fonction]</span></div></div>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 24px 32px; border-top: 1px solid #26314A; padding-top: 32px">
-<div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 30px; color: #D4B26A">[CHIFFRE]</span><span style="color: #AEB6C6; font-size: 15px">voyages organisés</span></div>
-<div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 30px; color: #D4B26A">[CHIFFRE]</span><span style="color: #AEB6C6; font-size: 15px">pays desservis</span></div>
-<div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 30px; color: #D4B26A">[CHIFFRE]</span><span style="color: #AEB6C6; font-size: 15px">partenaires vérifiés</span></div>
-<div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 30px; color: #D4B26A">[NOTE] / 5</span><span style="color: #AEB6C6; font-size: 15px">satisfaction clients</span></div>
-</div>
-</div>
+<section class="section" aria-labelledby="etapes-titre">
+  <div class="container stack stack--lg">
+    <div class="intro reveal">
+      <p class="eyebrow">Comment ça marche</p>
+      <h2 class="h2 h2--sm" id="etapes-titre">Trois étapes, un seul interlocuteur.</h2>
+    </div>
+    <ol class="steps">
+      <li class="reveal"><h3>Vous décrivez votre besoin</h3><p>Trajet, dates, nombre de personnes et exigences particulières.</p></li>
+      <li class="reveal"><h3>Nous vous envoyons une proposition</h3><p>Options chiffrées dans votre devise, auprès de partenaires vérifiés.</p></li>
+      <li class="reveal"><h3>Vous validez, nous organisons</h3><p>Paiement sécurisé par carte ou Mobile Money, puis suivi jusqu'au retour.</p></li>
+    </ol>
+  </div>
 </section>
 
-<section aria-labelledby="confiance-titre" style="background: #0E1421; border-top: 1px solid #26314A">
-<div style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 36px">
-<h2 id="confiance-titre" style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(28px, 3.2vw, 40px); line-height: 1.15">Ils nous font confiance.</h2>
-<div style="display: flex; flex-wrap: wrap; gap: 16px">
-<div style="flex: 1 1 160px; min-width: 0; height: 84px; border: 1px dashed #3D4C6B; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #AEB6C6; font-size: 13px">[LOGO PARTENAIRE]</div>
-<div style="flex: 1 1 160px; min-width: 0; height: 84px; border: 1px dashed #3D4C6B; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #AEB6C6; font-size: 13px">[LOGO PARTENAIRE]</div>
-<div style="flex: 1 1 160px; min-width: 0; height: 84px; border: 1px dashed #3D4C6B; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #AEB6C6; font-size: 13px">[LOGO PARTENAIRE]</div>
-<div style="flex: 1 1 160px; min-width: 0; height: 84px; border: 1px dashed #3D4C6B; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #AEB6C6; font-size: 13px">[LOGO PARTENAIRE]</div>
-<div style="flex: 1 1 160px; min-width: 0; height: 84px; border: 1px dashed #3D4C6B; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #AEB6C6; font-size: 13px">[LOGO PARTENAIRE]</div>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 20px">
-<figure style="flex: 1 1 320px; min-width: 0; margin: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 16px"><blockquote style="margin: 0; font-size: 17px">[TÉMOIGNAGE CLIENT : deux ou trois phrases]</blockquote><figcaption style="color: #AEB6C6; font-size: 14px">[Nom, fonction]</figcaption></figure>
-<figure style="flex: 1 1 320px; min-width: 0; margin: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 16px"><blockquote style="margin: 0; font-size: 17px">[TÉMOIGNAGE CLIENT : deux ou trois phrases]</blockquote><figcaption style="color: #AEB6C6; font-size: 14px">[Nom, fonction]</figcaption></figure>
-</div>
-</div>
+<!-- SECTION MASQUÉE tant que les informations ne sont pas renseignées : retirez l'attribut « hidden » pour l'afficher. -->
+<section class="section section--alt" aria-labelledby="equipe-titre" hidden>
+  <div class="container stack stack--lg">
+    <div class="intro">
+      <p class="eyebrow">Votre équipe</p>
+      <h2 class="h2" id="equipe-titre">Des personnes, pas un standard.</h2>
+      <p class="lead">Une question ? Nos conseillers vous répondent directement et suivent votre dossier à chaque étape.</p>
+    </div>
+    <div class="grid grid--wide">
+      <div class="card person"><div class="avatar">[PHOTO]</div><div><h3>[NOM DU CONSEILLER]</h3><p>[Fonction]</p></div></div>
+      <div class="card person"><div class="avatar">[PHOTO]</div><div><h3>[NOM DU CONSEILLER]</h3><p>[Fonction]</p></div></div>
+    </div>
+    <div class="facts">
+      <div class="stat"><b>[CHIFFRE]</b><span class="muted">voyages organisés</span></div>
+      <div class="stat"><b>[CHIFFRE]</b><span class="muted">pays desservis</span></div>
+      <div class="stat"><b>[CHIFFRE]</b><span class="muted">partenaires vérifiés</span></div>
+      <div class="stat"><b>[NOTE] / 5</b><span class="muted">satisfaction clients</span></div>
+    </div>
+  </div>
 </section>
 
-<section id="partenaires" aria-labelledby="partenaires-titre" style="border-top: 1px solid #26314A">
-<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 40px 56px">
-<div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
-<p style="margin: 0; color: #D4B26A; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase">Programme partenaires</p>
-<h2 id="partenaires-titre" style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.15">Vous avez les clients, nous organisons le voyage.</h2>
-<p style="margin: 0; color: #AEB6C6">Agents de joueurs, managers d'artistes, conciergeries, agences et organisateurs d'événements : confiez-nous les déplacements de vos clients et recevez une commission sur chaque voyage réalisé.</p>
-</div>
-<div style="flex: 1 1 360px; min-width: 0; background: #131B2B; border: 1px solid #26314A; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 16px">
-<div style="display: flex; justify-content: space-between; gap: 16px; border-bottom: 1px solid #26314A; padding-bottom: 14px"><span style="color: #AEB6C6">Commission</span><span style="font-weight: 600">[VOTRE COMMISSION]</span></div>
-<div style="display: flex; justify-content: space-between; gap: 16px; border-bottom: 1px solid #26314A; padding-bottom: 14px"><span style="color: #AEB6C6">Votre client</span><span style="font-weight: 600; text-align: right">Reste votre client</span></div>
-<div style="display: flex; justify-content: space-between; gap: 16px"><span style="color: #AEB6C6">Suivi</span><span style="font-weight: 600; text-align: right">Un conseiller dédié</span></div>
-<a href="mailto:contact@soratrave.com?subject=Programme%20partenaires" style="display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 12px; background: #D4B26A; color: #0A0E17; font-weight: 600; text-decoration: none; padding: 0 20px">Devenir partenaire</a>
-</div>
-</div>
+<!-- SECTION MASQUÉE tant que les logos et témoignages ne sont pas renseignés : retirez l'attribut « hidden » pour l'afficher. -->
+<section class="section" aria-labelledby="confiance-titre" hidden>
+  <div class="container stack stack--lg">
+    <h2 class="h2 h2--sm" id="confiance-titre">Ils nous font confiance.</h2>
+    <div class="grid grid--tight">
+      <div class="logo-slot">[LOGO PARTENAIRE]</div>
+      <div class="logo-slot">[LOGO PARTENAIRE]</div>
+      <div class="logo-slot">[LOGO PARTENAIRE]</div>
+      <div class="logo-slot">[LOGO PARTENAIRE]</div>
+      <div class="logo-slot">[LOGO PARTENAIRE]</div>
+    </div>
+    <div class="grid grid--wide">
+      <figure class="card" style="margin: 0"><blockquote>[TÉMOIGNAGE CLIENT : deux ou trois phrases]</blockquote><figcaption class="muted">[Nom, fonction]</figcaption></figure>
+      <figure class="card" style="margin: 0"><blockquote>[TÉMOIGNAGE CLIENT : deux ou trois phrases]</blockquote><figcaption class="muted">[Nom, fonction]</figcaption></figure>
+    </div>
+  </div>
 </section>
 
-<section id="faq" aria-labelledby="faq-titre" style="border-top: 1px solid #26314A">
-<div style="max-width: 860px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 32px">
-<h2 id="faq-titre" style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(28px, 3.2vw, 40px); line-height: 1.15">Questions fréquentes</h2>
-<div style="display: flex; flex-direction: column">
-<details style="border-top: 1px solid #26314A; padding: 6px 0"><summary style="min-height: 52px; display: flex; align-items: center; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 17px">Combien de temps à l'avance faut-il réserver ?</summary><p style="margin: 0 0 18px; color: #AEB6C6">Le plus tôt possible, surtout pour un groupe ou un événement. Délai minimum : [VOTRE DÉLAI].</p></details>
-<details style="border-top: 1px solid #26314A; padding: 6px 0"><summary style="min-height: 52px; display: flex; align-items: center; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 17px">Comment le prix est-il calculé ?</summary><p style="margin: 0 0 18px; color: #AEB6C6">Chaque demande reçoit un devis selon le trajet, les dates, le nombre de personnes et le niveau de service souhaité. La demande est gratuite et sans engagement.</p></details>
-<details style="border-top: 1px solid #26314A; padding: 6px 0"><summary style="min-height: 52px; display: flex; align-items: center; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 17px">Quels moyens de paiement acceptez-vous ?</summary><p style="margin: 0 0 18px; color: #AEB6C6">Carte bancaire (Visa, Mastercard) et Mobile Money (Wave, Orange Money, MTN Mobile Money, Moov Money).</p></details>
-<details style="border-top: 1px solid #26314A; padding: 6px 0"><summary style="min-height: 52px; display: flex; align-items: center; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 17px">Mes informations restent-elles confidentielles ?</summary><p style="margin: 0 0 18px; color: #AEB6C6">Oui. Vos informations servent uniquement à organiser votre voyage, et un accord de confidentialité peut être signé sur demande.</p></details>
-<details style="border-top: 1px solid #26314A; border-bottom: 1px solid #26314A; padding: 6px 0"><summary style="min-height: 52px; display: flex; align-items: center; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 17px">Dans quels pays intervenez-vous ?</summary><p style="margin: 0 0 18px; color: #AEB6C6">En Afrique et en Europe. Pays couverts : [VOS PAYS].</p></details>
-</div>
-</div>
+<section class="section section--alt" id="partenaires" aria-labelledby="partenaires-titre">
+  <div class="container split" style="gap: 40px 56px">
+    <div class="stack reveal">
+      <p class="eyebrow">Programme partenaires</p>
+      <h2 class="h2" id="partenaires-titre">Vous avez les clients, nous organisons le voyage.</h2>
+      <p class="lead">Agents de joueurs, managers d'artistes, conciergeries, agences et organisateurs d'événements : confiez-nous les déplacements de vos clients et recevez une commission sur chaque voyage réalisé.</p>
+    </div>
+    <div class="offer reveal" style="flex: 1 1 360px">
+      <div class="offer-row"><span class="muted">Commission</span><span>Sur chaque voyage réalisé</span></div>
+      <div class="offer-row"><span class="muted">Votre client</span><span>Reste votre client</span></div>
+      <div class="offer-row" style="border: 0; padding: 0"><span class="muted">Suivi</span><span>Un conseiller dédié</span></div>
+      <a class="btn btn--gold" href="mailto:contact@soratrave.com?subject=Programme%20partenaires">Devenir partenaire</a>
+    </div>
+  </div>
 </section>
 
-<section id="contact" style="background: #131B2B; border-top: 1px solid #26314A">
-<div style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 40px">
-<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
-<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.15">Parlons de votre prochain voyage.</h2>
-<p style="margin: 0; color: #AEB6C6; max-width: 520px">Un conseiller SoraTrave Prestige étudie votre demande et revient vers vous avec une proposition personnalisée.</p>
-</div>
-<div style="flex: 0 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
-<a href="mailto:contact@soratrave.com" style="display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 12px; background: #D4B26A; color: #0A0E17; font-weight: 600; text-decoration: none; padding: 0 20px">contact@soratrave.com</a>
-<a href="https://wa.me/33758954783" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 12px; background: #D4B26A; color: #0A0E17; font-weight: 600; text-decoration: none; padding: 0 20px">Écrire sur WhatsApp</a>
-<a href="tel:+33758954783" style="display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 12px; border: 1px solid #3D4C6B; color: #F5F1E8; font-weight: 600; text-decoration: none; padding: 0 20px">+33 7 58 95 47 83</a>
-</div>
-</div>
+<section class="section" id="faq" aria-labelledby="faq-titre">
+  <div class="container stack stack--lg" style="max-width: 880px">
+    <div class="intro reveal">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="h2 h2--sm" id="faq-titre">Questions fréquentes</h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary>Combien de temps à l'avance faut-il réserver ?</summary><p>Le plus tôt possible, surtout pour un groupe ou un événement. Pour une demande urgente, écrivez-nous directement sur WhatsApp : nous vérifions les disponibilités immédiatement.</p></details>
+      <details><summary>Comment le prix est-il calculé ?</summary><p>Chaque demande reçoit un devis selon le trajet, les dates, le nombre de personnes et le niveau de service souhaité. La demande est gratuite et sans engagement.</p></details>
+      <details><summary>L'estimation de durée de vol est-elle fiable ?</summary><p>Elle donne un ordre de grandeur calculé à partir de la distance entre les deux villes et de la vitesse moyenne de chaque type d'appareil. La durée réelle dépend de l'appareil choisi, des vents et des éventuelles escales : elle figure dans votre devis.</p></details>
+      <details><summary>Quels moyens de paiement acceptez-vous ?</summary><p>Carte bancaire (Visa, Mastercard) et Mobile Money (Wave, Orange Money, MTN Mobile Money, Moov Money).</p></details>
+      <details><summary>Mes informations restent-elles confidentielles ?</summary><p>Oui. Vos informations servent uniquement à organiser votre voyage, et un accord de confidentialité peut être signé sur demande. Le formulaire de ce site n'envoie rien à un serveur : il prépare un message que vous envoyez vous-même par WhatsApp ou par e-mail.</p></details>
+      <details><summary>Dans quels pays intervenez-vous ?</summary><p>En Afrique, en Europe et au Moyen-Orient. Consultez nos <a href="#destinations">destinations</a> ; les autres destinations sont étudiées sur demande.</p></details>
+    </div>
+  </div>
 </section>
 
-<footer style="border-top: 1px solid #26314A">
-<div style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 20px; display: flex; flex-wrap: wrap; gap: 36px 56px; font-size: 15px">
-<div style="flex: 2 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 20px">SoraTrave <span style="color: #D4B26A; font-weight: 400; letter-spacing: 0.18em; font-size: 12px; text-transform: uppercase">Prestige</span></span>
-<span style="color: #AEB6C6; max-width: 320px">Le service sur mesure de SoraTrave pour les voyages d'exception entre l'Afrique et l'Europe.</span>
-</div>
-<nav aria-label="Services" style="flex: 1 1 160px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
-<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; margin-bottom: 6px">Services</span>
-<a href="#jets" style="color: #AEB6C6; text-decoration: none; padding: 6px 0">Jets privés</a>
-<a href="#yachts" style="color: #AEB6C6; text-decoration: none; padding: 6px 0">Yachts et catamarans</a>
-<a href="#clubs" style="color: #AEB6C6; text-decoration: none; padding: 6px 0">Clubs sportifs</a>
-<a href="#vip" style="color: #AEB6C6; text-decoration: none; padding: 6px 0">Personnalités</a>
-<a href="#evenements" style="color: #AEB6C6; text-decoration: none; padding: 6px 0">Événements</a>
-<a href="#hotels" style="color: #AEB6C6; text-decoration: none; padding: 6px 0">Hôtels et villas</a>
-<a href="#services" style="color: #AEB6C6; text-decoration: none; padding: 6px 0">Services à la carte</a>
-<a href="#destinations" style="color: #AEB6C6; text-decoration: none; padding: 6px 0">Destinations</a>
-</nav>
-<nav aria-label="Informations" style="flex: 1 1 160px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
-<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; margin-bottom: 6px">Informations</span>
-<a href="https://soratrave.com" style="color: #AEB6C6; text-decoration: none; padding: 6px 0">soratrave.com</a>
-<a href="#faq" style="color: #AEB6C6; text-decoration: none; padding: 6px 0">Questions fréquentes</a>
-<span style="color: #AEB6C6; padding: 6px 0">Mentions légales [LIEN]</span>
-<span style="color: #AEB6C6; padding: 6px 0">Conditions générales [LIEN]</span>
-<span style="color: #AEB6C6; padding: 6px 0">Confidentialité [LIEN]</span>
-</nav>
-<div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
-<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 600; margin-bottom: 6px">Contact</span>
-<a href="mailto:contact@soratrave.com" style="color: #AEB6C6; text-decoration: none; padding: 6px 0">contact@soratrave.com</a>
-<a href="tel:+33758954783" style="color: #AEB6C6; text-decoration: none; padding: 6px 0">+33 7 58 95 47 83</a>
-</div>
-</div>
-<div style="max-width: 1200px; margin: 0 auto; padding: 36px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 40px; color: #AEB6C6; font-size: 14px">
-<span>© 2026 SoraTrave · Votre partenaire de voyage pour l'Afrique et l'Europe</span>
-<span>Visa · Mastercard · Wave · Orange Money · MTN Mobile Money · Moov Money</span>
-</div>
+<section class="section contact" id="contact">
+  <div class="container split" style="justify-content: space-between; gap: 40px">
+    <div class="stack reveal" style="gap: 16px">
+      <h2 class="h2">Parlons de votre prochain voyage.</h2>
+      <p class="lead" style="max-width: 520px">Un conseiller SoraTrave Prestige étudie votre demande et revient vers vous avec une proposition personnalisée.</p>
+    </div>
+    <div class="contact-actions reveal">
+      <a class="btn btn--gold" href="https://wa.me/33758954783" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+      <a class="btn btn--outline" href="mailto:contact@soratrave.com">contact@soratrave.com</a>
+      <a class="btn btn--ghost" href="tel:+33758954783">+33 7 58 95 47 83</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div style="flex: 2 1 260px; gap: 12px">
+      <a class="brand" href="#top" style="padding: 0; color: var(--text)">SoraTrave <small>Prestige</small></a>
+      <span class="muted" style="max-width: 320px">Le service sur mesure de SoraTrave pour les voyages d'exception entre l'Afrique, l'Europe et le Moyen-Orient.</span>
+    </div>
+    <nav aria-labelledby="f-services" style="flex: 1 1 160px">
+      <h2 id="f-services">Services</h2>
+      <a href="#jets">Jets privés</a>
+      <a href="#yachts">Yachts et catamarans</a>
+      <a href="#clubs">Clubs sportifs</a>
+      <a href="#vip">Personnalités</a>
+      <a href="#evenements">Événements</a>
+      <a href="#hotels">Hôtels et villas</a>
+      <a href="#services">Services à la carte</a>
+    </nav>
+    <nav aria-labelledby="f-infos" style="flex: 1 1 160px">
+      <h2 id="f-infos">Informations</h2>
+      <a href="#estimation">Estimer un vol</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#partenaires">Programme partenaires</a>
+      <a href="#faq">Questions fréquentes</a>
+      <a href="https://soratrave.com">soratrave.com</a>
+      <!-- À ajouter dès que les pages existent :
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="conditions-generales.html">Conditions générales</a>
+      <a href="confidentialite.html">Confidentialité</a>
+      -->
+    </nav>
+    <div style="flex: 1 1 200px">
+      <h2>Contact</h2>
+      <a href="mailto:contact@soratrave.com">contact@soratrave.com</a>
+      <a href="tel:+33758954783">+33 7 58 95 47 83</a>
+      <a href="https://wa.me/33758954783" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span id="year">2026</span> SoraTrave · Votre partenaire de voyage pour l'Afrique et l'Europe</span>
+    <span>Visa · Mastercard · Wave · Orange Money · MTN Mobile Money · Moov Money</span>
+  </div>
 </footer>
 
+<div class="floating">
+  <button class="fab fab--top" type="button" id="to-top" aria-label="Revenir en haut"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg></button>
+  <a class="fab fab--wa" href="https://wa.me/33758954783" target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg></a>
 </div>
+
 <script>
 (function () {
+  'use strict';
+  document.documentElement.classList.add('js');
+
+  /* ---------- Réglages ---------- */
+  var WHATSAPP = '33758954783';
+  var EMAIL = 'contact@soratrave.com';
+  var STORE = 'sora-demande-v2';
+
+  /* Villes : nom affiché, latitude, longitude (sert à la liste de suggestions et à l'estimateur). */
+  var CITIES = [
+    ["Abidjan, Côte d'Ivoire", 5.36, -4.01], ["Yamoussoukro, Côte d'Ivoire", 6.82, -5.28], ['Dakar, Sénégal', 14.69, -17.45],
+    ['Bamako, Mali', 12.64, -8.00], ['Conakry, Guinée', 9.64, -13.58], ['Ouagadougou, Burkina Faso', 12.37, -1.52],
+    ['Niamey, Niger', 13.51, 2.11], ['Lomé, Togo', 6.13, 1.22], ['Cotonou, Bénin', 6.37, 2.39], ['Accra, Ghana', 5.60, -0.19],
+    ['Lagos, Nigeria', 6.52, 3.38], ['Abuja, Nigeria', 9.08, 7.40], ['Douala, Cameroun', 4.05, 9.77], ['Yaoundé, Cameroun', 3.85, 11.50],
+    ['Libreville, Gabon', 0.42, 9.47], ['Brazzaville, Congo', -4.27, 15.28], ['Kinshasa, RD Congo', -4.32, 15.31],
+    ['Luanda, Angola', -8.84, 13.23], ['Kigali, Rwanda', -1.95, 30.06], ['Nairobi, Kenya', -1.29, 36.82],
+    ['Addis-Abeba, Éthiopie', 9.03, 38.74], ['Dar es Salaam, Tanzanie', -6.79, 39.21], ['Zanzibar, Tanzanie', -6.17, 39.20],
+    ['Johannesburg, Afrique du Sud', -26.20, 28.05], ['Le Cap, Afrique du Sud', -33.92, 18.42], ['Casablanca, Maroc', 33.57, -7.59],
+    ['Marrakech, Maroc', 31.63, -7.99], ['Rabat, Maroc', 34.02, -6.84], ['Alger, Algérie', 36.75, 3.06], ['Tunis, Tunisie', 36.81, 10.18],
+    ['Le Caire, Égypte', 30.04, 31.24], ['Paris, France', 48.86, 2.35], ['Nice, France', 43.70, 7.27], ['Cannes, France', 43.55, 7.01],
+    ['Marseille, France', 43.30, 5.37], ['Lyon, France', 45.76, 4.84], ['Monaco', 43.74, 7.42], ['Londres, Royaume-Uni', 51.51, -0.13],
+    ['Bruxelles, Belgique', 50.85, 4.35], ['Genève, Suisse', 46.20, 6.14], ['Madrid, Espagne', 40.42, -3.70], ['Barcelone, Espagne', 41.39, 2.17],
+    ['Ibiza, Espagne', 38.91, 1.43], ['Lisbonne, Portugal', 38.72, -9.14], ['Rome, Italie', 41.90, 12.50], ['Milan, Italie', 45.46, 9.19],
+    ['Athènes, Grèce', 37.98, 23.73], ['Mykonos, Grèce', 37.45, 25.33], ['Istanbul, Turquie', 41.01, 28.98],
+    ['Dubaï, Émirats arabes unis', 25.20, 55.27], ['Abu Dhabi, Émirats arabes unis', 24.45, 54.38], ['Doha, Qatar', 25.29, 51.53],
+    ['Riyad, Arabie saoudite', 24.71, 46.68]
+  ];
+
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  function norm(s) { return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9 ]+/g, ' ').trim(); }
+  function $(sel, ctx) { return (ctx || document).querySelector(sel); }
+  function $$(sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); }
+
+  /* ---------- Suggestions de villes et bandeau ---------- */
+  var dl = $('#sora-lieux');
+  if (dl) { dl.innerHTML = CITIES.map(function (c) { return '<option value="' + esc(c[0]) + '"></option>'; }).join(''); }
+  var ticker = $('#ticker');
+  if (ticker) {
+    var names = CITIES.filter(function (c, i) { return i % 2 === 0; }).map(function (c) { return '<span>' + esc(c[0].split(',')[0]) + '</span>'; }).join('');
+    ticker.innerHTML = names + names;
+  }
+  var yr = $('#year'); if (yr) { yr.textContent = new Date().getFullYear(); }
+
+  /* ---------- En-tête, menu mobile, lien actif ---------- */
+  var header = $('#header'), nav = $('#nav'), burger = $('.burger'), toTop = $('#to-top');
+  function setMenu(open) {
+    if (!nav || !burger) { return; }
+    nav.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+  }
+  if (burger) { burger.addEventListener('click', function () { setMenu(burger.getAttribute('aria-expanded') !== 'true'); }); }
+  if (nav) { nav.addEventListener('click', function (e) { if (e.target.closest('a')) { setMenu(false); } }); }
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { setMenu(false); } });
+  document.addEventListener('click', function (e) { if (nav && nav.classList.contains('is-open') && !e.target.closest('#header')) { setMenu(false); } });
+
+  function onScroll() {
+    var y = window.scrollY || window.pageYOffset;
+    if (header) { header.classList.toggle('is-scrolled', y > 8); }
+    if (toTop) { toTop.classList.toggle('is-visible', y > 900); }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  if (toTop) { toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); }); }
+
+  if ('IntersectionObserver' in window) {
+    var navLinks = $$('#nav a[href^="#"]:not(.btn)');
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) { return; }
+        var id = '#' + en.target.id;
+        navLinks.forEach(function (a) { a.classList.toggle('is-active', a.getAttribute('href') === id); });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    navLinks.forEach(function (a) { var s = $(a.getAttribute('href')); if (s) { spy.observe(s); } });
+  }
+
+  /* Apparition au défilement : simple calcul de position, fonctionne dans tous les navigateurs. */
+  var pending = $$('.reveal');
+  function reveal() {
+    var limit = (window.innerHeight || document.documentElement.clientHeight) * 0.94;
+    pending = pending.filter(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < limit) { el.classList.add('is-in'); return false; }
+      return true;
+    });
+    if (!pending.length) { window.removeEventListener('scroll', onReveal); window.removeEventListener('resize', onReveal); }
+  }
+  function onReveal() { reveal(); }
+  window.addEventListener('scroll', onReveal, { passive: true });
+  window.addEventListener('resize', onReveal);
+  window.addEventListener('load', reveal);
+  reveal();
+  /* Filet de sécurité : si un hash ou un saut de page n'a déclenché aucun événement, tout reste lisible. */
+  setTimeout(function () { onReveal(); }, 600);
+
+  /* ---------- Estimateur de vol ---------- */
+  var JETS = [
+    { id: 'leger', name: 'Jet léger', speed: 720, range: 2400, seats: '4 à 7 passagers' },
+    { id: 'inter', name: 'Jet intermédiaire', speed: 820, range: 5500, seats: '7 à 9 passagers' },
+    { id: 'long', name: 'Long-courrier', speed: 880, range: 11000, seats: '10 à 16 passagers' }
+  ];
+  function findCity(q) {
+    var n = norm(q);
+    if (!n) { return null; }
+    for (var i = 0; i < CITIES.length; i++) { if (norm(CITIES[i][0]) === n) { return CITIES[i]; } }
+    for (var j = 0; j < CITIES.length; j++) { if (norm(CITIES[j][0].split(',')[0]) === n) { return CITIES[j]; } }
+    for (var k = 0; k < CITIES.length; k++) { if (norm(CITIES[k][0]).indexOf(n) === 0) { return CITIES[k]; } }
+    return null;
+  }
+  function distanceKm(a, b) {
+    var R = 6371, r = Math.PI / 180;
+    var dLat = (b[1] - a[1]) * r, dLon = (b[2] - a[2]) * r;
+    var h = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(a[1] * r) * Math.cos(b[1] * r) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    return 2 * R * Math.asin(Math.sqrt(h));
+  }
+  function fmtDuration(h) {
+    var m = Math.round(h * 60 / 5) * 5, hh = Math.floor(m / 60), mm = m % 60;
+    return hh + ' h ' + (mm < 10 ? '0' : '') + mm;
+  }
+  var estForm = $('#est-form'), estOut = $('#est-result'), estFrom = $('#est-from'), estTo = $('#est-to');
+  var lastRoute = null;
+  function estimate() {
+    var a = findCity(estFrom.value), b = findCity(estTo.value);
+    if (!a || !b) {
+      estOut.innerHTML = '<p class="form-error">Choisissez deux villes dans la liste proposée. Pour une autre destination, <a href="#demande">demandez directement un devis</a>.</p>';
+      lastRoute = null; return;
+    }
+    if (a === b) { estOut.innerHTML = '<p class="form-error">Le départ et l\'arrivée sont identiques.</p>'; lastRoute = null; return; }
+    estFrom.value = a[0]; estTo.value = b[0];
+    var route = distanceKm(a, b) * 1.05;
+    var best = null;
+    JETS.forEach(function (j) { if (!best && route <= j.range) { best = j.id; } });
+    if (!best) { best = 'long'; }
+    var rows = JETS.map(function (j) {
+      var stops = Math.max(0, Math.ceil(route / j.range) - 1);
+      var hours = route / j.speed + 0.5 + stops * 0.75;
+      var note = stops === 0 ? 'Vol sans escale' : (stops === 1 ? '1 escale technique probable' : stops + ' escales techniques probables');
+      return '<div class="est-row' + (j.id === best ? ' is-best' : '') + '">' + (j.id === best ? '<span class="flag">Conseillé</span>' : '') +
+        '<span class="k">' + j.name + '</span><span class="t">' + fmtDuration(hours) + '</span><span class="s">' + note + ' · ' + j.seats + '</span></div>';
+    }).join('');
+    lastRoute = { from: a[0], to: b[0] };
+    estOut.innerHTML = '<div class="est-summary"><strong>' + esc(a[0].split(',')[0]) + ' → ' + esc(b[0].split(',')[0]) + '</strong>' +
+      '<span class="muted">environ ' + Math.round(route / 10) * 10 + ' km</span></div><div class="est-rows">' + rows + '</div>' +
+      '<div class="est-foot"><p class="note">Estimation indicative (hors vents, attente et formalités). La durée exacte figure dans votre devis.</p>' +
+      '<a class="btn btn--gold" href="#demande" data-est-request>Demander ce vol</a></div>';
+  }
+  if (estForm) {
+    estForm.addEventListener('submit', function (e) { e.preventDefault(); estimate(); });
+    $('#est-swap').addEventListener('click', function () { var t = estFrom.value; estFrom.value = estTo.value; estTo.value = t; if (estOut.innerHTML) { estimate(); } });
+    estOut.addEventListener('click', function (e) {
+      if (e.target.closest('[data-est-request]') && lastRoute) {
+        state.tab = 'jet';
+        state.vals['jet:Départ'] = lastRoute.from;
+        state.vals['jet:Arrivée'] = lastRoute.to;
+        save(); render();
+      }
+    });
+  }
+
+  /* ---------- Formulaire de demande ---------- */
   var defs = [
-    { id: 'jet', label: 'Jet privé', options: ['Aller simple', 'Aller-retour'], fields: [['Départ', 'Ex. Abidjan'], ['Arrivée', 'Ex. Paris'], ['Date', 'JJ/MM/AAAA'], ['Passagers', 'Nombre']] },
-    { id: 'yacht', label: 'Yacht', options: ['Yacht charter', 'Sortie de pêche', 'Croisière à la journée', 'Réception à bord'], fields: [['Zone de navigation', 'Ex. Méditerranée'], ['Embarquement', 'JJ/MM/AAAA'], ['Durée', 'Nombre de jours'], ['Invités', 'Nombre']] },
-    { id: 'club', label: 'Club sportif', fields: [['Club ou fédération', 'Nom'], ['Trajet', 'Départ – arrivée'], ['Dates', 'Aller – retour'], ['Taille du groupe', 'Joueurs et staff']] },
-    { id: 'vip', label: 'Personnalité', fields: [['Destination', 'Ville ou pays'], ['Dates', 'Aller – retour'], ['Personnes', 'Vous et votre entourage'], ['Services souhaités', 'Jet, sécurité, chauffeur…']] },
-    { id: 'event', label: 'Événement', fields: [["Type d'événement", 'Ex. sommet, concert, mariage'], ['Ville', "Lieu de l'événement"], ['Dates', 'Début – fin'], ['Invités à transporter', 'Nombre']] },
-    { id: 'hotel', label: 'Hôtel', options: ['Hôtel', 'Villa ou appartement'], fields: [['Destination', 'Ville ou pays'], ['Arrivée', 'JJ/MM/AAAA'], ['Départ', 'JJ/MM/AAAA'], ['Voyageurs', 'Nombre de personnes']] }
+    { id: 'jet', label: 'Jet privé', options: ['Aller simple', 'Aller-retour', 'Multi-étapes'], fields: [['Départ', 'Ex. Abidjan', 'text', 1], ['Arrivée', 'Ex. Paris', 'text', 1], ['Date', '', 'date', 1], ['Passagers', 'Nombre', 'number']] },
+    { id: 'yacht', label: 'Yacht', options: ['Yacht charter', 'Sortie de pêche', 'Croisière à la journée', 'Réception à bord'], fields: [['Zone de navigation', 'Ex. Méditerranée', 'text', 1], ['Embarquement', '', 'date', 1], ['Durée', 'Nombre de jours', 'number'], ['Invités', 'Nombre', 'number']] },
+    { id: 'club', label: 'Club sportif', fields: [['Club ou fédération', 'Nom', 'text', 1], ['Trajet', 'Départ – arrivée', 'text', 1], ['Dates', 'Aller – retour', 'text'], ['Taille du groupe', 'Joueurs et staff', 'number']] },
+    { id: 'vip', label: 'Personnalité', fields: [['Destination', 'Ville ou pays', 'text', 1], ['Dates', 'Aller – retour', 'text'], ['Personnes', 'Vous et votre entourage', 'number'], ['Services souhaités', 'Jet, sécurité, chauffeur…', 'text']] },
+    { id: 'event', label: 'Événement', fields: [["Type d'événement", 'Ex. sommet, concert, mariage', 'text', 1], ['Ville', "Lieu de l'événement", 'text', 1], ['Dates', 'Début – fin', 'text'], ['Invités à transporter', 'Nombre', 'number']] },
+    { id: 'hotel', label: 'Hôtel', options: ['Hôtel', 'Villa ou appartement'], fields: [['Destination', 'Ville ou pays', 'text', 1], ['Arrivée', '', 'date', 1], ['Départ', '', 'date'], ['Voyageurs', 'Nombre de personnes', 'number']] }
   ];
   var places = { 'jet:Départ': 1, 'jet:Arrivée': 1, 'yacht:Zone de navigation': 1, 'vip:Destination': 1, 'event:Ville': 1, 'hotel:Destination': 1 };
   var currencies = [['EUR', 'EUR · Euro'], ['USD', 'USD · Dollar américain'], ['GBP', 'GBP · Livre sterling'], ['XOF', 'XOF · Franc CFA (UEMOA)'], ['XAF', 'XAF · Franc CFA (CEMAC)'], ['AED', 'AED · Dirham des Émirats']];
-  var WHATSAPP = '33758954783';
-  var EMAIL = 'contact@soratrave.com';
-  var state = { tab: 'jet', opts: {}, vals: {}, nom: '', contact: '', devise: 'EUR' };
-  var root = document.getElementById('sora-form');
-  if (!root) { return; }
+  var state = { tab: 'jet', opts: {}, vals: {}, nom: '', contact: '', devise: 'EUR', details: '' };
+  try { var saved = JSON.parse(localStorage.getItem(STORE) || 'null'); if (saved && typeof saved === 'object') { for (var key in state) { if (saved[key] !== undefined) { state[key] = saved[key]; } } } } catch (e) { /* stockage indisponible */ }
+  function save() { try { localStorage.setItem(STORE, JSON.stringify(state)); } catch (e) { /* stockage indisponible */ } }
 
-  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  var root = $('#sora-form');
+  if (!root) { return; }
+  var today = new Date(); today = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+
   function active() { for (var i = 0; i < defs.length; i++) { if (defs[i].id === state.tab) { return defs[i]; } } return defs[0]; }
-  function chosen(d) { return state.opts[d.id] || (d.options || [])[0] || ''; }
+  function chosen(d) { var o = state.opts[d.id]; return (d.options && d.options.indexOf(o) >= 0) ? o : (d.options || [])[0] || ''; }
   function fieldsOf(d) {
     var f = d.fields.slice();
-    if (d.id === 'jet' && chosen(d) === 'Aller-retour') { f.splice(3, 0, ['Date de retour', 'JJ/MM/AAAA']); }
+    if (d.id === 'jet' && chosen(d) === 'Aller-retour') { f.splice(3, 0, ['Date de retour', '', 'date', 1]); }
+    if (d.id === 'jet' && chosen(d) === 'Multi-étapes') { f.splice(2, 0, ['Étapes', 'Ex. Dakar puis Nice', 'text', 1]); }
     return f;
   }
+  function fmtDate(v) { var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v); return m ? m[3] + '/' + m[2] + '/' + m[1] : v; }
   function message() {
     var d = active(), c = chosen(d);
-    var lines = ['Bonjour SoraTrave Prestige,', 'Demande : ' + d.label + (c ? ' (' + c + ')' : '')];
-    fieldsOf(d).forEach(function (f) { var v = state.vals[d.id + ':' + f[0]]; if (v) { lines.push(f[0] + ' : ' + v); } });
+    var lines = ['Bonjour SoraTrave Prestige,', '', 'Demande : ' + d.label + (c ? ' (' + c + ')' : '')];
+    fieldsOf(d).forEach(function (f) { var v = state.vals[d.id + ':' + f[0]]; if (v) { lines.push(f[0] + ' : ' + (f[2] === 'date' ? fmtDate(v) : v)); } });
+    if (state.details) { lines.push('Précisions : ' + state.details); }
+    lines.push('Devise du devis : ' + state.devise);
+    lines.push('');
     if (state.nom) { lines.push('Nom : ' + state.nom); }
     if (state.contact) { lines.push('Contact : ' + state.contact); }
-    lines.push('Devise du devis : ' + state.devise);
     return lines.join('\n');
   }
   function updateLinks() {
     var msg = message();
-    root.querySelector('[data-send="wa"]').href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg);
-    root.querySelector('[data-send="mail"]').href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Demande ' + active().label) + '&body=' + encodeURIComponent(msg);
+    $('[data-send="wa"]', root).href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg);
+    $('[data-send="mail"]', root).href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Demande ' + active().label + ' — SoraTrave Prestige') + '&body=' + encodeURIComponent(msg);
   }
-
-  var INPUT = 'height: 48px; box-sizing: border-box; width: 100%; padding: 0 14px; border-radius: 10px; border: 1px solid #3D4C6B; background: #0A0E17; color: #F5F1E8; font: 400 16px Inter, sans-serif';
-  var CELL = 'flex: 1 1 180px; min-width: 0; display: flex; flex-direction: column; gap: 6px';
-  var LABEL = 'font-size: 13px; color: #AEB6C6';
-  function pill(on, radius, size) {
-    return 'min-height: 44px; padding: 0 18px; border-radius: ' + radius + '; cursor: pointer; font: ' + (on ? 600 : 500) + ' ' + size + ' Inter, sans-serif; ' +
-      (on ? 'border: 1px solid #D4B26A; background: #D4B26A; color: #0A0E17' : 'border: 1px solid #3D4C6B; background: transparent; color: #F5F1E8');
+  function validContact(v) { v = String(v).trim(); return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) || v.replace(/\D/g, '').length >= 8; }
+  function validate() {
+    var d = active(), bad = [];
+    fieldsOf(d).forEach(function (f, i) { if (f[3] && !String(state.vals[d.id + ':' + f[0]] || '').trim()) { bad.push('req-' + d.id + '-' + i); } });
+    if (!state.nom.trim()) { bad.push('req-nom'); }
+    if (!validContact(state.contact)) { bad.push('req-contact'); }
+    $$('.input', root).forEach(function (el) { el.setAttribute('aria-invalid', String(bad.indexOf(el.id) >= 0)); });
+    return bad;
   }
-  function cell(id, label, inner) { return '<div style="' + CELL + '"><label for="' + id + '" style="' + LABEL + '">' + esc(label) + '</label>' + inner + '</div>'; }
+  function field(id, label, inner, req, full) {
+    return '<div class="field' + (full ? ' field--full' : '') + '"><label for="' + id + '">' + esc(label) + (req ? ' <b aria-hidden="true">*</b>' : '') + '</label>' + inner + '</div>';
+  }
+  function input(id, key, val, ph, type, extra) {
+    var t = type || 'text', more = extra || '';
+    if (t === 'number') { more += ' min="1" inputmode="numeric"'; }
+    if (t === 'date') { more += ' min="' + today + '"'; }
+    return '<input class="input" id="' + id + '" type="' + t + '" data-key="' + esc(key) + '" value="' + esc(val || '') + '"' + (ph ? ' placeholder="' + esc(ph) + '"' : '') + more + '>';
+  }
 
   function render() {
     var d = active(), c = chosen(d), h = '';
-    h += '<div role="group" aria-label="Type de demande" style="display: flex; flex-wrap: wrap; gap: 8px">';
-    defs.forEach(function (t) {
-      var on = t.id === d.id;
-      h += '<button type="button" data-tab="' + t.id + '" aria-pressed="' + on + '" style="' + pill(on, '999px', '15px') + '">' + esc(t.label) + '</button>';
-    });
+    h += '<div class="pills" role="group" aria-label="Type de demande">';
+    defs.forEach(function (t) { h += '<button class="pill" type="button" data-tab="' + t.id + '" aria-pressed="' + (t.id === d.id) + '">' + esc(t.label) + '</button>'; });
     h += '</div>';
     if (d.options) {
-      h += '<div role="group" aria-label="Formule" style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid #26314A">';
-      d.options.forEach(function (o) {
-        var on = o === c;
-        h += '<button type="button" data-opt="' + esc(o) + '" aria-pressed="' + on + '" style="' + pill(on, '10px', '14px') + '">' + esc(o) + '</button>';
-      });
+      h += '<div class="pills pills--sub" role="group" aria-label="Formule">';
+      d.options.forEach(function (o) { h += '<button class="pill" type="button" data-opt="' + esc(o) + '" aria-pressed="' + (o === c) + '">' + esc(o) + '</button>'; });
       h += '</div>';
     }
-    h += '<div style="display: flex; flex-wrap: wrap; gap: 16px">';
+    h += '<div class="fields">';
     fieldsOf(d).forEach(function (f, i) {
       var key = d.id + ':' + f[0], id = 'req-' + d.id + '-' + i;
-      h += cell(id, f[0], '<input id="' + id + '" type="text" data-key="' + esc(key) + '"' + (places[key] ? ' list="sora-lieux"' : '') +
-        ' value="' + esc(state.vals[key] || '') + '" placeholder="' + esc(f[1]) + '" style="' + INPUT + '">');
+      h += field(id, f[0], input(id, key, state.vals[key], f[1], f[2], (places[key] ? ' list="sora-lieux" autocomplete="off"' : '') + (f[3] ? ' required' : '')), f[3]);
     });
-    h += cell('req-nom', 'Nom complet', '<input id="req-nom" type="text" data-key="@nom" autocomplete="name" value="' + esc(state.nom) + '" placeholder="Votre nom" style="' + INPUT + '">');
-    h += cell('req-contact', 'E-mail ou téléphone', '<input id="req-contact" type="text" data-key="@contact" value="' + esc(state.contact) + '" placeholder="Pour vous recontacter" style="' + INPUT + '">');
+    h += field('req-nom', 'Nom complet', input('req-nom', '@nom', state.nom, 'Votre nom', 'text', ' autocomplete="name" required'), true);
+    h += field('req-contact', 'E-mail ou téléphone', input('req-contact', '@contact', state.contact, 'Pour vous recontacter', 'text', ' autocomplete="email" required'), true);
     var opts = currencies.map(function (cu) { return '<option value="' + cu[0] + '"' + (cu[0] === state.devise ? ' selected' : '') + '>' + esc(cu[1]) + '</option>'; }).join('');
-    h += cell('req-devise', 'Devise du devis', '<select id="req-devise" data-key="@devise" style="' + INPUT + '">' + opts + '</select>');
+    h += field('req-devise', 'Devise du devis', '<select class="input" id="req-devise" data-key="@devise">' + opts + '</select>');
+    h += field('req-details', 'Précisions (facultatif)', '<textarea class="input" id="req-details" data-key="@details" rows="3" placeholder="Horaires souhaités, bagages, services à ajouter…">' + esc(state.details) + '</textarea>', false, true);
     h += '</div>';
-    var BTN = 'flex: 1 1 190px; min-width: 0; min-height: 52px; display: flex; align-items: center; justify-content: center; border-radius: 12px; font: 600 16px Inter, sans-serif; text-decoration: none; padding: 0 16px; ';
-    h += '<div style="display: flex; flex-wrap: wrap; gap: 12px">' +
-      '<a data-send="wa" href="#" target="_blank" rel="noopener" style="' + BTN + 'background: #D4B26A; color: #0A0E17">Envoyer par WhatsApp</a>' +
-      '<a data-send="mail" href="#" style="' + BTN + 'border: 1px solid #D4B26A; color: #F5F1E8">Envoyer par e-mail</a></div>';
+    h += '<p class="form-error" id="form-error" role="alert"></p><p class="form-ok" id="form-ok" role="status"></p>';
+    h += '<div class="send"><a class="btn btn--gold" data-send="wa" href="#" target="_blank" rel="noopener">Envoyer par WhatsApp</a>' +
+      '<a class="btn btn--outline" data-send="mail" href="#">Envoyer par e-mail</a></div>';
+    h += '<button type="button" class="note" data-reset style="background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; align-self: flex-start; font-family: inherit">Effacer le formulaire</button>';
     root.innerHTML = h;
     updateLinks();
   }
 
   root.addEventListener('click', function (e) {
     var b = e.target.closest('button');
-    if (!b) { return; }
-    if (b.hasAttribute('data-tab')) { state.tab = b.getAttribute('data-tab'); render(); }
-    else if (b.hasAttribute('data-opt')) { state.opts[state.tab] = b.getAttribute('data-opt'); render(); }
+    if (b && b.hasAttribute('data-tab')) { state.tab = b.getAttribute('data-tab'); save(); render(); return; }
+    if (b && b.hasAttribute('data-opt')) { state.opts[state.tab] = b.getAttribute('data-opt'); save(); render(); return; }
+    if (b && b.hasAttribute('data-reset')) { state = { tab: state.tab, opts: {}, vals: {}, nom: '', contact: '', devise: 'EUR', details: '' }; save(); render(); return; }
+    var s = e.target.closest('[data-send]');
+    if (s) {
+      var bad = validate(), err = $('#form-error'), ok = $('#form-ok');
+      if (bad.length) {
+        e.preventDefault();
+        ok.textContent = '';
+        err.textContent = bad.indexOf('req-contact') >= 0 && state.contact ? 'Indiquez un e-mail valide ou un numéro de téléphone complet.' : 'Merci de remplir les champs marqués d\'une étoile.';
+        var first = document.getElementById(bad[0]); if (first) { first.focus(); }
+      } else {
+        err.textContent = '';
+        ok.textContent = s.getAttribute('data-send') === 'wa' ? 'WhatsApp s\'ouvre avec votre demande : il ne reste qu\'à appuyer sur Envoyer.' : 'Votre messagerie s\'ouvre avec votre demande : il ne reste qu\'à l\'envoyer.';
+      }
+    }
   });
   function onField(e) {
     var k = e.target.getAttribute('data-key');
     if (!k) { return; }
-    if (k === '@nom') { state.nom = e.target.value; }
-    else if (k === '@contact') { state.contact = e.target.value; }
-    else if (k === '@devise') { state.devise = e.target.value; }
-    else { state.vals[k] = e.target.value; }
-    updateLinks();
+    var v = e.target.value;
+    if (k === '@nom') { state.nom = v; } else if (k === '@contact') { state.contact = v; }
+    else if (k === '@devise') { state.devise = v; } else if (k === '@details') { state.details = v; }
+    else { state.vals[k] = v; }
+    if (e.target.getAttribute('aria-invalid') === 'true') { e.target.setAttribute('aria-invalid', 'false'); }
+    save(); updateLinks();
   }
   root.addEventListener('input', onField);
   root.addEventListener('change', onField);
+  root.addEventListener('submit', function (e) { e.preventDefault(); });
   document.addEventListener('click', function (e) {
     var a = e.target.closest('a[data-tab]');
-    if (a) { state.tab = a.getAttribute('data-tab'); render(); }
+    if (a) { state.tab = a.getAttribute('data-tab'); save(); render(); }
   });
   render();
 })();
