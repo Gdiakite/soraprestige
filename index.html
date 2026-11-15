@@ -925,10 +925,10 @@ blockquote { margin: 0; font-size: 17px; }
   var defs = [
     { id: 'jet', label: 'Jet privé', options: ['Aller simple', 'Aller-retour', 'Multi-étapes'], fields: [['Départ', 'Ex. Abidjan', 'text', 1], ['Arrivée', 'Ex. Paris', 'text', 1], ['Date', '', 'date', 1], ['Passagers', 'Nombre', 'number']] },
     { id: 'yacht', label: 'Yacht', options: ['Yacht charter', 'Sortie de pêche', 'Croisière à la journée', 'Réception à bord'], fields: [['Zone de navigation', 'Ex. Méditerranée', 'text', 1], ['Embarquement', '', 'date', 1], ['Durée', 'Nombre de jours', 'number'], ['Invités', 'Nombre', 'number']] },
-    { id: 'club', label: 'Club sportif', fields: [['Club ou fédération', 'Nom', 'text', 1], ['Trajet', 'Départ – arrivée', 'text', 1], ['Dates', 'Aller – retour', 'text'], ['Taille du groupe', 'Joueurs et staff', 'number']] },
-    { id: 'vip', label: 'Personnalité', fields: [['Destination', 'Ville ou pays', 'text', 1], ['Dates', 'Aller – retour', 'text'], ['Personnes', 'Vous et votre entourage', 'number'], ['Services souhaités', 'Jet, sécurité, chauffeur…', 'text']] },
-    { id: 'event', label: 'Événement', fields: [["Type d'événement", 'Ex. sommet, concert, mariage', 'text', 1], ['Ville', "Lieu de l'événement", 'text', 1], ['Dates', 'Début – fin', 'text'], ['Invités à transporter', 'Nombre', 'number']] },
-    { id: 'hotel', label: 'Hôtel', options: ['Hôtel', 'Villa ou appartement'], fields: [['Destination', 'Ville ou pays', 'text', 1], ['Arrivée', '', 'date', 1], ['Départ', '', 'date'], ['Voyageurs', 'Nombre de personnes', 'number']] }
+    { id: 'club', label: 'Club sportif', fields: [['Club ou fédération', 'Nom', 'text', 1], ['Trajet', 'Départ – arrivée', 'text', 1], ['Date aller', '', 'date', 1], ['Date retour', '', 'date', 0, 'Date aller'], ['Taille du groupe', 'Joueurs et staff', 'number']] },
+    { id: 'vip', label: 'Personnalité', fields: [['Destination', 'Ville ou pays', 'text', 1], ['Date de départ', '', 'date', 1], ['Date de retour', '', 'date', 0, 'Date de départ'], ['Personnes', 'Vous et votre entourage', 'number'], ['Services souhaités', 'Jet, sécurité, chauffeur…', 'text']] },
+    { id: 'event', label: 'Événement', fields: [["Type d'événement", 'Ex. sommet, concert, mariage', 'text', 1], ['Ville', "Lieu de l'événement", 'text', 1], ['Date de début', '', 'date', 1], ['Date de fin', '', 'date', 0, 'Date de début'], ['Invités à transporter', 'Nombre', 'number']] },
+    { id: 'hotel', label: 'Hôtel', options: ['Hôtel', 'Villa ou appartement'], fields: [['Destination', 'Ville ou pays', 'text', 1], ['Arrivée', '', 'date', 1], ['Départ', '', 'date', 0, 'Arrivée'], ['Voyageurs', 'Nombre de personnes', 'number']] }
   ];
   var places = { 'jet:Départ': 1, 'jet:Arrivée': 1, 'yacht:Zone de navigation': 1, 'vip:Destination': 1, 'event:Ville': 1, 'hotel:Destination': 1 };
   var currencies = [['EUR', 'EUR · Euro'], ['USD', 'USD · Dollar américain'], ['GBP', 'GBP · Livre sterling'], ['XOF', 'XOF · Franc CFA (UEMOA)'], ['XAF', 'XAF · Franc CFA (CEMAC)'], ['AED', 'AED · Dirham des Émirats']];
@@ -944,7 +944,7 @@ blockquote { margin: 0; font-size: 17px; }
   function chosen(d) { var o = state.opts[d.id]; return (d.options && d.options.indexOf(o) >= 0) ? o : (d.options || [])[0] || ''; }
   function fieldsOf(d) {
     var f = d.fields.slice();
-    if (d.id === 'jet' && chosen(d) === 'Aller-retour') { f.splice(3, 0, ['Date de retour', '', 'date', 1]); }
+    if (d.id === 'jet' && chosen(d) === 'Aller-retour') { f.splice(3, 0, ['Date de retour', '', 'date', 1, 'Date']); }
     if (d.id === 'jet' && chosen(d) === 'Multi-étapes') { f.splice(2, 0, ['Étapes', 'Ex. Dakar puis Nice', 'text', 1]); }
     return f;
   }
@@ -977,10 +977,14 @@ blockquote { margin: 0; font-size: 17px; }
   function field(id, label, inner, req, full) {
     return '<div class="field' + (full ? ' field--full' : '') + '"><label for="' + id + '">' + esc(label) + (req ? ' <b aria-hidden="true">*</b>' : '') + '</label>' + inner + '</div>';
   }
-  function input(id, key, val, ph, type, extra) {
+  function input(id, key, val, ph, type, extra, after) {
     var t = type || 'text', more = extra || '';
     if (t === 'number') { more += ' min="1" inputmode="numeric"'; }
-    if (t === 'date') { more += ' min="' + today + '"'; }
+    if (t === 'date') {
+      /* Une date de fin ne peut pas précéder la date de début correspondante. */
+      var start = after ? state.vals[after] : '';
+      more += ' min="' + (start && start > today ? start : today) + '"' + (after ? ' data-after="' + esc(after) + '"' : '');
+    }
     return '<input class="input" id="' + id + '" type="' + t + '" data-key="' + esc(key) + '" value="' + esc(val || '') + '"' + (ph ? ' placeholder="' + esc(ph) + '"' : '') + more + '>';
   }
 
@@ -997,7 +1001,7 @@ blockquote { margin: 0; font-size: 17px; }
     h += '<div class="fields">';
     fieldsOf(d).forEach(function (f, i) {
       var key = d.id + ':' + f[0], id = 'req-' + d.id + '-' + i;
-      h += field(id, f[0], input(id, key, state.vals[key], f[1], f[2], (places[key] ? ' list="sora-lieux" autocomplete="off"' : '') + (f[3] ? ' required' : '')), f[3]);
+      h += field(id, f[0], input(id, key, state.vals[key], f[1], f[2], (places[key] ? ' list="sora-lieux" autocomplete="off"' : '') + (f[3] ? ' required' : ''), f[4] ? d.id + ':' + f[4] : ''), f[3]);
     });
     h += field('req-nom', 'Nom complet', input('req-nom', '@nom', state.nom, 'Votre nom', 'text', ' autocomplete="name" required'), true);
     h += field('req-contact', 'E-mail ou téléphone', input('req-contact', '@contact', state.contact, 'Pour vous recontacter', 'text', ' autocomplete="email" required'), true);
@@ -1039,6 +1043,13 @@ blockquote { margin: 0; font-size: 17px; }
     if (k === '@nom') { state.nom = v; } else if (k === '@contact') { state.contact = v; }
     else if (k === '@devise') { state.devise = v; } else if (k === '@details') { state.details = v; }
     else { state.vals[k] = v; }
+    if (e.target.type === 'date') {
+      $$('[data-after]', root).forEach(function (end) {
+        if (end.getAttribute('data-after') !== k) { return; }
+        end.min = v && v > today ? v : today;
+        if (v && end.value && end.value < v) { end.value = ''; state.vals[end.getAttribute('data-key')] = ''; }
+      });
+    }
     if (e.target.getAttribute('aria-invalid') === 'true') { e.target.setAttribute('aria-invalid', 'false'); }
     save(); updateLinks();
   }
