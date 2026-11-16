@@ -206,18 +206,6 @@ textarea.input:focus { border-color: var(--bronze); box-shadow: none; }
 .send { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); }
 .note { color: var(--muted); font-size: 13px; }
 
-/* Sommaire */
-.toc { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: clamp(32px, 6vw, 96px); }
-.toc-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
-.toc-list a { display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; align-items: baseline; gap: 16px; padding: 22px 0; border-bottom: 1px solid var(--line); text-decoration: none; transition: padding-left .3s ease, color .3s ease; }
-.toc-list a:hover { padding-left: 12px; color: var(--bronze); }
-.toc-n { font: italic 400 18px/1 var(--serif); color: var(--bronze); }
-.toc-t { font: 400 clamp(26px, 3vw, 40px)/1.05 var(--serif); }
-.toc-t small { display: block; font: 400 15px/1.5 var(--sans); color: var(--muted); margin-top: 6px; }
-.toc-a { font-size: 22px; transition: transform .3s ease; }
-.toc-list a:hover .toc-a { transform: translateX(6px); }
-@media (max-width: 900px) { .toc { grid-template-columns: 1fr; } .toc-list a { grid-template-columns: 44px minmax(0, 1fr) auto; } }
-
 /* Doubles pages */
 .spread { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(24px, 4vw, 56px); align-items: start; }
 .spread > .s-head { grid-column: 1 / span 5; display: flex; flex-direction: column; gap: 26px; }
@@ -266,17 +254,6 @@ textarea.input:focus { border-color: var(--bronze); box-shadow: none; }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .tag { border: 1px solid var(--ink); padding: 5px 14px; font-size: 13px; letter-spacing: .06em; }
 
-/* Bandeau plein cadre */
-.cover { position: relative; color: var(--paper); }
-.cover .photo { aspect-ratio: 21 / 9; min-height: 420px; }
-.cover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,9,7,0) 35%, rgba(10,9,7,.72)); pointer-events: none; }
-.cover-text { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding-bottom: clamp(28px, 4vw, 56px); }
-.cover-text .wrap { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 20px; }
-.cover .kicker { color: rgba(243,238,228,.8); }
-.cover .kicker b { color: #E2C29C; }
-.cover .title em { color: #E2C29C; }
-@media (max-width: 700px) { .cover .photo { aspect-ratio: 3 / 4; min-height: 0; } }
-
 /* Estimateur : carte d'embarquement */
 .est-layout { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
 @media (max-width: 900px) { .est-layout { grid-template-columns: 1fr; } }
@@ -310,26 +287,6 @@ textarea.input:focus { border-color: var(--bronze); box-shadow: none; }
 @media (max-width: 640px) { .est-rows { grid-template-columns: 1fr; } .est-row { border-right: 0; border-bottom: 1px solid var(--line); } }
 .est-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; padding: 18px 0 24px; }
 .est-foot .note { max-width: 40ch; }
-
-/* Destinations */
-.dest { border-top: 1px solid var(--ink); }
-.dest-row { display: grid; grid-template-columns: minmax(0, .35fr) minmax(0, 1fr); gap: 24px; padding: 26px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
-.dest-row h3 { font: italic 400 22px/1.2 var(--serif); color: var(--bronze); }
-.dest-row p { font: 400 clamp(24px, 3vw, 40px)/1.25 var(--serif); }
-.dest-row p span { color: var(--bronze-2); font-style: italic; }
-@media (max-width: 700px) { .dest-row { grid-template-columns: 1fr; gap: 8px; } }
-.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 20px 40px; padding-top: 28px; }
-.fact { display: flex; flex-direction: column; gap: 4px; }
-.fact .k { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
-
-/* Méthode */
-.method { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--ink); counter-reset: m; list-style: none; margin: 0; padding: 0; }
-.method li { counter-increment: m; padding: 28px clamp(16px, 2.5vw, 36px) 32px 0; display: flex; flex-direction: column; gap: 12px; }
-.method li + li { border-left: 1px solid var(--line); padding-left: clamp(16px, 2.5vw, 36px); }
-.method li::before { content: counter(m, upper-roman) "."; font: italic 400 56px/1 var(--serif); color: var(--bronze); }
-.method h3 { font-size: 26px; }
-.method p { color: var(--muted); font-size: 15.5px; }
-@media (max-width: 800px) { .method { grid-template-columns: 1fr; } .method li + li { border-left: 0; border-top: 1px solid var(--line); padding-left: 0; } }
 
 /* Équipe, confiance (masquées tant qu'elles ne sont pas renseignées) */
 .person { display: flex; align-items: center; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--line); }
@@ -388,6 +345,74 @@ blockquote { margin: 0; font: italic 400 24px/1.35 var(--serif); }
 .fab--wa { background: #25D366; color: #fff; }
 .fab--top { width: 44px; height: 44px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); opacity: 0; visibility: hidden; }
 .fab--top.is-visible { opacity: 1; visibility: visible; }
+
+/* Univers : carrousel horizontal */
+.u-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px 40px; }
+.u-ctrl { display: flex; align-items: center; gap: 10px; }
+.u-count { font: italic 400 20px var(--serif); font-variation-settings: "opsz" 11; margin-right: 10px; min-width: 70px; text-align: right; }
+.u-btn { width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; display: grid; place-items: center; transition: background-color .2s ease, color .2s ease, opacity .2s ease; }
+.u-btn:hover:not(:disabled) { background: var(--ink); color: var(--paper); }
+.u-btn:disabled { opacity: .3; cursor: default; }
+.u-tabs { display: flex; gap: 4px 26px; margin-top: 36px; border-bottom: 1px solid var(--line); overflow-x: auto; scrollbar-width: none; }
+.u-tabs::-webkit-scrollbar { display: none; }
+.u-tab { flex: none; display: inline-flex; align-items: baseline; gap: 8px; padding: 12px 0 14px; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; background: none; cursor: pointer; font: 500 14.5px var(--sans); color: var(--muted); transition: color .2s ease, border-color .2s ease; }
+.u-tab b { font: italic 400 15px var(--serif); font-variation-settings: "opsz" 11; color: var(--bronze); }
+.u-tab:hover { color: var(--ink); }
+.u-tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--ink); }
+.rail { --pad: max(clamp(16px, 4vw, 48px), calc((100vw - 1320px) / 2 + clamp(16px, 4vw, 48px))); position: relative; display: flex; gap: clamp(16px, 2vw, 28px); overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--pad); padding: 32px var(--pad) 8px; scrollbar-width: none; cursor: grab; overscroll-behavior-x: contain; }
+.rail::-webkit-scrollbar { display: none; }
+.rail.is-drag { cursor: grabbing; scroll-snap-type: none; user-select: none; }
+.rail.is-drag * { pointer-events: none; }
+.rail:focus-visible { outline-offset: -2px; }
+.slide { flex: 0 0 min(1120px, 86vw); scroll-snap-align: start; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 560px; background: var(--card); border: 1px solid var(--ink); overflow: hidden; }
+.slide-side { position: relative; min-height: 100%; }
+.slide-side.photo img { position: absolute; inset: 0; height: 100%; -webkit-user-drag: none; }
+.slide-side.night { padding: clamp(24px, 3vw, 44px); display: flex; flex-direction: column; justify-content: flex-end; gap: 20px; }
+.slide-n { position: absolute; top: clamp(18px, 2.5vw, 32px); left: clamp(24px, 3vw, 44px); font: italic 400 clamp(56px, 7vw, 96px)/1 var(--serif); color: var(--bronze-2); }
+.slide-side .spec td { border-color: var(--night-line); color: var(--night-text); }
+.slide-side .spec thead th { color: var(--night-muted); border-color: var(--night-text); }
+.slide-side .spec td:first-child { font-size: 22px; }
+.slide-side .spec td small { display: block; font: 400 13px/1.4 var(--sans); color: var(--night-muted); margin-top: 4px; }
+.slide-side .spec td:last-child { color: var(--bronze-2); }
+.slide-big { font: 400 clamp(52px, 6vw, 88px)/.95 var(--serif); letter-spacing: -0.02em; }
+.slide-big em { color: var(--bronze-2); }
+.slide-fine { font-size: 13px; line-height: 1.55; color: var(--night-muted); padding-left: 14px; border-left: 1px solid var(--bronze-2); }
+.slide-side .dashlist li { padding-block: 10px; font-size: 15px; }
+.slide-body { padding: clamp(24px, 3.4vw, 52px); display: flex; flex-direction: column; gap: 20px; }
+.slide-t { font-size: clamp(30px, 3.2vw, 46px); line-height: 1.05; letter-spacing: -0.015em; font-variation-settings: normal; }
+.slide-t em { color: var(--bronze); }
+.slide-lead { color: var(--ink-2); font-size: 16.5px; max-width: 48ch; }
+.slide-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; border-top: 1px solid var(--line); }
+.slide-list li { padding: 10px 0 10px 22px; border-bottom: 1px solid var(--line); position: relative; font-size: 15px; }
+.slide-list li::before { content: "—"; position: absolute; left: 0; color: var(--bronze); }
+.slide-list--desc li { display: flex; flex-direction: column; gap: 2px; color: var(--muted); font-size: 13.5px; }
+.slide-list--desc b { color: var(--ink); font-weight: 600; font-size: 15px; }
+.slide-cta { margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px 28px; padding-top: 8px; }
+.u-progress { height: 2px; background: var(--line); margin-top: 28px; position: relative; overflow: hidden; }
+.u-progress span { position: absolute; left: 0; top: 0; bottom: 0; width: 12.5%; background: var(--ink); transition: width .2s ease; }
+.u-hint { margin-top: 12px; font-size: 13px; color: var(--muted); }
+@media (max-width: 860px) {
+  .slide { grid-template-columns: 1fr; grid-template-rows: auto 1fr; min-height: 0; flex-basis: 88vw; }
+  .slide-side.photo { aspect-ratio: 16 / 10; min-height: 0; }
+  .slide-side.night { min-height: 0; padding-top: 96px; order: 2; }
+  .rail { align-items: flex-start; }
+  .slide-list { grid-template-columns: 1fr; }
+  .u-ctrl .u-btn { width: 46px; height: 46px; }
+}
+
+/* Destinations : bandeaux défilants */
+.dest-band { padding-block: clamp(64px, 8vw, 112px); background: var(--paper-2); overflow: hidden; }
+.dest-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .8fr); gap: 24px 64px; align-items: end; margin-bottom: clamp(32px, 4vw, 56px); }
+@media (max-width: 860px) { .dest-head { grid-template-columns: 1fr; } }
+.marquee { overflow: hidden; border-top: 1px solid var(--ink); padding-block: 18px; }
+.marquee + .marquee { border-bottom: 1px solid var(--ink); }
+.mq-track { display: flex; width: max-content; animation: mq 70s linear infinite; }
+.marquee--rev .mq-track { animation-direction: reverse; animation-duration: 60s; }
+.marquee:hover .mq-track { animation-play-state: paused; }
+.mq-item { flex: none; white-space: nowrap; padding-right: .6em; font: 400 clamp(30px, 4.4vw, 60px)/1.15 var(--serif); letter-spacing: -0.01em; }
+.mq-item i { font-style: italic; color: var(--bronze); font-size: .55em; margin: 0 .6em 0 .2em; vertical-align: .25em; font-variation-settings: "opsz" 11; }
+@keyframes mq { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .marquee { overflow-x: auto; } }
 
 /* Apparition */
 .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
@@ -501,54 +526,159 @@ blockquote { margin: 0; font: italic 400 24px/1.35 var(--serif); }
   </div>
 </section>
 
-<!-- SOMMAIRE -->
-<section class="band" aria-labelledby="sommaire-titre">
-  <div class="wrap toc">
-    <div class="reveal" style="display: flex; flex-direction: column; gap: 24px">
-      <p class="kicker"><b>Sommaire</b> Nos univers</p>
-      <h2 class="title" id="sommaire-titre">Tout le voyage, <em>une seule adresse.</em></h2>
+<!-- UNIVERS : carrousel horizontal (remplace les sections 01 à 08) -->
+<section class="band" id="univers" aria-labelledby="univers-titre">
+  <div class="wrap u-head reveal">
+    <div style="display: flex; flex-direction: column; gap: 22px; max-width: 760px">
+      <p class="kicker"><b>Nos univers</b> Huit façons de voyager</p>
+      <h2 class="title" id="univers-titre">Tout le voyage, <em>une seule adresse.</em></h2>
     </div>
-    <ol class="toc-list reveal">
-      <li><a href="#jets"><span class="toc-n">01</span><span class="toc-t">Jets privés<small>Vols à la demande, à vos horaires, vers l'aéroport de votre choix.</small></span><span class="toc-a" aria-hidden="true">→</span></a></li>
-      <li><a href="#yachts"><span class="toc-n">02</span><span class="toc-t">Yachts et catamarans<small>Location avec équipage, à la journée ou à la semaine.</small></span><span class="toc-a" aria-hidden="true">→</span></a></li>
-      <li><a href="#clubs"><span class="toc-n">03</span><span class="toc-t">Clubs sportifs<small>Transport, hébergement et logistique de toute l'équipe.</small></span><span class="toc-a" aria-hidden="true">→</span></a></li>
-      <li><a href="#vip"><span class="toc-n">04</span><span class="toc-t">Personnalités<small>Voyages discrets pour artistes, dirigeants et officiels.</small></span><span class="toc-a" aria-hidden="true">→</span></a></li>
-      <li><a href="#evenements"><span class="toc-n">05</span><span class="toc-t">Événements et chauffeurs<small>Chauffeurs privés et transport complet de vos invités.</small></span><span class="toc-a" aria-hidden="true">→</span></a></li>
-      <li><a href="#hotels"><span class="toc-n">06</span><span class="toc-t">Hôtels et villas<small>Palaces, suites et villas réservés avec votre voyage.</small></span><span class="toc-a" aria-hidden="true">→</span></a></li>
-      <li><a href="#services"><span class="toc-n">07</span><span class="toc-t">Services à la carte<small>Hélicoptère, sécurité, accueil aéroport, conciergerie…</small></span><span class="toc-a" aria-hidden="true">→</span></a></li>
-      <li><a href="#visas"><span class="toc-n">08</span><span class="toc-t">Visas et formalités<small>Conditions d'entrée, dossier, rendez-vous et suivi de la demande.</small></span><span class="toc-a" aria-hidden="true">→</span></a></li>
-    </ol>
+    <div class="u-ctrl">
+      <span class="u-count" id="u-count" aria-live="polite">01 / 08</span>
+      <button class="u-btn" type="button" id="u-prev" aria-label="Univers précédent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6 9 12l6 6"/></svg></button>
+      <button class="u-btn" type="button" id="u-next" aria-label="Univers suivant"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
+    </div>
   </div>
-</section>
-
-<!-- 01 JETS -->
-<section class="band" id="jets" style="padding-top: 0">
   <div class="wrap">
-    <hr class="rule">
-    <div class="spread" style="padding-top: clamp(40px, 5vw, 72px)">
-      <div class="s-head reveal">
-        <p class="kicker"><b>01</b> Jets privés</p>
-        <h2 class="title">Décollez à votre heure, <em>pas à celle des autres.</em></h2>
-        <p class="lead">Vous indiquez le trajet et la date, nous trouvons l'appareil adapté et gérons le reste : créneaux, accueil au terminal, transferts au sol et restauration à bord.</p>
-        <div class="tags"><span class="tag">Aller simple</span><span class="tag">Aller-retour</span><span class="tag">Multi-étapes</span></div>
-      </div>
-      <div class="s-body reveal">
+    <div class="u-tabs" role="tablist" aria-label="Choisir un univers">
+      <button class="u-tab" type="button" role="tab" data-slide="0"><b>01</b> Jets</button>
+      <button class="u-tab" type="button" role="tab" data-slide="1"><b>02</b> Yachts</button>
+      <button class="u-tab" type="button" role="tab" data-slide="2"><b>03</b> Clubs</button>
+      <button class="u-tab" type="button" role="tab" data-slide="3"><b>04</b> Personnalités</button>
+      <button class="u-tab" type="button" role="tab" data-slide="4"><b>05</b> Événements</button>
+      <button class="u-tab" type="button" role="tab" data-slide="5"><b>06</b> Hôtels</button>
+      <button class="u-tab" type="button" role="tab" data-slide="6"><b>07</b> Services</button>
+      <button class="u-tab" type="button" role="tab" data-slide="7"><b>08</b> Visas</button>
+    </div>
+  </div>
+
+  <div class="rail reveal" id="rail" tabindex="0" aria-label="Nos univers : faites défiler horizontalement">
+
+    <article class="slide" id="jets" aria-label="01 Jets privés">
+      <div class="slide-side night">
+        <span class="slide-n">01</span>
         <table class="spec">
-          <thead><tr><th scope="col">Appareil</th><th scope="col">Pour qui</th><th scope="col">Tarif</th></tr></thead>
+          <thead><tr><th scope="col">Appareil</th><th scope="col">Tarif</th></tr></thead>
           <tbody>
-            <tr><td>Jet léger</td><td class="muted">Trajets courts, petits groupes</td><td>Sur devis</td></tr>
-            <tr><td>Jet intermédiaire</td><td class="muted">Vols régionaux, plus d'espace</td><td>Sur devis</td></tr>
-            <tr><td>Long-courrier</td><td class="muted">Afrique – Europe sans escale</td><td>Sur devis</td></tr>
-            <tr><td>Avion de groupe</td><td class="muted">Équipes, délégations, tournées</td><td>Sur devis</td></tr>
+            <tr><td>Jet léger<small>Trajets courts, petits groupes</small></td><td>Sur devis</td></tr>
+            <tr><td>Jet intermédiaire<small>Vols régionaux, plus d'espace</small></td><td>Sur devis</td></tr>
+            <tr><td>Long&#8208;courrier<small>Afrique – Europe sans escale</small></td><td>Sur devis</td></tr>
+            <tr><td>Avion de groupe<small>Équipes, délégations, tournées</small></td><td>Sur devis</td></tr>
           </tbody>
         </table>
-        <div style="display: flex; flex-wrap: wrap; gap: 12px 32px">
-          <a class="arrow" href="#demande" data-tab="jet">Demander un vol <span>→</span></a>
-          <a class="arrow" href="#estimation">Estimer la durée du vol <span>→</span></a>
-        </div>
       </div>
-    </div>
+      <div class="slide-body">
+        <p class="kicker"><b>01</b> Jets privés</p>
+        <h3 class="slide-t">Décollez à votre heure, <em>pas à celle des autres.</em></h3>
+        <p class="slide-lead">Vous indiquez le trajet et la date, nous trouvons l'appareil adapté et gérons le reste : créneaux, accueil au terminal, transferts au sol et restauration à bord.</p>
+        <div class="tags"><span class="tag">Aller simple</span><span class="tag">Aller-retour</span><span class="tag">Multi-étapes</span></div>
+        <div class="slide-cta"><a class="arrow" href="#demande" data-tab="jet">Demander un vol <span>→</span></a><a class="arrow" href="#estimation">Estimer la durée <span>→</span></a></div>
+      </div>
+    </article>
+
+    <article class="slide" id="yachts" aria-label="02 Yachts et catamarans">
+      <div class="slide-side photo"><img src="images/yacht.jpg" alt="Yacht naviguant au large de Cannes" width="2000" height="1210" loading="lazy" decoding="async" draggable="false"></div>
+      <div class="slide-body">
+        <p class="kicker"><b>02</b> Yachts et catamarans</p>
+        <h3 class="slide-t">La mer comme <em>adresse privée.</em></h3>
+        <p class="slide-lead">Croisière en famille, séminaire en mer ou réception à quai : nous sélectionnons le bateau, l'équipage et l'itinéraire selon votre programme.</p>
+        <ul class="slide-list"><li>Yacht charter avec équipage</li><li>Sortie de pêche</li><li>Croisière à la journée</li><li>Réception à bord</li><li>Chef et activités nautiques</li><li>Tarif selon bateau et saison</li></ul>
+        <div class="slide-cta"><a class="arrow" href="#demande" data-tab="yacht">Réserver un yacht <span>→</span></a></div>
+      </div>
+    </article>
+
+    <article class="slide" id="clubs" aria-label="03 Clubs sportifs">
+      <div class="slide-side photo photo--graded"><img src="images/clubs.jpg" alt="Terrain de football éclairé par les projecteurs, de nuit" width="2000" height="1330" loading="lazy" decoding="async" draggable="false"></div>
+      <div class="slide-body">
+        <p class="kicker"><b>03</b> Clubs sportifs</p>
+        <h3 class="slide-t">Votre équipe arrive <em>prête à jouer.</em></h3>
+        <p class="slide-lead">Clubs, fédérations et sélections : déplacements de match, de stage et de tournoi, pour les joueurs, le staff et le matériel.</p>
+        <ul class="slide-list"><li>Vols d'équipe</li><li>Hébergement groupé</li><li>Matériel et bagages</li><li>Coordinateur dédié</li><li>Bus et transferts</li><li>Stages et entraînements</li><li>Visas de groupe</li><li>Dirigeants et supporters</li></ul>
+        <div class="slide-cta"><a class="arrow" href="#demande" data-tab="club">Planifier un déplacement <span>→</span></a></div>
+      </div>
+    </article>
+
+    <article class="slide" id="vip" aria-label="04 Personnalités et stars">
+      <div class="slide-side photo"><img src="images/vip.jpg" alt="Berline Mercedes noire avec chauffeur" width="1600" height="1066" loading="lazy" decoding="async" draggable="false" style="object-position: 40% 70%"></div>
+      <div class="slide-body">
+        <p class="kicker"><b>04</b> Personnalités et stars</p>
+        <h3 class="slide-t">Discrétion totale, <em>service complet.</em></h3>
+        <p class="slide-lead">Artistes, sportifs, dirigeants et personnalités publiques : chaque voyage est préparé en toute confidentialité, avec votre entourage et votre agenda.</p>
+        <ul class="slide-list"><li>Accord de confidentialité</li><li>Accueil VIP et passage accéléré</li><li>Chauffeur et sécurité rapprochée</li><li>Réservations sous un autre nom</li><li>Tournées sur plusieurs villes</li><li>Assistant sur place</li></ul>
+        <div class="slide-cta"><a class="arrow" href="#demande" data-tab="vip">Parler à un conseiller <span>→</span></a></div>
+      </div>
+    </article>
+
+    <article class="slide" id="evenements" aria-label="05 Événements et chauffeurs">
+      <div class="slide-side photo"><img src="images/evenement.jpg" alt="Longue table de gala dressée avec bougies et fleurs" width="1600" height="1066" loading="lazy" decoding="async" draggable="false"></div>
+      <div class="slide-body">
+        <p class="kicker"><b>05</b> Événements et chauffeurs</p>
+        <h3 class="slide-t">Vos invités sont attendus, <em>jamais en attente.</em></h3>
+        <p class="slide-lead">Sommets, compétitions, concerts, mariages et cérémonies privées : tous les déplacements de l'événement, de l'aéroport à la dernière voiture du soir.</p>
+        <ul class="slide-list"><li>Chauffeurs privés</li><li>Accueil des invités</li><li>Coordination sur place</li><li>Navettes</li><li>Lieux et réceptions</li><li>Protocole et délégations</li><li>Conciergerie</li><li>Véhicules à vos couleurs</li></ul>
+        <div class="slide-cta"><a class="arrow" href="#demande" data-tab="event">Organiser le transport <span>→</span></a></div>
+      </div>
+    </article>
+
+    <article class="slide" id="hotels" aria-label="06 Hôtels et villas">
+      <div class="slide-side photo"><img src="images/hotel.jpg" alt="Suite d'hôtel avec bain et vue sur la ville" width="1600" height="1066" loading="lazy" decoding="async" draggable="false"></div>
+      <div class="slide-body">
+        <p class="kicker"><b>06</b> Hôtels et villas</p>
+        <h3 class="slide-t">Une adresse <em>à la hauteur du voyage.</em></h3>
+        <p class="slide-lead">Votre hébergement réservé en même temps que votre jet, votre yacht ou votre événement : une seule organisation, une seule facture.</p>
+        <ul class="slide-list"><li>Hôtels et palaces</li><li>Villas et appartements</li><li>Réservations de groupe</li><li>Demandes particulières</li><li>Séminaires et réunions</li><li>Longs séjours</li></ul>
+        <div class="slide-cta"><a class="arrow" href="#demande" data-tab="hotel">Réserver un hébergement <span>→</span></a></div>
+      </div>
+    </article>
+
+    <article class="slide" id="services" aria-label="07 Services à la carte">
+      <div class="slide-side night slide-type">
+        <span class="slide-n">07</span>
+        <p class="slide-big">à la <em>carte.</em></p>
+        <p class="muted">Ajoutez-les à votre demande : nous les coordonnons avec le reste du voyage.</p>
+      </div>
+      <div class="slide-body">
+        <p class="kicker"><b>07</b> Services à la carte</p>
+        <h3 class="slide-t">Tout ce qui <em>entoure le voyage.</em></h3>
+        <ul class="slide-list slide-list--desc">
+          <li><b>Hélicoptère</b> Transferts rapides vers les sites difficiles d'accès</li>
+          <li><b>Voitures de luxe</b> Avec ou sans chauffeur, livrées sur place</li>
+          <li><b>Accueil aéroport</b> Agent, passage accéléré, salon privé</li>
+          <li><b>Sécurité</b> Agents de protection et véhicules adaptés</li>
+          <li><b>Animaux à bord</b> Vols et hôtels qui les acceptent</li>
+          <li><b>eSIM</b> Internet dès l'atterrissage</li>
+          <li><b>Restaurants et billetterie</b> Tables, concerts, matchs</li>
+          <li><b>Visas</b> Voir l'univers suivant →</li>
+        </ul>
+        <div class="slide-cta"><a class="arrow" href="#demande">Ajouter à ma demande <span>→</span></a></div>
+      </div>
+    </article>
+
+    <article class="slide" id="visas" aria-label="08 Visas et formalités">
+      <div class="slide-side night slide-type">
+        <span class="slide-n">08</span>
+        <p class="kicker" style="color: var(--night-text)">Documents souvent demandés</p>
+        <ul class="dashlist">
+          <li>Passeport valide plusieurs mois après le retour</li>
+          <li>Photos d'identité aux normes</li>
+          <li>Billets et réservation d'hébergement</li>
+          <li>Justificatifs de ressources</li>
+          <li>Assurance voyage (exigée pour Schengen)</li>
+          <li>Lettre d'invitation, selon le motif</li>
+        </ul>
+        <p class="slide-fine">Liste indicative : elle varie selon le pays, la nationalité et le motif. La décision appartient aux autorités du pays de destination ; les frais consulaires sont indiqués à part dans le devis.</p>
+      </div>
+      <div class="slide-body">
+        <p class="kicker"><b>08</b> Visas et formalités</p>
+        <h3 class="slide-t">Partez l'esprit tranquille, <em>dossier en règle.</em></h3>
+        <p class="slide-lead">Nous préparons vos formalités en même temps que le voyage, pour vous, votre entourage ou toute une équipe.</p>
+        <ul class="slide-list"><li>Conditions d'entrée vérifiées</li><li>Liste des pièces et relecture</li><li>Rendez-vous consulat</li><li>Visas électroniques</li><li>Visas de groupe</li><li>Suivi de la demande</li></ul>
+        <div class="slide-cta"><a class="arrow" href="#demande" data-tab="visa">Préparer mon visa <span>→</span></a></div>
+      </div>
+    </article>
+
   </div>
+  <div class="wrap"><div class="u-progress" aria-hidden="true"><span id="u-bar"></span></div><p class="u-hint">Faites glisser ou utilisez les flèches pour parcourir les univers.</p></div>
 </section>
 
 <!-- ESTIMATEUR -->
@@ -574,255 +704,26 @@ blockquote { margin: 0; font: italic 400 24px/1.35 var(--serif); }
   </div>
 </section>
 
-<!-- 02 YACHTS -->
-<section id="yachts" aria-labelledby="yachts-titre">
-  <div class="cover">
-    <div class="photo"><img src="images/yacht.jpg" alt="Yacht naviguant en Méditerranée au large de Cannes" width="2000" height="1210" loading="lazy" decoding="async"></div>
-    <div class="cover-text">
-      <div class="wrap">
-        <div style="display: flex; flex-direction: column; gap: 18px; max-width: 760px">
-          <p class="kicker"><b>02</b> Yachts et catamarans</p>
-          <h2 class="title" id="yachts-titre">La mer comme <em>adresse privée.</em></h2>
-        </div>
-      </div>
+<!-- DESTINATIONS : deux bandeaux qui défilent en sens opposés -->
+<section class="dest-band" id="destinations" aria-labelledby="destinations-titre">
+  <div class="wrap dest-head reveal">
+    <div style="display: flex; flex-direction: column; gap: 18px">
+      <p class="kicker"><b>Atlas</b> Destinations</p>
+      <h2 class="title title--sm" id="destinations-titre">Trois régions, <em>un même niveau de service.</em></h2>
+    </div>
+    <p class="lead">Au départ et à destination des grandes villes d'Afrique, d'Europe et du Moyen&#8209;Orient. Autres destinations sur demande.</p>
+  </div>
+  <div class="marquee" aria-label="Afrique : Abidjan, Dakar, Lagos, Accra, Douala, Libreville, Kinshasa, Casablanca, Marrakech, Tunis, Le Caire, Nairobi, Kigali, Zanzibar">
+    <div class="mq-track" aria-hidden="true">
+      <span class="mq-item"><i>Afrique</i>Abidjan ✦ Dakar ✦ Lagos ✦ Accra ✦ Douala ✦ Libreville ✦ Kinshasa ✦ Casablanca ✦ Marrakech ✦ Tunis ✦ Le&nbsp;Caire ✦ Nairobi ✦ Kigali ✦ Zanzibar ✦</span>
+      <span class="mq-item"><i>Afrique</i>Abidjan ✦ Dakar ✦ Lagos ✦ Accra ✦ Douala ✦ Libreville ✦ Kinshasa ✦ Casablanca ✦ Marrakech ✦ Tunis ✦ Le&nbsp;Caire ✦ Nairobi ✦ Kigali ✦ Zanzibar ✦</span>
     </div>
   </div>
-  <div class="wrap band--tight band">
-    <div class="spread">
-      <div class="s-head reveal">
-        <p class="lead">Croisière en famille, séminaire en mer ou réception à quai : nous sélectionnons le bateau, l'équipage et l'itinéraire selon votre programme.</p>
-        <ul class="dashlist">
-          <li>Yachts à moteur, voiliers et catamarans avec équipage</li>
-          <li>Chef à bord, activités nautiques et escales sur mesure</li>
-          <li>Tarif sur devis, selon le bateau, la durée et la saison</li>
-        </ul>
-        <a class="arrow" href="#demande" data-tab="yacht" style="align-self: flex-start">Réserver un yacht <span>→</span></a>
-      </div>
-      <div class="s-body reveal">
-        <div class="items">
-          <div class="item"><h3>Yacht charter</h3><p>Le bateau et son équipage pour vous seuls, plusieurs jours ou une semaine.</p></div>
-          <div class="item"><h3>Sortie de pêche</h3><p>Fishing trip en mer avec skipper et matériel fournis.</p></div>
-          <div class="item"><h3>Croisière à la journée</h3><p>Baignade, déjeuner à bord et retour au coucher du soleil.</p></div>
-          <div class="item"><h3>Réception à bord</h3><p>Anniversaire, séminaire ou soirée privée, à quai ou en mer.</p></div>
-        </div>
-      </div>
+  <div class="marquee marquee--rev" aria-label="Europe et Moyen-Orient : Paris, Nice, Monaco, Londres, Genève, Ibiza, Mykonos, Dubaï, Abu Dhabi, Doha, Riyad">
+    <div class="mq-track" aria-hidden="true">
+      <span class="mq-item"><i>Europe</i>Paris ✦ Nice ✦ Monaco ✦ Londres ✦ Genève ✦ Ibiza ✦ Mykonos ✦ <i>Moyen&#8208;Orient</i>Dubaï ✦ Abu&nbsp;Dhabi ✦ Doha ✦ Riyad ✦</span>
+      <span class="mq-item"><i>Europe</i>Paris ✦ Nice ✦ Monaco ✦ Londres ✦ Genève ✦ Ibiza ✦ Mykonos ✦ <i>Moyen&#8208;Orient</i>Dubaï ✦ Abu&nbsp;Dhabi ✦ Doha ✦ Riyad ✦</span>
     </div>
-  </div>
-</section>
-
-<!-- 03 CLUBS -->
-<section class="band band--paper2" id="clubs" aria-labelledby="clubs-titre">
-  <div class="wrap" style="display: flex; flex-direction: column; gap: clamp(36px, 5vw, 64px)">
-    <div class="spread">
-      <div class="s-head reveal">
-        <p class="kicker"><b>03</b> Clubs sportifs</p>
-        <h2 class="title" id="clubs-titre">Votre équipe arrive <em>prête à jouer.</em></h2>
-      </div>
-      <div class="s-body reveal" style="justify-content: flex-end">
-        <p class="lead">Clubs, fédérations et sélections : nous organisons les déplacements de match, de stage et de tournoi, pour les joueurs, le staff et le matériel.</p>
-        <a class="arrow" href="#demande" data-tab="club" style="align-self: flex-start">Planifier un déplacement d'équipe <span>→</span></a>
-      </div>
-    </div>
-    <figure class="photo photo--wide photo--graded reveal" style="margin: 0"><img src="images/clubs.jpg" alt="Terrain de football éclairé par les projecteurs du stade, de nuit" width="2000" height="1330" loading="lazy" decoding="async"></figure>
-    <div class="items items--4 reveal">
-      <div class="item"><h3>Vols d'équipe</h3><p>Charter complet ou places groupées, avec horaires calés sur le calendrier sportif.</p></div>
-      <div class="item"><h3>Hébergement groupé</h3><p>Hôtels proches du stade, étages réservés, repas adaptés aux sportifs.</p></div>
-      <div class="item"><h3>Matériel et bagages</h3><p>Équipements, matériel médical et bagages hors format pris en charge.</p></div>
-      <div class="item"><h3>Coordinateur dédié</h3><p>Un seul interlocuteur avant, pendant et après le déplacement.</p></div>
-      <div class="item"><h3>Bus et transferts</h3><p>Car d'équipe et véhicules du staff entre l'aéroport, l'hôtel, l'entraînement et le stade.</p></div>
-      <div class="item"><h3>Stages</h3><p>Recherche de terrains, salles de sport et centres de récupération pour vos stages.</p></div>
-      <div class="item"><h3>Visas de groupe</h3><p>Suivi des passeports, visas et listes de passagers pour tout l'effectif.</p></div>
-      <div class="item"><h3>Dirigeants et supporters</h3><p>Déplacements séparés pour les dirigeants, les familles, la presse et les supporters.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 04 PERSONNALITÉS -->
-<section class="band night" id="vip" aria-labelledby="vip-titre">
-  <div class="wrap spread spread--flip">
-    <div class="s-head reveal">
-      <p class="kicker"><b>04</b> Personnalités et stars</p>
-      <h2 class="title" id="vip-titre">Discrétion totale, <em>service complet.</em></h2>
-      <p class="lead">Artistes, sportifs de haut niveau, dirigeants et personnalités publiques : chaque voyage est préparé en toute confidentialité, avec votre entourage et votre agenda.</p>
-      <ul class="dashlist">
-        <li>Accord de confidentialité sur demande</li>
-        <li>Accueil VIP à l'aéroport et passage accéléré</li>
-        <li>Chauffeur privé et sécurité rapprochée</li>
-        <li>Suites, villas et tournées : entourage et équipes inclus</li>
-        <li>Agendas sur plusieurs villes, en lien avec votre manager</li>
-        <li>Réservations sous un autre nom, itinéraires tenus secrets</li>
-        <li>Assistant de voyage sur place pendant tout le séjour</li>
-        <li>Demandes personnelles : tables, shopping privé, loisirs</li>
-      </ul>
-      <a class="arrow" href="#demande" data-tab="vip" style="align-self: flex-start">Parler à un conseiller <span>→</span></a>
-    </div>
-    <figure class="s-body reveal" style="margin: 0">
-      <div class="photo photo--land"><img src="images/vip.jpg" alt="Berline Mercedes noire avec chauffeur" width="1600" height="1066" loading="lazy" decoding="async" style="object-position: 62% 78%"></div>
-      <figcaption class="caption"><em>Accueil et chauffeur</em><span>Berline, van ou cortège</span></figcaption>
-    </figure>
-  </div>
-</section>
-
-<!-- 05 ÉVÉNEMENTS -->
-<section class="band" id="evenements" aria-labelledby="evenements-titre">
-  <div class="wrap" style="display: flex; flex-direction: column; gap: clamp(36px, 5vw, 64px)">
-    <div class="spread">
-      <div class="s-head reveal">
-        <p class="kicker"><b>05</b> Événements et chauffeurs</p>
-        <h2 class="title" id="evenements-titre">Vos invités sont attendus, <em>jamais en attente.</em></h2>
-        <p class="lead">Sommets et forums, compétitions sportives, concerts, mariages et cérémonies privées : nous prenons en charge tous les déplacements de l'événement, de l'aéroport à la dernière voiture du soir.</p>
-        <a class="arrow" href="#demande" data-tab="event" style="align-self: flex-start">Organiser le transport d'un événement <span>→</span></a>
-      </div>
-      <figure class="s-body reveal" style="margin: 0">
-        <div class="photo photo--land"><img src="images/evenement.jpg" alt="Longue table de gala dressée avec bougies et fleurs" width="1600" height="1066" loading="lazy" decoding="async"></div>
-        <figcaption class="caption"><em>Dîners, galas, cérémonies</em><span>Lieux et transport des invités</span></figcaption>
-      </figure>
-    </div>
-    <div class="items items--4 reveal">
-      <div class="item"><h3>Chauffeurs privés</h3><p>Transferts ou mise à disposition à la journée, en berline, van ou minibus.</p></div>
-      <div class="item"><h3>Accueil des invités</h3><p>Prise en charge à l'aéroport des délégations, intervenants et artistes.</p></div>
-      <div class="item"><h3>Coordination sur place</h3><p>Un responsable suit les trajets et gère les changements de dernière minute.</p></div>
-      <div class="item"><h3>Conciergerie</h3><p>Hébergement des invités, restaurants, accès VIP aux matchs et spectacles.</p></div>
-      <div class="item"><h3>Navettes</h3><p>Minibus et cars en rotation entre les hôtels et les lieux de l'événement.</p></div>
-      <div class="item"><h3>Lieux et réceptions</h3><p>Salles, villas ou yachts pour vos dîners, soirées et cérémonies.</p></div>
-      <div class="item"><h3>Protocole</h3><p>Accueil des officiels, cortèges et coordination avec les services de sécurité.</p></div>
-      <div class="item"><h3>À vos couleurs</h3><p>Véhicules et tenues des chauffeurs personnalisés à votre image.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 06 HÔTELS -->
-<section class="band band--paper2" id="hotels" aria-labelledby="hotels-titre">
-  <div class="wrap spread spread--flip">
-    <div class="s-head reveal">
-      <p class="kicker"><b>06</b> Hôtels et villas</p>
-      <h2 class="title" id="hotels-titre">Une adresse <em>à la hauteur du voyage.</em></h2>
-      <p class="lead">Nous réservons votre hébergement en même temps que votre jet, votre yacht ou votre événement : une seule organisation, une seule facture.</p>
-      <a class="arrow" href="#demande" data-tab="hotel" style="align-self: flex-start">Réserver un hébergement <span>→</span></a>
-    </div>
-    <div class="s-body reveal">
-      <figure style="margin: 0">
-        <div class="photo photo--land"><img src="images/hotel.jpg" alt="Suite d'hôtel avec bain et vue sur la ville" width="1600" height="1066" loading="lazy" decoding="async"></div>
-      </figure>
-      <div class="items">
-        <div class="item"><h3>Hôtels et palaces</h3><p>Chambres et suites haut de gamme, en Afrique et en Europe.</p></div>
-        <div class="item"><h3>Villas et appartements</h3><p>Résidences privées, avec personnel sur demande.</p></div>
-        <div class="item"><h3>Réservations de groupe</h3><p>Équipes, délégations et invités logés au même endroit.</p></div>
-        <div class="item"><h3>Demandes particulières</h3><p>Arrivée anticipée, départ tardif, étage réservé : nous les négocions.</p></div>
-        <div class="item"><h3>Séminaires</h3><p>Salles de réunion, salons privés et restauration.</p></div>
-        <div class="item"><h3>Longs séjours</h3><p>Résidences avec services pour les missions de plusieurs semaines.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 07 SERVICES -->
-<section class="band" id="services" aria-labelledby="services-titre">
-  <div class="wrap" style="display: flex; flex-direction: column; gap: clamp(36px, 5vw, 56px)">
-    <div class="spread">
-      <div class="s-head reveal">
-        <p class="kicker"><b>07</b> Services à la carte</p>
-        <h2 class="title" id="services-titre">Tout ce qui <em>entoure le voyage.</em></h2>
-      </div>
-      <div class="s-body reveal" style="justify-content: flex-end">
-        <p class="lead">Ajoutez à votre demande les services dont vous avez besoin : nous les coordonnons avec le reste du voyage.</p>
-      </div>
-    </div>
-    <div class="items items--4 reveal">
-      <div class="item"><h3>Hélicoptère</h3><p>Transferts rapides entre l'aéroport, la ville et les sites difficiles d'accès.</p></div>
-      <div class="item"><h3>Voitures de luxe</h3><p>Avec ou sans chauffeur, livrées à l'aéroport ou à l'hôtel.</p></div>
-      <div class="item"><h3>Accueil aéroport</h3><p>Agent à l'arrivée, passage accéléré et salon privé.</p></div>
-      <div class="item"><h3>Visa et formalités</h3><p>Accompagnement pour les visas et documents de voyage. <a href="#visas">En savoir plus</a></p></div>
-      <div class="item"><h3>Sécurité</h3><p>Agents de protection et véhicules adaptés.</p></div>
-      <div class="item"><h3>Animaux à bord</h3><p>Vols et hébergements qui acceptent vos animaux.</p></div>
-      <div class="item"><h3>eSIM</h3><p>Internet dès l'atterrissage, sans changer de carte SIM.</p></div>
-      <div class="item"><h3>Restaurants et billetterie</h3><p>Tables, concerts, matchs et accès privilégiés.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 08 VISAS -->
-<section class="band night" id="visas" aria-labelledby="visas-titre">
-  <div class="wrap" style="display: flex; flex-direction: column; gap: clamp(40px, 5vw, 72px)">
-    <div class="spread">
-      <div class="s-head reveal">
-        <p class="kicker"><b>08</b> Visas et formalités</p>
-        <h2 class="title" id="visas-titre">Partez l'esprit tranquille, <em>dossier en règle.</em></h2>
-        <p class="lead">Conditions d'entrée, pièces à fournir, rendez-vous, délais : nous préparons vos formalités en même temps que le voyage, pour vous, votre entourage ou toute une équipe.</p>
-        <a class="arrow" href="#demande" data-tab="visa" style="align-self: flex-start">Préparer mon visa <span>→</span></a>
-      </div>
-      <div class="s-body reveal">
-        <p class="kicker" style="color: var(--night-text)">Ce que nous prenons en charge</p>
-        <ul class="dashlist">
-          <li>Vérification des conditions d'entrée selon votre nationalité, votre destination et le motif du voyage</li>
-          <li>Liste exacte des pièces à fournir, puis relecture complète du dossier</li>
-          <li>Prise de rendez-vous au consulat ou au centre de dépôt des visas</li>
-          <li>Demandes de visa électronique, lorsque le pays de destination le propose</li>
-          <li>Visas de groupe pour équipes, délégations, artistes et invités</li>
-          <li>Suivi de la demande et coordination avec les dates du voyage</li>
-        </ul>
-      </div>
-    </div>
-    <div class="reveal">
-      <p class="kicker" style="margin-bottom: 18px"><b>Aide&#8208;mémoire</b> Documents souvent demandés</p>
-      <div class="items items--3">
-        <div class="item"><h3>Passeport</h3><p>En cours de validité, généralement plusieurs mois après la date de retour, avec des pages vierges.</p></div>
-        <div class="item"><h3>Photos d'identité</h3><p>Récentes et conformes aux normes du pays de destination.</p></div>
-        <div class="item"><h3>Billets et hébergement</h3><p>Réservation de vol aller-retour, réservation d'hôtel ou attestation d'accueil.</p></div>
-        <div class="item"><h3>Justificatifs de ressources</h3><p>Relevés bancaires, attestation d'employeur ou prise en charge par un tiers.</p></div>
-        <div class="item"><h3>Assurance voyage</h3><p>Exigée notamment pour un visa Schengen, avec une couverture médicale minimale.</p></div>
-        <div class="item"><h3>Lettre d'invitation</h3><p>Pour un voyage d'affaires, un événement, une compétition ou une visite familiale.</p></div>
-      </div>
-      <div class="docs-note">
-        <p>Liste indicative : les pièces exigées varient selon le pays, votre nationalité et le motif du voyage. Nous vous envoyons la liste exacte pour votre dossier.</p>
-        <p>La délivrance du visa reste une décision des autorités du pays de destination. Les frais consulaires sont indiqués à part dans votre devis.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- DESTINATIONS -->
-<section class="band band--paper2" id="destinations" aria-labelledby="destinations-titre">
-  <div class="wrap" style="display: flex; flex-direction: column; gap: clamp(36px, 5vw, 56px)">
-    <div class="spread">
-      <div class="s-head reveal">
-        <p class="kicker"><b>Atlas</b> Destinations</p>
-        <h2 class="title" id="destinations-titre">Trois régions, <em>un même niveau de service.</em></h2>
-      </div>
-      <div class="s-body reveal" style="justify-content: flex-end">
-        <p class="lead">Au départ et à destination des grandes villes d'Afrique, d'Europe et du Moyen-Orient. Autres destinations sur demande.</p>
-      </div>
-    </div>
-    <div class="dest reveal">
-      <div class="dest-row"><h3>Afrique de l'Ouest et centrale</h3><p>Abidjan&nbsp;<span>/</span> Dakar&nbsp;<span>/</span> Lagos&nbsp;<span>/</span> Accra&nbsp;<span>/</span> Douala&nbsp;<span>/</span> Libreville&nbsp;<span>/</span> Kinshasa</p></div>
-      <div class="dest-row"><h3>Afrique du Nord et de l'Est</h3><p>Casablanca&nbsp;<span>/</span> Marrakech&nbsp;<span>/</span> Tunis&nbsp;<span>/</span> Le&nbsp;Caire&nbsp;<span>/</span> Nairobi&nbsp;<span>/</span> Kigali&nbsp;<span>/</span> Zanzibar</p></div>
-      <div class="dest-row"><h3>Europe</h3><p>Paris&nbsp;<span>/</span> Nice&nbsp;<span>/</span> Monaco&nbsp;<span>/</span> Londres&nbsp;<span>/</span> Genève&nbsp;<span>/</span> Ibiza&nbsp;<span>/</span> Mykonos</p></div>
-      <div class="dest-row"><h3>Moyen&#8208;Orient</h3><p>Dubaï&nbsp;<span>/</span> Abu&nbsp;Dhabi&nbsp;<span>/</span> Doha&nbsp;<span>/</span> Riyad</p></div>
-    </div>
-    <div class="facts reveal">
-      <div class="fact"><span class="k">Devises du devis</span><span>EUR · USD · GBP · XOF · XAF · AED</span></div>
-      <div class="fact"><span class="k">Paiement</span><span>Carte bancaire et Mobile Money</span></div>
-      <!-- À compléter puis décommenter :
-      <div class="fact"><span class="k">Langues</span><span>[VOS LANGUES]</span></div>
-      <div class="fact"><span class="k">Disponibilité</span><span>[VOS HORAIRES]</span></div>
-      <div class="fact"><span class="k">Bureaux</span><span>[VOS BUREAUX]</span></div>
-      -->
-    </div>
-  </div>
-</section>
-
-<!-- ENGAGEMENTS -->
-<section class="band" aria-labelledby="engagements-titre">
-  <div class="wrap" style="display: flex; flex-direction: column; gap: clamp(36px, 5vw, 56px)">
-    <div class="reveal" style="display: flex; flex-direction: column; gap: 22px; max-width: 900px">
-      <p class="kicker"><b>Nos engagements</b> Pourquoi nous</p>
-      <h2 class="title" id="engagements-titre">Ce que vous pouvez <em>attendre de nous.</em></h2>
-    </div>
-    <ol class="method reveal">
-      <li><h3>Un interlocuteur unique</h3><p>La même personne suit votre dossier de la demande jusqu'au retour, et coordonne chaque prestataire.</p></li>
-      <li><h3>Des partenaires vérifiés</h3><p>Opérateurs aériens, armateurs et chauffeurs sélectionnés et contrôlés par nos soins.</p></li>
-      <li><h3>Des prix clairs, en toute discrétion</h3><p>Un devis détaillé dans votre devise, validé par vous avant toute réservation. Vos trajets et vos invités ne sont partagés avec personne.</p></li>
-    </ol>
   </div>
 </section>
 
@@ -1052,6 +953,83 @@ blockquote { margin: 0; font: italic 400 24px/1.35 var(--serif); }
   window.addEventListener('load', reveal);
   reveal();
   setTimeout(reveal, 600);
+
+  /* ---------- Carrousel des univers ---------- */
+  var rail = $('#rail');
+  if (rail) {
+    var slides = $$('.slide', rail), tabs = $$('.u-tab'), uCount = $('#u-count'), uBar = $('#u-bar');
+    var uPrev = $('#u-prev'), uNext = $('#u-next'), current = -1, suppressClick = false, drag = null;
+    function pad() { return parseFloat(getComputedStyle(rail).paddingLeft) || 0; }
+    function nearest() {
+      var x = rail.scrollLeft + pad(), best = 0, bestD = Infinity;
+      slides.forEach(function (s, i) { var d = Math.abs(s.offsetLeft - x); if (d < bestD) { bestD = d; best = i; } });
+      if (rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 4) { best = slides.length - 1; }
+      return best;
+    }
+    function goTo(i, smooth) {
+      i = Math.max(0, Math.min(slides.length - 1, i));
+      rail.scrollTo({ left: slides[i].offsetLeft - pad(), behavior: smooth === false ? 'auto' : 'smooth' });
+    }
+    function sync() {
+      var i = nearest(), max = rail.scrollWidth - rail.clientWidth;
+      var n = slides.length, f = max > 0 ? rail.scrollLeft / max : 1;
+      if (uBar) { uBar.style.width = ((f * (n - 1) + 1) / n * 100) + '%'; }
+      if (i === current) { return; }
+      current = i;
+      tabs.forEach(function (t, k) { t.setAttribute('aria-selected', String(k === i)); t.tabIndex = k === i ? 0 : -1; });
+      if (uCount) { uCount.textContent = String(i + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0'); }
+      if (uPrev) { uPrev.disabled = i === 0; }
+      if (uNext) { uNext.disabled = i === slides.length - 1; }
+      var tab = tabs[i]; if (tab && tab.parentNode) { var p = tab.parentNode; p.scrollTo({ left: tab.offsetLeft - p.offsetLeft - 16, behavior: 'smooth' }); }
+    }
+    rail.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', function () { goTo(current, false); });
+    if (uPrev) { uPrev.addEventListener('click', function () { goTo(nearest() - 1); }); }
+    if (uNext) { uNext.addEventListener('click', function () { goTo(nearest() + 1); }); }
+    tabs.forEach(function (t) { t.addEventListener('click', function () { goTo(+t.getAttribute('data-slide')); }); });
+    rail.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); goTo(nearest() + 1); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(nearest() - 1); }
+    });
+
+    /* Glisser à la souris (le doigt et le pavé tactile défilent nativement). */
+    rail.addEventListener('pointerdown', function (e) {
+      if (e.pointerType !== 'mouse' || e.button !== 0) { return; }
+      drag = { x: e.clientX, left: rail.scrollLeft, moved: false };
+    });
+    window.addEventListener('pointermove', function (e) {
+      if (!drag) { return; }
+      var dx = e.clientX - drag.x;
+      if (!drag.moved && Math.abs(dx) > 6) { drag.moved = true; rail.classList.add('is-drag'); }
+      if (drag.moved) { rail.scrollLeft = drag.left - dx; }
+    });
+    window.addEventListener('pointerup', function () {
+      if (!drag) { return; }
+      var moved = drag.moved; drag = null;
+      if (moved) {
+        rail.classList.remove('is-drag');
+        suppressClick = true; setTimeout(function () { suppressClick = false; }, 60);
+        goTo(nearest());
+      }
+    });
+    rail.addEventListener('click', function (e) { if (suppressClick) { e.preventDefault(); e.stopPropagation(); } }, true);
+
+    /* Les liens vers un univers (#jets, #visas…) ouvrent la bonne diapositive. */
+    function slideIndex(hash) { for (var k = 0; k < slides.length; k++) { if ('#' + slides[k].id === hash) { return k; } } return -1; }
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('a[href^="#"]');
+      if (!a) { return; }
+      var k = slideIndex(a.getAttribute('href'));
+      if (k < 0) { return; }
+      e.preventDefault();
+      $('#univers').scrollIntoView({ behavior: 'smooth' });
+      goTo(k);
+      try { history.replaceState(null, '', a.getAttribute('href')); } catch (err) { /* sans effet */ }
+    });
+    var startK = slideIndex(location.hash);
+    if (startK >= 0) { window.addEventListener('load', function () { $('#univers').scrollIntoView(); goTo(startK, false); }); }
+    sync();
+  }
 
   /* ---------- Estimateur de vol ---------- */
   var JETS = [
